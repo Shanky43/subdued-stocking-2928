@@ -1,4 +1,4 @@
-import { Box, Container, Image, Text, } from '@chakra-ui/react'
+import { Box, Container, HStack, Image, Spacer, Text, } from '@chakra-ui/react'
 import React from 'react'
 import { AiFillStar } from 'react-icons/ai';
 import Carousel from 'react-multi-carousel';
@@ -98,7 +98,28 @@ const popularbrands = [
     { image: "https://onemg.gumlet.io/h_150,w_150,a_ignore,q_auto,f_auto,c_fit/470dd15e-564d-4335-a633-6146d0239858.png", name: "Medisynth" },
     { image: "https://onemg.gumlet.io/h_150,w_150,a_ignore,q_auto,f_auto,c_fit/gpr2zunhramcprkush5j.png", name: "Wheezal" }
 ]
-
+const ShopByConcern = [
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/c2ymdg1tavs7mcnomcy0.png", name: "Warts" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/rpgkuklyd2youea8fdyr.png", name: "Hair Care" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/bfhia3yw4eemlxdslkks.png", name: "Sexual Wellness" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/nq5fthflkzfoahebdlv4.png", name: "Fungal Infection" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/uachuw80oilbpqnqmefp.png", name: "Diabetes" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/fdgokqurlq4c4jck8xpe.png", name: "Hypothyroidism" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/mvllnlsj1ttxuuarsfei.png", name: "Obesity" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/blzqsofglmrd8xlakfhu.png", name: "Piles and Fissures" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/wfchhzujp0duz7ir5e9w.png", name: "Allergic Rhinitis" }
+]
+const ShopByHomeopathy = [
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/p9e2jc60m3r5nbysyfm0.png", name: "Berberis Aquifolium" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/wqsh5tn0qwxoqsvsxm16.png", name: "Berberis Vulgaris" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/sijdkmnjf3ih8k4z04co.png", name: "Nux Vomica" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/jkdrio4gxrdmelci2yre.png", name: "Arinca Montana" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/liabuc0dqnft3frvk2o0.png", name: "Syxygium Jambolanum" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/wd7et3tgcqks3ipxswhw.png", name: "Silicea" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/dosvy0feaoni0znz1tdz.png", name: "Thyroidinum" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/fcgg3l4cei3adzzgzdre.png", name: "Cineraria Maritima" },
+    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/vnjqwoktfbdmk5af1q7t.png", name: "Phytolacca Berry" }
+]
 const Homeopathy = () => {
     const responsive = {
         desktop: {
@@ -137,7 +158,7 @@ const Homeopathy = () => {
                             >
                                 {
                                     SpotlightAds.map(items => (
-                                        <Box p="10" m="2" width={"100%"} _hover={{
+                                        <Box p="5" m="2" width={"100%"} _hover={{
                                             " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
                                         }} borderRadius={"10"}>
                                             <Box style={{ display: 'flex', justifyContent: "center" }}> <Image src={items.image} alt={items.name} width={"100px"} h={["100px", "170px"]} /></Box>
@@ -148,10 +169,10 @@ const Homeopathy = () => {
                                                     bgColor={"#1aab2a"} pl="2" width={"50px"}><Text fontSize={".85em"}>{items.rating}</Text>
                                                     <AiFillStar style={{ justifyContent: 'center', alignItems: 'center', margin: "auto" }} textAlign="center" />
                                                 </Box>
-                                                <Text pl="2">{items.users_rating}</Text>
+                                                <Text pl="2" fontSize={".8em"} color={'gray'}>{items.users_rating}</Text>
                                             </Box>
-                                            <Text mt="5" fontSize={".85em"} color={"gray"}>MRP <Text as={"span"} textDecoration={"line-through"}>₹{items.mrp}</Text> <Text color="green" as={"span"}>{items.offer}</Text></Text>
-
+                                            <Text mt="5" fontSize={".85em"} color={"gray"}>MRP <Text as={"span"} textDecoration={"line-through"}>₹ {items.mrp}</Text> <Text color="green" as={"span"}>{items.offer}</Text></Text>
+                                            <Box><HStack><Text fontWeight={"bold"}>₹{items.price}</Text> <Spacer /> <Text color={"#ff6f61"} cursor={"pointer"} fontWeight={"bold"}>ADD</Text></HStack></Box>
 
                                         </Box>
                                     ))
@@ -159,7 +180,7 @@ const Homeopathy = () => {
                             </Carousel>
                         </Box>
                     </Box>
-                    <Box mt="5" width={"100%"} mb="100px">
+                    <Box mt="10" width={"100%"}>
                         <Text textAlign={"left"} fontWeight={"600"}>Popular brands</Text>
                         <Box bgColor={"white"} mt="5" >
                             <Carousel
@@ -176,7 +197,7 @@ const Homeopathy = () => {
                                                 " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
                                             }} borderRadius={"10"} >
                                                 <Image src={items.image} alt={items.name} width={"250px"} />
-                                                <Text textAlign={'center'}>{items.name}</Text>
+                                                <Text textAlign={'center'} pt="5" fontWeight={500}>{items.name}</Text>
                                             </Box>
                                         </Box>
                                     ))
@@ -185,7 +206,62 @@ const Homeopathy = () => {
                         </Box>
 
                     </Box>
+                    <Box mt="5%" mb="5%">
+                        <Image src='https://onemg.gumlet.io/c0a6a2ef-7fa4-4d42-b7df-fb90828aa145_1667474655.jpg?w=1062&h=124&format=auto' alt='banner'
+                            width={"100%"} />
+                    </Box>
+                    <Box mt="10" width={"100%"} mb="5%">
+                        <Text textAlign={"left"} fontWeight={"600"}>Shop by concern</Text>
+                        <Box bgColor={"white"} mt="5" >
+                            <Carousel
+                                swipeable={false}
+                                draggable={false}
+                                // showDots={true}
+                                responsive={responsive}
 
+                            >
+                                {
+                                    ShopByConcern.map(items => (
+                                        <Box  pl="5"pr="5" >
+                                            <Box p="5" _hover={{
+                                                " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                                            }} borderRadius={"10"} >
+                                                <Image src={items.image} alt={items.name} width={"250px"} />
+                                                <Text textAlign={'center'} pt="5" fontWeight={500}>{items.name}</Text>
+                                            </Box>
+                                        </Box>
+                                    ))
+                                }
+                            </Carousel>
+                        </Box>
+
+                    </Box>
+                    <Box mt="10" width={"100%"} mb="5%">
+                        <Text textAlign={"left"} fontWeight={"600"}>Shop by homeopathy salts</Text>
+                        <Box bgColor={"white"} mt="5" >
+                            <Carousel
+                                swipeable={false}
+                                draggable={false}
+                                // showDots={true}
+                                responsive={responsive}
+
+                            >
+                                {
+                                    ShopByHomeopathy.map(items => (
+                                        <Box pl="5"pr="5" >
+                                            <Box p="5" _hover={{
+                                                " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                                            }} borderRadius={"10"} >
+                                                <Image src={items.image} alt={items.name} width={"250px"} />
+                                                <Text textAlign={'center'} pt="5" fontWeight={500}>{items.name}</Text>
+                                            </Box>
+                                        </Box>
+                                    ))
+                                }
+                            </Carousel>
+                        </Box>
+
+                    </Box>
                 </Box>
             </Container>
         </div>

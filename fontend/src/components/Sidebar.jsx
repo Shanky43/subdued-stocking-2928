@@ -1,10 +1,13 @@
-import { Box, Container, Divider, Flex,  Text } from '@chakra-ui/react'
+import { Box, Container, Divider, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Homeopathy from '../Pages/Homeopathy'
 import Ayurvedaproducts from '../Pages/Ayurvedaproducts'
 
 const Sidebar = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    console.log(category)
     return (
         <div>
             <Container maxW={"100%"} minH={"100vh"} bgColor={"#f6f6f6"} mt={20}>
@@ -20,7 +23,7 @@ const Sidebar = () => {
 
                             </Box>
                         </Box>
-                        <Box maxW={"75%"}  mt="10">
+                        <Box maxW={"75%"} mt="10">
                             <Routes>
                                 <Route path='/homeopathy' element={<Homeopathy />}></Route>
                                 <Route path='/ayurveda' element={<Ayurvedaproducts />}></Route>
