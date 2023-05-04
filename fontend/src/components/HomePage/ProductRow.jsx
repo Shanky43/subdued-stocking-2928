@@ -101,7 +101,7 @@ const ShopbyhealthCarousel = () => {
     <>
       <div style={{ margin: "40px 0" }}>
 
-        <p style={{ fontSize: "20px", fontWeight: "600",marginLeft:'82px',marginBottom:'10px' }}>Ayurveda top brands</p>
+        <p style={{ fontSize: "20px", fontWeight: "600", marginLeft: '82px', marginBottom: '10px' }}>Ayurveda top brands</p>
 
 
         <div onMouseEnter={handleHover} onMouseLeave={handleHover}>
@@ -134,9 +134,9 @@ export const CustomRightArrow = ({ onClick, ...rest }) => {
   } = rest;
 
   return (
-      <Box right='3%' fontSize={'0'} top='50%' transform="translate(0,-50%)"
-    cursor= "pointer"  color= "transparent" border= "none" outline= "0" background= "0 0" position='absolute' lineHeight='0' backgroundImage={"url(https://assets.1mg.com/hkp/1.0.0/static/images/next-round.svg)"} backgroundRepeat='no-repeat' backgroundSize='cover' display='block' height='50px' width='50px' zIndex={'2'} onClick={() => onClick()} >
-     {" "}
+    <Box right='3%' fontSize={'0'} top='50%' transform="translate(0,-50%)"
+      cursor="pointer" color="transparent" border="none" outline="0" background="0 0" position='absolute' lineHeight='0' backgroundImage={"url(https://assets.1mg.com/hkp/1.0.0/static/images/next-round.svg)"} backgroundRepeat='no-repeat' backgroundSize='cover' display='block' height='50px' width='50px' zIndex={'2'} onClick={() => onClick()} >
+      {" "}
     </Box>
 
   )
@@ -150,8 +150,8 @@ export const CustomLeftArrow = ({ onClick, ...rest }) => {
 
   return (
     <Box left='3%' fontSize={'0'} top='50%' transform="translate(0,-50%)"
-    cursor= "pointer"  color= "transparent" border= "none" outline= "0" background= "0 0" position='absolute' lineHeight='0' backgroundImage={"url(https://assets.1mg.com/hkp/1.0.0/static/images/prev-round.svg)"} backgroundRepeat='no-repeat' backgroundSize='cover' display='block' height='50px' width='50px' zIndex={'2'} onClick={() => onClick()} >
-     {" "}
+      cursor="pointer" color="transparent" border="none" outline="0" background="0 0" position='absolute' lineHeight='0' backgroundImage={"url(https://assets.1mg.com/hkp/1.0.0/static/images/prev-round.svg)"} backgroundRepeat='no-repeat' backgroundSize='cover' display='block' height='50px' width='50px' zIndex={'2'} onClick={() => onClick()} >
+      {" "}
     </Box>
   )
 }

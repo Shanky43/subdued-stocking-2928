@@ -176,17 +176,17 @@ const LabTestCard = ({ title, desc, img, price, discountprice, name, rating, id 
 
   return (
     <Box border='1px solid #eee' padding='5px' margin='5px' textAlign={'left'} borderRadius='7px' height={'180px'} boxSizing='border-box' _hover={{ border: '2px solid #E0E0E0', cursor: 'pointer', motion: 'none', transform: 'none', transition: 'none' }} >
-      <Flex>  
+      <Flex>
         <Text color='#212121' fontSize='15px' fontWeight='500'>{title}</Text>
-        <Box position="absolute" display="inline-flex" padding="2px 4px" fontSize="12px"  fontWeight="700"     borderRadius="2px"      color="#2b2b2b"
-          lineHeight="1.42" marginLeft='3px'   backgroundColor="#ffe3c2"    minWidth="58px" right="3%" top="4%"> <Image height= "18px" width= "18px" marginRight= "4px" src='https://onemg.gumlet.io/safe_bjisiz.svg' />
+        <Box position="absolute" display="inline-flex" padding="2px 4px" fontSize="12px" fontWeight="700" borderRadius="2px" color="#2b2b2b"
+          lineHeight="1.42" marginLeft='3px' backgroundColor="#ffe3c2" minWidth="58px" right="3%" top="4%"> <Image height="18px" width="18px" marginRight="4px" src='https://onemg.gumlet.io/safe_bjisiz.svg' />
           <Text>SAFE</Text>
         </Box>
-        </Flex>
+      </Flex>
       <Text colour='white' fontSize='13px' >{desc}</Text>
       <Flex alignItems='center' gap='11px' margin='8px 0px'>
         <Image w='33%' height='55px' border='1px solid #eee' src={img} />
-        <Text width='36px' fontSize='12px' padding='1px' height='18px' textColor='#fff' align='center'  colour='white' backgroundColor={'#1aaa2a'}>{rating} ★</Text>
+        <Text width='36px' fontSize='12px' padding='1px' height='18px' textColor='#fff' align='center' colour='white' backgroundColor={'#1aaa2a'}>{rating} ★</Text>
         <Text colour='#212121' fontSize='12px'>{name}</Text>
       </Flex>
       <Flex gap='10px' alignItems='center' >

@@ -1,8 +1,8 @@
 import React from 'react'
 import { BsCart3 } from 'react-icons/bs'
 import { BiSearchAlt2 } from "react-icons/bi";
-import {GiHamburgerMenu} from 'react-icons/gi'
-import {FcFlashOn} from 'react-icons/fc'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { FcFlashOn } from 'react-icons/fc'
 import logo from '../../Assests/logo.png'
 import {
     Text, Badge, HStack, Box, Center, Flex, Link, Icon, Divider, FormControl,
@@ -75,12 +75,12 @@ const UpperFullRow = () => {
         { title: "CARE PLAN", badge: "SAVE MORE" },
 
     ]
-    
+
     return (
         <>
-           <HStack justifyContent={'space-between'} p={4} borderBottom='1px solid #f1f4f6' mb={'3px'} display={{base:'none',lg:'flex'}} >
-                 <Box role='logo' w='120px'  mx='10px' >
-                   <Image src={logo} />
+            <HStack justifyContent={'space-between'} p={4} borderBottom='1px solid #f1f4f6' mb={'3px'} display={{ base: 'none', lg: 'flex' }} >
+                <Box role='logo' w='120px' mx='10px' >
+                    <Image src={logo} />
                 </Box>
 
                 {" "}
@@ -108,14 +108,14 @@ const UpperFullRow = () => {
             </HStack>
 
 
-            <HStack justifyContent={'space-between'} p={4} borderBottom='1px solid #f1f4f6' mb={'2px'} display={{base:'flex',lg:'none'}} >
-       <Flex w='23%' mx='15px' justify='space-around' >
-                <Icon as={GiHamburgerMenu} fontSize='22px' colour='black' mx='15px' />
-         <Image objectFit='cober' role='logo' src={logo} marginLeft='15px'/>
-       </Flex>
-   
-   <BsCart3 size='24px' />
-       </HStack>
+            <HStack justifyContent={'space-between'} p={4} borderBottom='1px solid #f1f4f6' mb={'2px'} display={{ base: 'flex', lg: 'none' }} >
+                <Flex w='23%' mx='15px' justify='space-around' >
+                    <Icon as={GiHamburgerMenu} fontSize='22px' colour='black' mx='15px' />
+                    <Image objectFit='cober' role='logo' src={logo} marginLeft='15px' />
+                </Flex>
+
+                <BsCart3 size='24px' />
+            </HStack>
 
 
             <Divider />
@@ -134,36 +134,36 @@ const SecondFullRow = () => {
                 <Box pr='5px' >
                     <SearchLocation width='180px' lefticon='true' placeholder='Location' righticon={MdOutlineMyLocation} />
                 </Box>
-                
+
                 <Box>
                     <SearchLocation width='600px' righticon={BiSearchAlt2} placeholder='Search for Medicines and Health Products' />
                 </Box>
 
-   <Center  >
-<FcFlashOn />
-   </Center>
-  
-  <HStack gap='1mm'> 
-                <Text w={"200px"} fontSize='15px' >
-            QUICK BUY! Get 15% off on medicines*
-          </Text>
-          <FormControl w={{ base: "100%", md: "150px" }}>
-            <Button
-              h={"35px"}
-              fontSize={"sm"}
-          _hover={{decoration:'none'}}
-              bg={"#ff6f61"}
-              color={"white"}
-            
-            >
-              Quick Order
-            </Button>
-          </FormControl>
-          </HStack>
+                <Center  >
+                    <FcFlashOn />
+                </Center>
+
+                <HStack gap='1mm'>
+                    <Text w={"200px"} fontSize='15px' >
+                        QUICK BUY! Get 15% off on medicines*
+                    </Text>
+                    <FormControl w={{ base: "100%", md: "150px" }}>
+                        <Button
+                            h={"35px"}
+                            fontSize={"sm"}
+                            _hover={{ decoration: 'none' }}
+                            bg={"#ff6f61"}
+                            color={"white"}
+
+                        >
+                            Quick Order
+                        </Button>
+                    </FormControl>
+                </HStack>
             </Flex>
-            <Box display={{base:'block',lg:'none'}}>
-                    <SearchLocation width='98%' righticon={BiSearchAlt2} placeholder='Search for Medicines and Health Products' />
-                </Box>
+            <Box display={{ base: 'block', lg: 'none' }}>
+                <SearchLocation width='98%' righticon={BiSearchAlt2} placeholder='Search for Medicines and Health Products' />
+            </Box>
         </>
     )
 }
@@ -187,8 +187,8 @@ const SearchLocation = ({ width, lefticon, placeholder, righticon }) => {
                         border={"0.2mm solid gray"}
                         _placeholder={{
                             color: "gray.600",
-                            fontWeight:'400',
-                            fontSize:'13px'
+                            fontWeight: '400',
+                            fontSize: '13px'
                         }}
                         type={"email"}
                         required
