@@ -1,6 +1,6 @@
 import {
     Box, Container, Divider, HStack, Image, Spacer, Text, Flex, Select, SimpleGrid, Checkbox, Button, Icon,
-    Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure
+    Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Center, RadioGroup, Stack, Radio
 } from '@chakra-ui/react'
 import { React, useEffect, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
@@ -12,13 +12,21 @@ import { useMediaQuery } from "@chakra-ui/react"
 import { SpotlightAds, popularbrands, ShopByConcern, ShopByHomeopathy, brands, discount, age, gender, cities } from "./Homeo_Pathy.js"
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { AiOutlineDown } from "react-icons/ai"
-
+import { BiSortAlt2 } from "react-icons/bi"
+import { RiFilter3Line } from "react-icons/ri"
 const Homeopathy = () => {
     const [city, setCity] = useState("Select City");
+    const [value, setValue] = useState('')
     const dispatch = useDispatch()
     const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)")
     const [isLargerThan769] = useMediaQuery("(min-width: 769px)")
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    // const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const { isOpen: isOpenDrawer1, onOpen: onOpenDrawer1, onClose: onCloseDrawer1 } = useDisclosure();
+    const { isOpen: isOpenDrawer2, onOpen: onOpenDrawer2, onClose: onCloseDrawer2 } = useDisclosure();
+    // const [selectedOption, setSelectedOption] = useState("");
+
+
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -64,25 +72,25 @@ const Homeopathy = () => {
         return state.Homeopathy.products
     })
     // console.log(HomeopathyProducts)
-    const handleCitySelect = (selectedCity) => {
+    const handleCitySelect = (selectedCity, option) => {
         setCity(selectedCity);
-        onClose();
+        onCloseDrawer1();
     };
-
+console.log(value)
     return (
         <div >
             <Container maxW={"100%"} minH={"100vh"} bgColor={"#f6f6f6"} mt={20}>
                 {
                     isLargerThan1024 ? null :
                         <Box>
-                            <Divider mt="10" borderColor={"black"} />
+                            <Divider mt="10" borderColor={"grey"} />
                             <Box>
-                                <Button variant="filled" onClick={onOpen}><Icon as={HiOutlineLocationMarker} boxSize={[5, 5, 5, 6]}></Icon> {city}  &nbsp;<Box mt="1"><AiOutlineDown /></Box></Button>
+                                <Button variant="filled" onClick={onOpenDrawer1}><Icon as={HiOutlineLocationMarker} boxSize={[5, 5, 5, 6]}></Icon> {city}  &nbsp;<Box mt="1"><AiOutlineDown /></Box></Button>
                                 <Box>
                                     <Drawer
-                                        isOpen={isOpen}
+                                        isOpen={isOpenDrawer1}
                                         placement="bottom"
-                                        onClose={onClose}
+                                        onClose={onCloseDrawer1}
                                         finalFocusRef={null}
                                     >
                                         <DrawerOverlay />
@@ -98,7 +106,7 @@ const Homeopathy = () => {
                                                         p="2"
                                                     >
                                                         <Icon as={HiOutlineLocationMarker} boxSize={[5, 5, 5, 6]} />
-                                                        {items.city}
+                                                        &nbsp; &nbsp;{items.city}
                                                     </Box>
                                                 ))}
                                             </DrawerBody>
@@ -110,6 +118,60 @@ const Homeopathy = () => {
                                 </Box>
 
                             </Box>
+                            <Divider borderColor={"grey"} />
+                            <Box display={'flex'} justifyContent={"space-around"}>
+                                <Box display={'flex'} justifyContent={"space-around"}>
+                                    <Box display={'flex'} justifyContent={"space-around"}>
+                                        <HStack justifyContent="center" alignItems="center" spacing={4}>
+                                            <Box alignContent="center" pr={["10px", "30px", "50px", "170px", "200px"]}>
+                                                <HStack>
+                                                    <Box><BiSortAlt2 /></Box>
+                                                    <Box><Text>Sort by: <Button variant={"filled"} onClick={onOpenDrawer2}></Button></Text></Box>
+                                                </HStack>
+                                                <Box>
+                                                    <Drawer
+                                                        isOpen={isOpenDrawer2}
+                                                        placement="bottom"
+                                                        onClose={onCloseDrawer2}
+                                                        finalFocusRef={null}
+                                                    >
+                                                        <DrawerOverlay />
+                                                        <DrawerContent height={"30em"}>
+                                                            <DrawerCloseButton />
+                                                            <DrawerHeader>Sort By</DrawerHeader>
+                                                            <DrawerBody >
+                                                                <RadioGroup onChange={setValue} value={value}>
+                                                                    <Stack direction='column'>
+                                                                        <Radio value='hightolow' color='#ff6f61'>High to Low</Radio>
+                                                                        <Radio value='lowtohigh' color='#ff6f61'>Low to High</Radio>
+                                                                        <Radio value='discount5%-10%' color='#ff6f61'>Discount 5% - 10%</Radio>
+                                                                        <Radio value='discount20%-50%' color='#ff6f61'>Discount 20% - 50%</Radio>
+                                                                    </Stack>
+                                                                </RadioGroup>
+                                                            </DrawerBody>
+                                                            <DrawerFooter>
+
+                                                            </DrawerFooter>
+                                                        </DrawerContent>
+                                                    </Drawer>
+                                                </Box>
+                                            </Box>
+
+                                            <Box>  <Divider orientation="vertical" borderColor="gray.400" h="40px" w="2px" /></Box>
+
+                                            <Box textAlign="center" pl={["10px", "30px", "50px", "170px", "200px"]}>
+                                                <HStack>
+                                                    <Box><RiFilter3Line /></Box>
+                                                    <Box><Text> <Text as="span">Filter</Text></Text></Box>
+                                                </HStack>
+                                            </Box>
+                                        </HStack>
+                                    </Box>
+
+
+                                </Box>
+                            </Box>
+                            <Divider borderColor={"grey"} />
                         </Box>
                 }
                 <Box>
@@ -256,7 +318,7 @@ const Homeopathy = () => {
                                                                 " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
                                                             }} borderRadius={"10"} >
                                                                 <Image src={items.image} alt={items.name} width={"250px"} />
-                                                                <Text textAlign={'center'} pt="5" fontWeight={500}>{items.name}</Text>
+                                                                <Text textAlign={'center'} pt="5" fontWeight={500} fontSize={[".7em", ".9em"]}>{items.name}</Text>
                                                             </Box>
                                                         </Box>
                                                     ))
@@ -285,7 +347,7 @@ const Homeopathy = () => {
                                                                 " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
                                                             }} borderRadius={"10"} >
                                                                 <Image src={items.image} alt={items.name} width={"250px"} />
-                                                                <Text textAlign={'center'} pt="5" fontWeight={500}>{items.name}</Text>
+                                                                <Text textAlign={'center'} pt="5" fontWeight={500} fontSize={[".7em", ".9em"]}>{items.name}</Text>
                                                             </Box>
                                                         </Box>
                                                     ))
@@ -305,13 +367,13 @@ const Homeopathy = () => {
                                                 responsive={responsive1}
                                             >
                                                 {
-                                                    ShopByHomeopathy.map(items => (
-                                                        <Box pl="5" pr="5" >
+                                                    ShopByHomeopathy.map((items, index) => (
+                                                        <Box pl="5" pr="5" key={index}>
                                                             <Box p="5" _hover={{
                                                                 " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
                                                             }} borderRadius={"10"} >
                                                                 <Image src={items.image} alt={items.name} width={"250px"} />
-                                                                <Text textAlign={'center'} pt="5" fontWeight={500}>{items.name}</Text>
+                                                                <Text textAlign={'center'} pt="5" fontSize={[".7em", ".9em"]} fontWeight={500}>{items.name}</Text>
                                                             </Box>
                                                         </Box>
                                                     ))
