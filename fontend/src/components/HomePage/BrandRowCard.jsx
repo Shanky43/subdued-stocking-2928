@@ -76,7 +76,7 @@ const BrandRowCard = () => {
         <button style={{color: "white", backgroundColor: "#ff6f61", padding: "8px", fontSize: "16px", borderRadius: "5px",fontWeight:'700'}}>SEE ALL</button>
     </div>
       <div onMouseEnter={handleHover} onMouseLeave={handleHover}>
-        <Carousel rows={1} customRightArrow={<CustomRightArrow />} loop={true} autoPlay='2000' removeArrowOnDeviceType={["tablet", "mobile"]}
+        <Carousel rows={1} customRightArrow={<CustomRightArrow />} infinite={true} autoPlay='2000' removeArrowOnDeviceType={["tablet", "mobile"]}
           responsive={responsive} containerClass="carousel-container-homepage" customLeftArrow={<CustomLeftArrow />}
 
         >

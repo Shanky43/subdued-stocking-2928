@@ -5,6 +5,7 @@ import ProductRow from '../components/HomePage/ProductRow'
 import BrandRowCard from '../components/HomePage/BrandRowCard'
 import CheckupsRow from '../components/HomePage/CheckupsRow'
 import Footer from '../components/HomePage/Footer'
+import PopularCategory from '../components/HomePage/PopularCategory'
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
 <Navbar/>
 <Banner/>
 <ProductRow/>
+<PopularCategory/>
 <BrandRowCard/>
 <CheckupsRow/>
 

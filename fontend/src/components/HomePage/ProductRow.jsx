@@ -105,7 +105,7 @@ const ShopbyhealthCarousel = () => {
 
 
         <div onMouseEnter={handleHover} onMouseLeave={handleHover}>
-          <Carousel rows={1} customRightArrow={<CustomRightArrow />} loop={true} autoPlay='2000' removeArrowOnDeviceType={["tablet", "mobile"]}
+          <Carousel rows={1} customRightArrow={<CustomRightArrow />} infinite={true} autoPlay='2000' removeArrowOnDeviceType={["tablet", "mobile"]}
             responsive={responsive} containerClass="carousel-container-homepage" customLeftArrow={<CustomLeftArrow />}
 
           >
@@ -134,9 +134,11 @@ export const CustomRightArrow = ({ onClick, ...rest }) => {
   } = rest;
 
   return (
-    <Button borderRadius='50%' position='absolute' right='3%' color='none' onClick={() => onClick()} >
-      <MdOutlineArrowForwardIos color='ff6f61' fontSize='35px' />
-    </Button>
+      <Box right='3%' fontSize={'0'} top='50%' transform="translate(0,-50%)"
+    cursor= "pointer"  color= "transparent" border= "none" outline= "0" background= "0 0" position='absolute' lineHeight='0' backgroundImage={"url(https://assets.1mg.com/hkp/1.0.0/static/images/next-round.svg)"} backgroundRepeat='no-repeat' backgroundSize='cover' display='block' height='50px' width='50px' zIndex={'2'} onClick={() => onClick()} >
+     {" "}
+    </Box>
+
   )
 }
 
@@ -147,8 +149,9 @@ export const CustomLeftArrow = ({ onClick, ...rest }) => {
   } = rest;
 
   return (
-    <Button  borderRadius='50%' position='absolute' left='3%' color='none' onClick={() => onClick()} >
-      <MdOutlineArrowBackIos color='ff6f61' fontSize='35px' />
-    </Button>
+    <Box left='3%' fontSize={'0'} top='50%' transform="translate(0,-50%)"
+    cursor= "pointer"  color= "transparent" border= "none" outline= "0" background= "0 0" position='absolute' lineHeight='0' backgroundImage={"url(https://assets.1mg.com/hkp/1.0.0/static/images/prev-round.svg)"} backgroundRepeat='no-repeat' backgroundSize='cover' display='block' height='50px' width='50px' zIndex={'2'} onClick={() => onClick()} >
+     {" "}
+    </Box>
   )
 }
