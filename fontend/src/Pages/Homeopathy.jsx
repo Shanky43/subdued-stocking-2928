@@ -1,8 +1,10 @@
-import { Box, Container, HStack, Image, Spacer, Text, } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Container, Divider, HStack, Image, Spacer, Text, Flex, Select, SimpleGrid, Checkbox, } from '@chakra-ui/react'
+import { React, useEffect } from 'react'
 import { AiFillStar } from 'react-icons/ai';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { homeopathyProducts } from '../Redux/Homeopathy/action';
 
 const SpotlightAds = [
     {
@@ -120,150 +122,259 @@ const ShopByHomeopathy = [
     { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/fcgg3l4cei3adzzgzdre.png", name: "Cineraria Maritima" },
     { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/vnjqwoktfbdmk5af1q7t.png", name: "Phytolacca Berry" }
 ]
+const brands = [
+    { brand: "SBL Pvt", numbers: "1250" },
+    { brand: "Dr. Roshanlal Aggarwal", numbers: "1500" },
+    { brand: "Tonicard", numbers: "50" },
+    { brand: "Dr. Reckeweg", numbers: "215" },
+    { brand: "ADEL", numbers: "1452" },
+    { brand: "Boiren", numbers: "214" }
+]
+
 const Homeopathy = () => {
+    const dispatch = useDispatch()
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
             items: 5
         },
         tablet: {
-            breakpoint: { max: 1024, min: 464 },
+            breakpoint: { max: 1024, min: 800 },
             items: 3
+        },
+        ipad: {
+            breakpoint: { max: 800, min: 464 },
+            items: 2
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
             items: 1
         }
     };
+
+    useEffect(() => {
+        dispatch(homeopathyProducts())
+    }, [dispatch])
+
+    const HomeopathyProducts = useSelector((state) => {
+        return state.Homeopathy.products
+    })
+    console.log(HomeopathyProducts)
     return (
         <div >
-            <Container maxW={"100%"}>
-                <Box ml={5}>
-                    <Text fontSize={"2xl"} fontWeight={"bold"}>HOMEOPATHY</Text>
+            <Container maxW={"100%"} minH={"100vh"} bgColor={"#f6f6f6"} mt={20}>
+                <Box>
+                    <Flex>
+                        <Box maxW={"15%"} ml={"100px"} mt="10">
+                            <Box style={{ "box-shadow": " rgba(0, 0, 0, 0.16) 0px 1px 4px" }} p="5" bgColor={"white"}>
+                                <Text fontSize={"md"} fontWeight={"bold"} color={"#ff6f61"}>FILTERS</Text>
+                                <Divider borderColor={"black"} pt="3" mb="3" />
+                                <Box>
+                                    <Box>
+                                        <Box> <Text width={"100%"} fontSize={"1em"} fontWeight={"600"}>Brands</Text></Box>
 
-                    <Box mt="5">
-                        <Image src='https://onemg.gumlet.io/c0a6a2ef-7fa4-4d42-b7df-fb90828aa145_1667474655.jpg?w=1062&h=124&format=auto' alt='banner'
-                            width={"100%"} />
-                    </Box>
+                                        <Box  >
+                                            {
+                                                brands.map((brands, index) => (
+                                                    <HStack key={index}>
+                                                        <Checkbox pt="2"><Text fontSize={".8em"}>{brands.brand}</Text></Checkbox>
+                                                        <Spacer />
+                                                        <Box><Text fontSize={".8em"}>{brands.numbers}</Text></Box>
+                                                    </HStack>
 
-                    <Box mt="5" width={"100%"}>
-                        <Text textAlign={"left"} fontWeight={"600"}>In the Spotlight</Text>
-                        <Box bgColor={"white"}
-                            mt="5">
-                            <Carousel
-                                swipeable={false}
-                                draggable={false}
-                                // showDots={true}
-                                responsive={responsive}
-                            >
-                                {
-                                    SpotlightAds.map(items => (
-                                        <Box p="5" m="2" width={"100%"} _hover={{
-                                            " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
-                                        }} borderRadius={"10"}>
-                                            <Box style={{ display: 'flex', justifyContent: "center" }}> <Image src={items.image} alt={items.name} width={"100px"} h={["100px", "170px"]} /></Box>
-                                            <Text width={"100%"} height={"100%"} pt="5" fontSize={".85em"} fontWeight={"600"}>{items.name}</Text>
-                                            <Text fontSize={".8em"} pt="1" color={"gray"}>{items.description}</Text>
-                                            <Box style={{ display: "flex" }} pt="3" h={["80%", "100%"]}>
-                                                <Box style={{ display: "flex" }} color={"white"}
-                                                    bgColor={"#1aab2a"} pl="2" width={"50px"}><Text fontSize={".85em"}>{items.rating}</Text>
-                                                    <AiFillStar style={{ justifyContent: 'center', alignItems: 'center', margin: "auto" }} textAlign="center" />
-                                                </Box>
-                                                <Text pl="2" fontSize={".8em"} color={'gray'}>{items.users_rating}</Text>
-                                            </Box>
-                                            <Text mt="5" fontSize={".85em"} color={"gray"}>MRP <Text as={"span"} textDecoration={"line-through"}>₹ {items.mrp}</Text> <Text color="green" as={"span"}>{items.offer}</Text></Text>
-                                            <Box><HStack><Text fontWeight={"bold"}>₹{items.price}</Text> <Spacer /> <Text color={"#ff6f61"} cursor={"pointer"} fontWeight={"bold"}>ADD</Text></HStack></Box>
+                                                ))
+                                            }
 
                                         </Box>
-                                    ))
-                                }
-                            </Carousel>
-                        </Box>
-                    </Box>
-                    <Box mt="10" width={"100%"}>
-                        <Text textAlign={"left"} fontWeight={"600"}>Popular brands</Text>
-                        <Box bgColor={"white"} mt="5" >
-                            <Carousel
-                                swipeable={false}
-                                draggable={false}
-                                // showDots={true}
-                                responsive={responsive}
 
-                            >
-                                {
-                                    popularbrands.map(items => (
-                                        <Box p="5" >
-                                            <Box p="5" _hover={{
-                                                " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
-                                            }} borderRadius={"10"} >
-                                                <Image src={items.image} alt={items.name} width={"250px"} />
-                                                <Text textAlign={'center'} pt="5" fontWeight={500}>{items.name}</Text>
+                                    </Box>
+                                </Box>
+
+                            </Box>
+                        </Box>
+                        <Box maxW={["100%", "90%", "80%", "70%"]} mt="10">
+                            <Container maxW={"100%"}>
+                                <Box ml={5}>
+                                    <Text fontSize={"2xl"} fontWeight={"bold"}>HOMEOPATHY</Text>
+
+                                    <Box mt="5">
+                                        <Image src='https://onemg.gumlet.io/c0a6a2ef-7fa4-4d42-b7df-fb90828aa145_1667474655.jpg?w=1062&h=124&format=auto' alt='banner'
+                                            width={"100%"} />
+                                    </Box>
+
+                                    <Box mt="5" width={"100%"}>
+                                        <Text textAlign={"left"} fontWeight={"600"}>In the Spotlight</Text>
+                                        <Box bgColor={"white"}
+                                            mt="5">
+                                            <Carousel
+                                                swipeable={false}
+                                                draggable={false}
+                                                // showDots={true}
+                                                responsive={responsive}
+                                            >
+                                                {
+                                                    SpotlightAds.map((items, index) => (
+                                                        <Box p="5" m="2" width={"100%"} _hover={{
+                                                            " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                                                        }} borderRadius={"10"} key={index}>
+                                                            <Box style={{ display: 'flex', justifyContent: "center" }}> <Image src={items.image} alt={items.name} width={"100px"} h={["100px", "170px"]} /></Box>
+                                                            <Box><Text width={"100%"} height={"20"} pt="5" fontSize={".85em"} fontWeight={"600"}>{items.name}</Text></Box>
+                                                            <Box><Text fontSize={".8em"} pt="1" color={"gray"}>{items.description}</Text></Box>
+                                                            <Box style={{ display: "flex" }} pt="3" h={["80%", "100%"]}>
+                                                                <Box style={{ display: "flex" }} color={"white"}
+                                                                    bgColor={"#1aab2a"} pl="2" width={"50px"}><Text fontSize={".85em"}>{items.rating}</Text>
+                                                                    <AiFillStar style={{ justifyContent: 'center', alignItems: 'center', margin: "auto" }} textAlign="center" />
+                                                                </Box>
+                                                                <Text pl="2" fontSize={".8em"} color={'gray'}>{items.users_rating}</Text>
+                                                            </Box>
+                                                            <Box> <Text mt="5" fontSize={".85em"} color={"gray"}>MRP <Text as={"span"} textDecoration={"line-through"}>₹ {items.mrp}</Text> <Text color="green" as={"span"}>{items.offer}</Text></Text></Box>
+                                                            <Box><HStack><Text fontWeight={"bold"}>₹{items.price}</Text> <Spacer /> <Text color={"#ff6f61"} cursor={"pointer"} fontWeight={"bold"}>ADD</Text></HStack></Box>
+
+                                                        </Box>
+                                                    ))
+                                                }
+                                            </Carousel>
+                                        </Box>
+                                    </Box>
+                                    <Box mt="5" width={"100%"}>
+                                        <Text textAlign={"left"} fontWeight={"600"}>Popular brands</Text>
+                                        <Box bgColor={"white"} mt="5" >
+                                            <Carousel
+                                                swipeable={false}
+                                                draggable={false}
+                                                // showDots={true}
+                                                responsive={responsive}
+                                            >
+                                                {
+                                                    popularbrands.map(items => (
+                                                        <Box p="5" >
+                                                            <Box p="5" _hover={{
+                                                                " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                                                            }} borderRadius={"10"} >
+                                                                <Image src={items.image} alt={items.name} width={"250px"} />
+                                                                <Text textAlign={'center'} pt="5" fontWeight={500}>{items.name}</Text>
+                                                            </Box>
+                                                        </Box>
+                                                    ))
+                                                }
+                                            </Carousel>
+                                        </Box>
+
+                                    </Box>
+                                    <Box mt="5" mb="5">
+                                        <Image src='https://onemg.gumlet.io/c0a6a2ef-7fa4-4d42-b7df-fb90828aa145_1667474655.jpg?w=1062&h=124&format=auto' alt='banner'
+                                            width={"100%"} />
+                                    </Box>
+                                    <Box mt="5" width={"100%"} mb="5">
+                                        <Text textAlign={"left"} fontWeight={"600"}>Shop by concern</Text>
+                                        <Box bgColor={"white"} mt="5" >
+                                            <Carousel
+                                                swipeable={false}
+                                                draggable={false}
+                                                // showDots={true}
+                                                responsive={responsive}
+                                            >
+                                                {
+                                                    ShopByConcern.map(items => (
+                                                        <Box pl="5" pr="5" >
+                                                            <Box p="5" _hover={{
+                                                                " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                                                            }} borderRadius={"10"} >
+                                                                <Image src={items.image} alt={items.name} width={"250px"} />
+                                                                <Text textAlign={'center'} pt="5" fontWeight={500}>{items.name}</Text>
+                                                            </Box>
+                                                        </Box>
+                                                    ))
+                                                }
+                                            </Carousel>
+                                        </Box>
+
+                                    </Box>
+                                    <Box mt="5" width={"100%"} mb="5">
+                                        <Text textAlign={"left"} fontWeight={"600"}>Shop by homeopathy salts</Text>
+                                        <Box bgColor={"white"} mt="5" >
+                                            <Carousel
+                                                swipeable={false}
+                                                draggable={false}
+                                                // showDots={true}
+                                                backgroundColor='#ff6f61'
+                                                responsive={responsive}
+                                            >
+                                                {
+                                                    ShopByHomeopathy.map(items => (
+                                                        <Box pl="5" pr="5" >
+                                                            <Box p="5" _hover={{
+                                                                " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                                                            }} borderRadius={"10"} >
+                                                                <Image src={items.image} alt={items.name} width={"250px"} />
+                                                                <Text textAlign={'center'} pt="5" fontWeight={500}>{items.name}</Text>
+                                                            </Box>
+                                                        </Box>
+                                                    ))
+                                                }
+                                            </Carousel>
+                                        </Box>
+
+                                    </Box>
+
+                                    <Box mt="5" width={"100%"} mb="5">
+                                        <Box>
+                                            <HStack>
+                                                <Text textAlign={"left"} fontWeight={"600"}>All Products</Text>
+                                                <Spacer />
+                                                <Select variant='filled' bgColor={"white"} width={"20%"} borderColor="white"
+                                                    _focus={{ border: "1px solid white" }}
+                                                    _hover={{ border: "1px solid white" }}
+                                                    styles={{ option: { color: "red", backgroundColor: "blue", borderRadius: "4px" } }}
+                                                >
+                                                    <option value="hightolow" bgColor="#FAFAFA">High to Low</option>
+                                                    <option value="lowtohigh">Low to High</option>
+                                                    <option value="discount5%-10%">Discount 5% - 10%</option>
+                                                    <option value="discount20%-50%">Discount 20% - 50%</option>
+                                                </Select>
+
+                                            </HStack>
+                                            <Box mt="5">
+                                                <SimpleGrid columns={[1, 2, 3, 4]} spacing={7}>
+                                                    {
+                                                        HomeopathyProducts.map((items, ind) => (
+                                                            <Box boxShadow="rgba(0, 0, 0, 0.16) 0px 1px 4px" bgColor={"white"}>
+                                                                <Box p="5">
+                                                                    <Image p="10" src={items.image} alt={items.name} style={{ display: "flex", justifyContent: "center", alignItems: "center", alignContent: 'center' }} width={"100%"} height={"250px"} />
+                                                                    <Box height="10" >
+                                                                        <Text width={"100%"} height={"100%"} pt="5" fontSize={".85em"} fontWeight={"500"}>{items.name}</Text>
+                                                                    </Box>
+                                                                    <Box pt="10">
+                                                                        <Text width={"100%"} height={"100%"} fontSize={".6em"} color={"gray"} fontWeight={"500"}>{items.brand}</Text>
+                                                                    </Box>
+                                                                    <Box style={{ display: "flex" }} pt="3" h={["80%", "100%"]}>
+                                                                        <Box style={{ display: "flex" }} color={"white"}
+                                                                            bgColor={"#1aab2a"} pl="2" width={"50px"}><Text fontSize={".85em"}>{"4." + (Math.floor(Math.random() * 5) + 1)}</Text>
+                                                                            <AiFillStar style={{ justifyContent: 'center', alignItems: 'center', margin: "auto" }} textAlign="center" />
+                                                                        </Box>
+                                                                        <Text pl="2" fontSize={".8em"} color={'gray'}>{(Math.floor(Math.random() * 10) + 10) * ind} ratings</Text>
+                                                                    </Box>
+                                                                    <Text mt="5" fontSize={".85em"} color={"gray"}>MRP <Text as={"span"} textDecoration={"line-through"}>₹ {items.mainprice}</Text> <Text color="green" as={"span"}>{items.discount}</Text></Text>
+                                                                    <Box mt="2"><HStack><Text fontWeight={"bold"}>₹{items.price}</Text> <Spacer /> <Text color={"#ff6f61"} cursor={"pointer"} fontWeight={"bold"}>ADD</Text></HStack></Box>
+                                                                </Box>
+                                                            </Box>
+                                                        ))
+                                                    }
+                                                </SimpleGrid>
                                             </Box>
                                         </Box>
-                                    ))
-                                }
-                            </Carousel>
+                                    </Box>
+
+
+
+                                    {/* /********** */}
+                                </Box>
+                            </Container>
                         </Box>
-
-                    </Box>
-                    <Box mt="5%" mb="5%">
-                        <Image src='https://onemg.gumlet.io/c0a6a2ef-7fa4-4d42-b7df-fb90828aa145_1667474655.jpg?w=1062&h=124&format=auto' alt='banner'
-                            width={"100%"} />
-                    </Box>
-                    <Box mt="10" width={"100%"} mb="5%">
-                        <Text textAlign={"left"} fontWeight={"600"}>Shop by concern</Text>
-                        <Box bgColor={"white"} mt="5" >
-                            <Carousel
-                                swipeable={false}
-                                draggable={false}
-                                // showDots={true}
-                                responsive={responsive}
-
-                            >
-                                {
-                                    ShopByConcern.map(items => (
-                                        <Box  pl="5"pr="5" >
-                                            <Box p="5" _hover={{
-                                                " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
-                                            }} borderRadius={"10"} >
-                                                <Image src={items.image} alt={items.name} width={"250px"} />
-                                                <Text textAlign={'center'} pt="5" fontWeight={500}>{items.name}</Text>
-                                            </Box>
-                                        </Box>
-                                    ))
-                                }
-                            </Carousel>
-                        </Box>
-
-                    </Box>
-                    <Box mt="10" width={"100%"} mb="5%">
-                        <Text textAlign={"left"} fontWeight={"600"}>Shop by homeopathy salts</Text>
-                        <Box bgColor={"white"} mt="5" >
-                            <Carousel
-                                swipeable={false}
-                                draggable={false}
-                                // showDots={true}
-                                responsive={responsive}
-
-                            >
-                                {
-                                    ShopByHomeopathy.map(items => (
-                                        <Box pl="5"pr="5" >
-                                            <Box p="5" _hover={{
-                                                " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
-                                            }} borderRadius={"10"} >
-                                                <Image src={items.image} alt={items.name} width={"250px"} />
-                                                <Text textAlign={'center'} pt="5" fontWeight={500}>{items.name}</Text>
-                                            </Box>
-                                        </Box>
-                                    ))
-                                }
-                            </Carousel>
-                        </Box>
-
-                    </Box>
+                    </Flex>
                 </Box>
-            </Container>
+            </Container >
+
         </div>
     )
 }
