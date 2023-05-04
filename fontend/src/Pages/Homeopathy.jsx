@@ -5,6 +5,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { homeopathyProducts } from '../Redux/Homeopathy/action';
+import { useMediaQuery } from "@chakra-ui/react"
 
 const SpotlightAds = [
     {
@@ -133,6 +134,8 @@ const brands = [
 
 const Homeopathy = () => {
     const dispatch = useDispatch()
+    const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)")
+    const [isLargerThan769] = useMediaQuery("(min-width: 769px)")
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -151,6 +154,24 @@ const Homeopathy = () => {
             items: 1
         }
     };
+    const responsive1 = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 5
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 800 },
+            items: 3
+        },
+        ipad: {
+            breakpoint: { max: 800, min: 464 },
+            items: 2
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 2
+        }
+    };
 
     useEffect(() => {
         dispatch(homeopathyProducts())
@@ -165,42 +186,46 @@ const Homeopathy = () => {
             <Container maxW={"100%"} minH={"100vh"} bgColor={"#f6f6f6"} mt={20}>
                 <Box>
                     <Flex>
-                        <Box maxW={"15%"} ml={"100px"} mt="10">
-                            <Box style={{ "box-shadow": " rgba(0, 0, 0, 0.16) 0px 1px 4px" }} p="5" bgColor={"white"}>
-                                <Text fontSize={"md"} fontWeight={"bold"} color={"#ff6f61"}>FILTERS</Text>
-                                <Divider borderColor={"black"} pt="3" mb="3" />
-                                <Box>
-                                    <Box>
-                                        <Box> <Text width={"100%"} fontSize={"1em"} fontWeight={"600"}>Brands</Text></Box>
+                        {
+                            isLargerThan1024 ?
+                                <Box maxW={"15%"} ml={"100px"} mt="10">
+                                    <Box style={{ "box-shadow": " rgba(0, 0, 0, 0.16) 0px 1px 4px" }} p="5" bgColor={"white"}>
+                                        <Text fontSize={"md"} fontWeight={"bold"} color={"#ff6f61"}>FILTERS</Text>
+                                        <Divider borderColor={"black"} pt="3" mb="3" />
+                                        <Box>
+                                            <Box>
+                                                <Box> <Text width={"100%"} fontSize={"1em"} fontWeight={"600"}>Brands</Text></Box>
 
-                                        <Box  >
-                                            {
-                                                brands.map((brands, index) => (
-                                                    <HStack key={index}>
-                                                        <Checkbox pt="2"><Text fontSize={".8em"}>{brands.brand}</Text></Checkbox>
-                                                        <Spacer />
-                                                        <Box><Text fontSize={".8em"}>{brands.numbers}</Text></Box>
-                                                    </HStack>
+                                                <Box  >
+                                                    {
+                                                        brands.map((brands, index) => (
+                                                            <HStack key={index}>
+                                                                <Checkbox pt="2"><Text fontSize={".8em"}>{brands.brand}</Text></Checkbox>
+                                                                <Spacer />
+                                                                <Box><Text fontSize={".8em"}>{brands.numbers}</Text></Box>
+                                                            </HStack>
 
-                                                ))
-                                            }
+                                                        ))
+                                                    }
 
+                                                </Box>
+
+                                            </Box>
                                         </Box>
 
                                     </Box>
-                                </Box>
-
-                            </Box>
-                        </Box>
-                        <Box maxW={["100%", "90%", "80%", "70%"]} mt="10">
+                                </Box> : null}
+                        <Box maxW={["100%", "100%", "100%", "100%", "70%"]} mt="10" margin="auto">
                             <Container maxW={"100%"}>
                                 <Box ml={5}>
                                     <Text fontSize={"2xl"} fontWeight={"bold"}>HOMEOPATHY</Text>
+                                    {
+                                        isLargerThan769 ? <Box mt="5">
+                                            <Image src='https://onemg.gumlet.io/c0a6a2ef-7fa4-4d42-b7df-fb90828aa145_1667474655.jpg?w=1062&h=124&format=auto' alt='banner'
+                                                width={"100%"} />
+                                        </Box> : null
+                                    }
 
-                                    <Box mt="5">
-                                        <Image src='https://onemg.gumlet.io/c0a6a2ef-7fa4-4d42-b7df-fb90828aa145_1667474655.jpg?w=1062&h=124&format=auto' alt='banner'
-                                            width={"100%"} />
-                                    </Box>
 
                                     <Box mt="5" width={"100%"}>
                                         <Text textAlign={"left"} fontWeight={"600"}>In the Spotlight</Text>
@@ -236,18 +261,18 @@ const Homeopathy = () => {
                                             </Carousel>
                                         </Box>
                                     </Box>
-                                    <Box mt="5" width={"100%"}>
+                                    <Box mt="5" width={"100%"} >
                                         <Text textAlign={"left"} fontWeight={"600"}>Popular brands</Text>
                                         <Box bgColor={"white"} mt="5" >
                                             <Carousel
                                                 swipeable={false}
                                                 draggable={false}
                                                 // showDots={true}
-                                                responsive={responsive}
+                                                responsive={responsive1}
                                             >
                                                 {
-                                                    popularbrands.map(items => (
-                                                        <Box p="5" >
+                                                    popularbrands.map((items, index) => (
+                                                        <Box p="5" key={index}>
                                                             <Box p="5" _hover={{
                                                                 " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
                                                             }} borderRadius={"10"} >
@@ -261,10 +286,10 @@ const Homeopathy = () => {
                                         </Box>
 
                                     </Box>
-                                    <Box mt="5" mb="5">
+                                    {isLargerThan769 ? <Box mt="5" mb="5">
                                         <Image src='https://onemg.gumlet.io/c0a6a2ef-7fa4-4d42-b7df-fb90828aa145_1667474655.jpg?w=1062&h=124&format=auto' alt='banner'
                                             width={"100%"} />
-                                    </Box>
+                                    </Box> : null}
                                     <Box mt="5" width={"100%"} mb="5">
                                         <Text textAlign={"left"} fontWeight={"600"}>Shop by concern</Text>
                                         <Box bgColor={"white"} mt="5" >
@@ -272,11 +297,11 @@ const Homeopathy = () => {
                                                 swipeable={false}
                                                 draggable={false}
                                                 // showDots={true}
-                                                responsive={responsive}
+                                                responsive={responsive1}
                                             >
                                                 {
-                                                    ShopByConcern.map(items => (
-                                                        <Box pl="5" pr="5" >
+                                                    ShopByConcern.map((items, index) => (
+                                                        <Box pl="5" pr="5" key={index} >
                                                             <Box p="5" _hover={{
                                                                 " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
                                                             }} borderRadius={"10"} >
@@ -298,7 +323,7 @@ const Homeopathy = () => {
                                                 draggable={false}
                                                 // showDots={true}
                                                 backgroundColor='#ff6f61'
-                                                responsive={responsive}
+                                                responsive={responsive1}
                                             >
                                                 {
                                                     ShopByHomeopathy.map(items => (
@@ -322,7 +347,7 @@ const Homeopathy = () => {
                                             <HStack>
                                                 <Text textAlign={"left"} fontWeight={"600"}>All Products</Text>
                                                 <Spacer />
-                                                <Select variant='filled' bgColor={"white"} width={"20%"} borderColor="white"
+                                                <Select variant='filled' bgColor={"white"} width={["65%", "20%"]} borderColor="white"
                                                     _focus={{ border: "1px solid white" }}
                                                     _hover={{ border: "1px solid white" }}
                                                     styles={{ option: { color: "red", backgroundColor: "blue", borderRadius: "4px" } }}
