@@ -7,7 +7,6 @@ function App() {
     <div>
       {/* <Allroutes /> */}
       <Sidebar />
-
     </div>
   );
 }
