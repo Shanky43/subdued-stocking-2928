@@ -131,7 +131,24 @@ const brands = [
     { brand: "ADEL", numbers: "1452" },
     { brand: "Boiren", numbers: "214" }
 ]
-
+const discount = [
+    { brand: "High to Low", numbers: "1350" },
+    { brand: "Low to High", numbers: "1500" },
+    { brand: "less than 10%", numbers: "350" },
+    { brand: "10 and above", numbers: "715" },
+    { brand: "20 and above", numbers: "1547" },
+]
+const age = [
+    { age: "All", numbers: "135550" },
+    { age: "Child", numbers: "1900" },
+    { age: "Elderly", numbers: "350" },
+    { age: "Adult", numbers: "640" }
+]
+const gender = [
+    { gender: "Unisex", numbers: "15550" },
+    { gender: "Female", numbers: "1200" },
+    { gender: "male", numbers: "1350" }
+]
 const Homeopathy = () => {
     const dispatch = useDispatch()
     const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)")
@@ -146,11 +163,11 @@ const Homeopathy = () => {
             items: 3
         },
         ipad: {
-            breakpoint: { max: 800, min: 464 },
-            items: 2
+            breakpoint: { max: 800, min: 500 },
+            items: 3
         },
         mobile: {
-            breakpoint: { max: 464, min: 0 },
+            breakpoint: { max: 500, min: 0 },
             items: 1
         }
     };
@@ -161,14 +178,14 @@ const Homeopathy = () => {
         },
         tablet: {
             breakpoint: { max: 1024, min: 800 },
-            items: 3
+            items: 4
         },
         ipad: {
-            breakpoint: { max: 800, min: 464 },
-            items: 2
+            breakpoint: { max: 800, min: 500 },
+            items: 3
         },
         mobile: {
-            breakpoint: { max: 464, min: 0 },
+            breakpoint: { max: 500, min: 0 },
             items: 2
         }
     };
@@ -188,7 +205,7 @@ const Homeopathy = () => {
                     <Flex>
                         {
                             isLargerThan1024 ?
-                                <Box maxW={"15%"} ml={"100px"} mt="10">
+                                <Box maxW={"15%"} ml={"100px"} mt="10" >
                                     <Box style={{ "box-shadow": " rgba(0, 0, 0, 0.16) 0px 1px 4px" }} p="5" bgColor={"white"}>
                                         <Text fontSize={"md"} fontWeight={"bold"} color={"#ff6f61"}>FILTERS</Text>
                                         <Divider borderColor={"black"} pt="3" mb="3" />
@@ -196,7 +213,7 @@ const Homeopathy = () => {
                                             <Box>
                                                 <Box> <Text width={"100%"} fontSize={"1em"} fontWeight={"600"}>Brands</Text></Box>
 
-                                                <Box  >
+                                                <Box>
                                                     {
                                                         brands.map((brands, index) => (
                                                             <HStack key={index}>
@@ -207,14 +224,69 @@ const Homeopathy = () => {
 
                                                         ))
                                                     }
-
                                                 </Box>
+                                                <Divider mt="5" borderColor={"black"} />
+                                                <Box mt="5">
+                                                    <Box> <Text width={"100%"} fontSize={"1em"} fontWeight={"600"}>DISCOUNT</Text></Box>
+                                                    <Box>
+                                                        {
+                                                            discount.map((brands, index) => (
+                                                                <HStack key={index}>
+                                                                    <Checkbox pt="2"><Text fontSize={".8em"}>{brands.brand}</Text></Checkbox>
+                                                                    <Spacer />
+                                                                    <Box><Text fontSize={".8em"}>{brands.numbers}</Text></Box>
+                                                                </HStack>
 
+                                                            ))
+                                                        }
+                                                    </Box>
+                                                </Box>
+                                                <Divider mt="5" borderColor={"black"} />
+                                                <Box mt="5">
+                                                    <Box> <Text width={"100%"} fontSize={"1em"} fontWeight={"600"}>AGE</Text></Box>
+                                                    <Box>
+                                                        {
+                                                            age.map((items, index) => (
+                                                                <HStack key={index}>
+                                                                    <Checkbox pt="2"><Text fontSize={".8em"}>{items.age}</Text></Checkbox>
+                                                                    <Spacer />
+                                                                    <Box><Text fontSize={".8em"}>{items.numbers}</Text></Box>
+                                                                </HStack>
+
+                                                            ))
+                                                        }
+                                                    </Box>
+                                                </Box>
+                                                <Divider mt="5" borderColor={"black"} />
+                                                <Box mt="5">
+                                                    <Box> <Text width={"100%"} fontSize={"1em"} fontWeight={"600"}>GENDER</Text></Box>
+                                                    <Box>
+                                                        {
+                                                            gender.map((items, index) => (
+                                                                <HStack key={index}>
+                                                                    <Checkbox pt="2"><Text fontSize={".8em"}>{items.gender}</Text></Checkbox>
+                                                                    <Spacer />
+                                                                    <Box><Text fontSize={".8em"}>{items.numbers}</Text></Box>
+                                                                </HStack>
+
+                                                            ))
+                                                        }
+                                                    </Box>
+                                                </Box>
                                             </Box>
                                         </Box>
 
                                     </Box>
-                                </Box> : null}
+                                </Box> : null
+                                
+                                
+                                
+                                
+                                }
+
+
+
+
                         <Box maxW={["100%", "100%", "100%", "100%", "70%"]} mt="10" margin="auto">
                             <Container maxW={"100%"}>
                                 <Box ml={5}>
