@@ -1,158 +1,24 @@
-import { Box, Container, Divider, HStack, Image, Spacer, Text, Flex, Select, SimpleGrid, Checkbox, } from '@chakra-ui/react'
-import { React, useEffect } from 'react'
+import {
+    Box, Container, Divider, HStack, Image, Spacer, Text, Flex, Select, SimpleGrid, Checkbox, Button, Icon,
+    Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure
+} from '@chakra-ui/react'
+import { React, useEffect, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { homeopathyProducts } from '../Redux/Homeopathy/action';
 import { useMediaQuery } from "@chakra-ui/react"
+import { SpotlightAds, popularbrands, ShopByConcern, ShopByHomeopathy, brands, discount, age, gender, cities } from "./Homeo_Pathy.js"
+import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { AiOutlineDown } from "react-icons/ai"
 
-const SpotlightAds = [
-    {
-        image: "https://onemg.gumlet.io/images/q_auto,w_150,h_150,f_auto,c_fit/htixcxvd91ofrcfaoyzq/bjain-nux-vomica-dilution-200-ch.jpg",
-        name: "Bjain Nux Vomica Dilution 200 CH",
-        description: "bottle 12ml Dilution",
-        rating: 4.6,
-        mrp: 65,
-        offer: "9% off",
-        price: 59,
-        users_rating: "109 ratings"
-    },
-    {
-        image: "https://onemg.gumlet.io/images/q_auto,w_150,h_150,f_auto,c_fit/42ea5450-ef22-4a3d-9e49-2c110a710708/bjain-omeo-allergy-tablet.jpeg",
-        name: "Bjain Omeo Allergy Tablet",
-        description: "bottle of 25gm tablets",
-        rating: 4.1,
-        mrp: 155,
-        offer: "14% off",
-        price: 133,
-        users_rating: "45 ratings"
-    },
-    {
-        image: "https://onemg.gumlet.io/images/q_auto,w_150,h_150,f_auto,c_fit/a0ea7747911d4c5da4a116699b76628c/bjain-omeo-diabeteez-drop.jpg",
-        name: "Bjain Omeo Diabeteez Drop",
-        description: "bottle of 30ml Drop",
-        rating: 3.8,
-        mrp: 150,
-        offer: "14% off",
-        price: 120,
-        users_rating: "14 ratings"
-    },
-    {
-        image: "https://onemg.gumlet.io/images/q_auto,w_150,h_150,f_auto,c_fit/i6vpnss1mvrivh2gmsfu/bjain-baryta-carbonica-dilution-30-ch.jpg",
-        name: "Bjain Baryta Carbonica Dilution 30 CH",
-        description: "bottle 30ml Dilution",
-        rating: 4.8,
-        mrp: 95,
-        offer: "12% off",
-        price: 83,
-        users_rating: "30 ratings"
-    },
-    {
-        image: "https://onemg.gumlet.io/images/q_auto,w_150,h_150,f_auto,c_fit/10ab19e2f18a4e519a704fbaf25e7208/bjain-omeo-kalmegh-drop.jpg",
-        name: "Bjain Omeo Kalmegh Drop",
-        description: "bottle 30ml Drop",
-        rating: 4.5,
-        mrp: 95,
-        offer: "13% off",
-        price: 82,
-        users_rating: "28 ratings"
-    },
-    {
-        image: "https://onemg.gumlet.io/images/q_auto,w_150,h_150,f_auto,c_fit/prgnisrvwtxwq6spyqp3/bjain-lycopodium-clavatum-dilution-200-ch.jpg",
-        name: "Bjain Lycopodium Clavatum Dilution 200 CH",
-        description: "bottle 12ml Dilution",
-        rating: 4.8,
-        mrp: 65,
-        offer: "14% off",
-        price: 56,
-        users_rating: "49 ratings"
-    },
-    {
-        image: "https://onemg.gumlet.io/images/q_auto,w_150,h_150,f_auto,c_fit/b16131c0ed114c3291ce34518b917d9b/bjain-tinospora-cordifolia-mother-tincture-q.jpg",
-        name: "Bjain Tinospora Cordifolia Mother Tincture Q",
-        description: "bottle 100ml Mother Tincture",
-        rating: 4.2,
-        mrp: 195,
-        offer: "9% off",
-        price: 176,
-        users_rating: "29 ratings"
-    },
-    {
-        image: "https://onemg.gumlet.io/images/q_auto,w_150,h_150,f_auto,c_fit/0c37a1afd60a4062bfdd67a9c70e79be/bjain-andrographis-paniculata-mother-tincture-q.jpg",
-        name: "Bjain Andrographis Paniculata Mother Tincture Q",
-        description: "bottle 100ml Mother Tincture",
-        rating: 4.5,
-        mrp: 195,
-        offer: "9% off",
-        price: 168,
-        users_rating: "29 ratings"
-    }
-
-]
-const popularbrands = [
-    { image: "https://onemg.gumlet.io/h_150,w_150,a_ignore,q_auto,f_auto,c_fit/a24d39b3-be87-42fe-a9c7-81e0137dc8e8.png", name: "ADEL Homeopathy" },
-    { image: "https://onemg.gumlet.io/h_150,w_150,a_ignore,q_auto,f_auto,c_fit/j1mwpwwh6hwegd4ecbah.png", name: "Dr Willmar Schwabe India " },
-    { image: "https://onemg.gumlet.io/h_150,w_150,a_ignore,q_auto,f_auto,c_fit/mfswtc9scqikisqs5x9u.png", name: "SBL Homeopathy" },
-    { image: "https://onemg.gumlet.io/h_150,w_150,a_ignore,q_auto,f_auto,c_fit/emvykrq48e0lojdqjnmy.png", name: "Bakson's" },
-    { image: "https://onemg.gumlet.io/h_150,w_150,a_ignore,q_auto,f_auto,c_fit/jjn8u1l625epfbw7kbhi.png", name: "BJAIN Homeopathy" },
-    { image: "https://onemg.gumlet.io/h_150,w_150,a_ignore,q_auto,f_auto,c_fit/alty1c84eogjq2hfz3q0.png", name: "Dr. Batra's Products" },
-    { image: "https://onemg.gumlet.io/h_150,w_150,a_ignore,q_auto,f_auto,c_fit/lvysji0eofj38ghn1j5v.png", name: "Dr Reckeweg" },
-    { image: "https://onemg.gumlet.io/h_150,w_150,a_ignore,q_auto,f_auto,c_fit/470dd15e-564d-4335-a633-6146d0239858.png", name: "Medisynth" },
-    { image: "https://onemg.gumlet.io/h_150,w_150,a_ignore,q_auto,f_auto,c_fit/gpr2zunhramcprkush5j.png", name: "Wheezal" }
-]
-const ShopByConcern = [
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/c2ymdg1tavs7mcnomcy0.png", name: "Warts" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/rpgkuklyd2youea8fdyr.png", name: "Hair Care" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/bfhia3yw4eemlxdslkks.png", name: "Sexual Wellness" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/nq5fthflkzfoahebdlv4.png", name: "Fungal Infection" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/uachuw80oilbpqnqmefp.png", name: "Diabetes" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/fdgokqurlq4c4jck8xpe.png", name: "Hypothyroidism" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/mvllnlsj1ttxuuarsfei.png", name: "Obesity" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/blzqsofglmrd8xlakfhu.png", name: "Piles and Fissures" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/wfchhzujp0duz7ir5e9w.png", name: "Allergic Rhinitis" }
-]
-const ShopByHomeopathy = [
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/p9e2jc60m3r5nbysyfm0.png", name: "Berberis Aquifolium" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/wqsh5tn0qwxoqsvsxm16.png", name: "Berberis Vulgaris" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/sijdkmnjf3ih8k4z04co.png", name: "Nux Vomica" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/jkdrio4gxrdmelci2yre.png", name: "Arinca Montana" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/liabuc0dqnft3frvk2o0.png", name: "Syxygium Jambolanum" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/wd7et3tgcqks3ipxswhw.png", name: "Silicea" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/dosvy0feaoni0znz1tdz.png", name: "Thyroidinum" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/fcgg3l4cei3adzzgzdre.png", name: "Cineraria Maritima" },
-    { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/vnjqwoktfbdmk5af1q7t.png", name: "Phytolacca Berry" }
-]
-const brands = [
-    { brand: "SBL Pvt", numbers: "1250" },
-    { brand: "Dr. Roshanlal Aggarwal", numbers: "1500" },
-    { brand: "Tonicard", numbers: "50" },
-    { brand: "Dr. Reckeweg", numbers: "215" },
-    { brand: "ADEL", numbers: "1452" },
-    { brand: "Boiren", numbers: "214" }
-]
-const discount = [
-    { brand: "High to Low", numbers: "1350" },
-    { brand: "Low to High", numbers: "1500" },
-    { brand: "less than 10%", numbers: "350" },
-    { brand: "10 and above", numbers: "715" },
-    { brand: "20 and above", numbers: "1547" },
-]
-const age = [
-    { age: "All", numbers: "135550" },
-    { age: "Child", numbers: "1900" },
-    { age: "Elderly", numbers: "350" },
-    { age: "Adult", numbers: "640" }
-]
-const gender = [
-    { gender: "Unisex", numbers: "15550" },
-    { gender: "Female", numbers: "1200" },
-    { gender: "male", numbers: "1350" }
-]
 const Homeopathy = () => {
+    const [city, setCity] = useState("Select City");
     const dispatch = useDispatch()
     const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)")
     const [isLargerThan769] = useMediaQuery("(min-width: 769px)")
+    const { isOpen, onOpen, onClose } = useDisclosure()
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -197,10 +63,55 @@ const Homeopathy = () => {
     const HomeopathyProducts = useSelector((state) => {
         return state.Homeopathy.products
     })
-    console.log(HomeopathyProducts)
+    // console.log(HomeopathyProducts)
+    const handleCitySelect = (selectedCity) => {
+        setCity(selectedCity);
+        onClose();
+    };
+
     return (
         <div >
             <Container maxW={"100%"} minH={"100vh"} bgColor={"#f6f6f6"} mt={20}>
+                {
+                    isLargerThan1024 ? null :
+                        <Box>
+                            <Divider mt="10" borderColor={"black"} />
+                            <Box>
+                                <Button variant="filled" onClick={onOpen}><Icon as={HiOutlineLocationMarker} boxSize={[5, 5, 5, 6]}></Icon> {city}  &nbsp;<Box mt="1"><AiOutlineDown /></Box></Button>
+                                <Box>
+                                    <Drawer
+                                        isOpen={isOpen}
+                                        placement="bottom"
+                                        onClose={onClose}
+                                        finalFocusRef={null}
+                                    >
+                                        <DrawerOverlay />
+                                        <DrawerContent height={"30em"}>
+                                            <DrawerCloseButton />
+                                            <DrawerHeader>Choose the City</DrawerHeader>
+                                            <DrawerBody >
+                                                {cities.map((items, index) => (
+                                                    <Box
+                                                        key={index}
+                                                        onClick={() => handleCitySelect(items.city)}
+                                                        _hover={{ cursor: "pointer", backgroundColor: "gray.200" }}
+                                                        p="2"
+                                                    >
+                                                        <Icon as={HiOutlineLocationMarker} boxSize={[5, 5, 5, 6]} />
+                                                        {items.city}
+                                                    </Box>
+                                                ))}
+                                            </DrawerBody>
+                                            <DrawerFooter>
+
+                                            </DrawerFooter>
+                                        </DrawerContent>
+                                    </Drawer>
+                                </Box>
+
+                            </Box>
+                        </Box>
+                }
                 <Box>
                     <Flex>
                         {
@@ -278,11 +189,7 @@ const Homeopathy = () => {
 
                                     </Box>
                                 </Box> : null
-                                
-                                
-                                
-                                
-                                }
+                        }
 
 
 
@@ -292,7 +199,7 @@ const Homeopathy = () => {
                                 <Box ml={5}>
                                     <Text fontSize={"2xl"} fontWeight={"bold"}>HOMEOPATHY</Text>
                                     {
-                                        isLargerThan769 ? <Box mt="5">
+                                        isLargerThan1024 ? <Box mt="5">
                                             <Image src='https://onemg.gumlet.io/c0a6a2ef-7fa4-4d42-b7df-fb90828aa145_1667474655.jpg?w=1062&h=124&format=auto' alt='banner'
                                                 width={"100%"} />
                                         </Box> : null
