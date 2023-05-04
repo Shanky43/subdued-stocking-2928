@@ -1,7 +1,6 @@
 import React from 'react'
 import { BsCart3 } from 'react-icons/bs'
 import { BiSearchAlt2 } from "react-icons/bi";
-import { Country, State, City } from 'country-state-city';
 import {FcFlashOn} from 'react-icons/fc'
 import {
     Text, Badge, HStack, Box, Center, Flex, Link, Icon, Divider, FormControl,
@@ -12,14 +11,8 @@ import {
     InputRightElement,
 } from '@chakra-ui/react'
 import { MdLocationPin, MdOutlineMyLocation } from "react-icons/md";
-import { getAllStates } from 'country-state-city/lib/state';
+
 const Navbar = () => {
-
-
-
-
-
-
     return (
         <>
             <UpperFullRow />
