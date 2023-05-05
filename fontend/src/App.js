@@ -1,4 +1,4 @@
-import Sidebar from "./components/Sidebar";
+// import Sidebar from "./components/Sidebar";
 import Allroutes from "./routes/Allroutes";
 
 function App() {
