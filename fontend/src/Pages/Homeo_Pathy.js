@@ -115,7 +115,7 @@ export const ShopByHomeopathy = [
     { image: "https://onemg.gumlet.io/a_ignore,f_auto,w_150,q_auto,h_150,c_fit/vnjqwoktfbdmk5af1q7t.png", name: "Phytolacca Berry" }
 ]
 export const brands = [
-    { brand: "SBL Pvt", numbers: "1250" },
+    { brand: "SBL Pvt ltd.", numbers: "1250" },
     { brand: "Dr. Roshanlal Aggarwal", numbers: "1500" },
     { brand: "Tonicard", numbers: "50" },
     { brand: "Dr. Reckeweg", numbers: "215" },

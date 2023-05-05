@@ -1,6 +1,6 @@
 import {
     Box, Container, Divider, HStack, Image, Spacer, Text, Flex, Select, SimpleGrid, Checkbox, Button, Icon,
-    Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, RadioGroup, Stack, Radio
+    Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, RadioGroup, Stack, Radio, Input, VStack
 } from '@chakra-ui/react'
 import { React, useEffect, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
@@ -15,10 +15,15 @@ import { AiOutlineDown } from "react-icons/ai"
 import { BiSortAlt2 } from "react-icons/bi"
 import { RiFilter3Line } from "react-icons/ri"
 import { useLocation, useSearchParams } from 'react-router-dom';
+
+
+
+
 const Homeopathy = () => {
     const [city, setCity] = useState("Select City");
     const [value, setValue] = useState('')
     const [category, setCategory] = useState([])
+    const [order, setOrder] = useState("")
     const [searchParams, setSearchParams] = useSearchParams()
     const location = useLocation()
     const dispatch = useDispatch()
@@ -68,46 +73,50 @@ const Homeopathy = () => {
         }
     };
     // console.log(location.search, "line70")
-    const handleSelectChanges = (e, brand) => {
+    const handleSelectChanges = (e) => {
         e.preventDefault();
         let newCategory = [...category];
         const value = e.target.value;
-      
+
         if (newCategory.includes(value)) {
-          newCategory = newCategory.filter((el) => el !== value);
+            newCategory = newCategory.filter((el) => el !== value);
         } else {
-          newCategory.push(value);
+            newCategory.push(value);
         }
-      
         setCategory(newCategory);
-      
         let params = new URLSearchParams(searchParams);
-        params.delete("brand");
-      
         if (newCategory.length > 0) {
-          newCategory.forEach((cat) => params.append("brand", cat));
+            newCategory.forEach((cat) => params.append("brand", cat));
         } else {
-          params.delete("category");
+            params.delete("brand");
         }
-      
         setSearchParams(params);
-      };
-      
-      useEffect(() => {
+    };
+
+    const handleDiscountChanges = (e) => {
+        // console.log(e.target.value)
+        setOrder(e.target.value)
+    };
+
+    // console.log(order)
+    useEffect(() => {
         const params = { category: "Homeopathy" };
+        category.length > 0 && (params.brand = category.join(','));
+        order && (params.order = order);
         setSearchParams(new URLSearchParams(params));
-      }, []);
-      
-      useEffect(() => {
+    }, [category, order]);
+
+
+
+
+    useEffect(() => {
         const decodedParams = new URLSearchParams(decodeURIComponent(searchParams.toString()));
         dispatch(homeopathyProducts(decodedParams));
-      }, [dispatch, searchParams]);
-      
+    }, [dispatch, searchParams]);
 
 
 
 
-    
     const HomeopathyProducts = useSelector((state) => {
         return state.Homeopathy.products
     })
@@ -241,17 +250,19 @@ const Homeopathy = () => {
                                                 <Divider mt="5" borderColor={"black"} />
                                                 <Box mt="5">
                                                     <Box> <Text width={"100%"} fontSize={"1em"} fontWeight={"600"}>DISCOUNT</Text></Box>
-                                                    <Box>
-                                                        {
-                                                            discount.map((brands, index) => (
-                                                                <HStack key={index}>
-                                                                    <Checkbox pt="2"><Text fontSize={".8em"}>{brands.brand}</Text></Checkbox>
-                                                                    <Spacer />
-                                                                    <Box><Text fontSize={".8em"}>{brands.numbers}</Text></Box>
-                                                                </HStack>
 
-                                                            ))
-                                                        }
+                                                    <Box>
+                                                        <VStack alignItems={"left"}>
+                                                            <Box> <RadioGroup >
+                                                                <Stack direction='column'>
+                                                                    <Radio onChange={handleDiscountChanges} value='hightolow' color='#ff6f61'><Text fontSize={".8em"} >High to Low</Text></Radio>
+                                                                    <Radio onChange={handleDiscountChanges} value='lowtohigh' color='#ff6f61'><Text fontSize={".8em"} >Low to High</Text></Radio>
+                                                                </Stack>
+                                                            </RadioGroup></Box>
+                                                            <Box><Checkbox pt="2" value={"discount5%-10%"} onChange={handleDiscountChanges}><Text fontSize={".8em"} >Discount 5% - 10%</Text></Checkbox></Box>
+                                                            <Box><Checkbox pt="2" value={"discount20%-50%"} onChange={handleDiscountChanges}><Text fontSize={".8em"} >Discount 20% - 50%</Text></Checkbox></Box>
+
+                                                        </VStack>
                                                     </Box>
                                                 </Box>
                                                 <Divider mt="5" borderColor={"black"} />
@@ -432,7 +443,7 @@ const Homeopathy = () => {
                                                     _focus={{ border: "1px solid white" }}
                                                     _hover={{ border: "1px solid white" }}
                                                     styles={{ option: { color: "red", backgroundColor: "blue", borderRadius: "4px" } }}
-
+                                                    onChange={handleDiscountChanges}
                                                 >
                                                     <option value="hightolow" bgColor="#FAFAFA">High to Low</option>
                                                     <option value="lowtohigh">Low to High</option>
@@ -479,10 +490,10 @@ const Homeopathy = () => {
                             </Container>
                         </Box>
                     </Flex>
-                </Box>
+                </Box >
             </Container >
 
-        </div>
+        </div >
     )
 }
 
