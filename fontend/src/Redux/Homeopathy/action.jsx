@@ -22,8 +22,6 @@ export const homeopathyProducts = (params) => (dispatch) => {
           (product) => product.category === params.get("category")
         );
       }
-
-      // Sort the data based on the `order` query parameter
       const sortOrder = params.get("order");
       if (sortOrder === "hightolow") {
         filteredData = filteredData.sort((a, b) => b.price - a.price);
