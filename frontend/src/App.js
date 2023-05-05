@@ -1,12 +1,16 @@
 import Sidebar from "./components/Sidebar";
+import "./App.css";
 import Allroutes from "./routes/Allroutes";
+
+
 
 
 function App() {
   return (
-    <div>
-      {/* <Allroutes /> */}
-      <Sidebar />
+    <div className="App">
+<Allroutes/>
+
+      {/* <Sidebar/> */}
     </div>
   );
 }
