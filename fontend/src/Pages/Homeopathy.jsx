@@ -14,7 +14,7 @@ import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { AiOutlineDown } from "react-icons/ai"
 import { BiSortAlt2 } from "react-icons/bi"
 import { RiFilter3Line } from "react-icons/ri"
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 
 
@@ -25,7 +25,7 @@ const Homeopathy = () => {
     const [category, setCategory] = useState([])
     const [order, setOrder] = useState("")
     const [searchParams, setSearchParams] = useSearchParams()
-    const location = useLocation()
+    // const location = useLocation()
     const dispatch = useDispatch()
     const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)")
     const [isLargerThan769] = useMediaQuery("(min-width: 769px)")
@@ -165,6 +165,7 @@ const Homeopathy = () => {
                                         </DrawerContent>
                                     </Drawer>
                                 </Box>
+
                             </Box>
                             <Divider borderColor={"grey"} mt="2" />
                             <Box display={'flex'} justifyContent={"space-around"}>
