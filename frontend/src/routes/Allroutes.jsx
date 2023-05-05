@@ -2,9 +2,8 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Homeopathy from '../Pages/Homeopathy'
 import Ayurvedaproducts from '../Pages/Ayurvedaproducts'
-import Admin from "../Admin_Page/Admin"
-import AdminLogin from "../Admin_Page/AdminLogin"
-
+import Adminlogin from "../Admin_Page/Pages/AdminLogin"
+import Admin from '../Admin_Page/Pages/Admin'
 
 const Allroutes = () => {
     return (
@@ -12,8 +11,8 @@ const Allroutes = () => {
             <Routes>
                 <Route path='/homeopathy' element={<Homeopathy />}></Route>
                 <Route path='/ayurveda' element={<Ayurvedaproducts />}></Route>
-                <Route path="/adminLogin" element={<AdminLogin />} />
-                <Route path="/admin" element={<Admin />} />
+                <Route path='/adminlogin'element={<Adminlogin/>}></Route>
+                <Route path='/admin'element={<Admin/>}></Route>
             </Routes>
         </div>
     )
