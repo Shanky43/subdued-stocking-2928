@@ -165,7 +165,6 @@ const Homeopathy = () => {
                                         </DrawerContent>
                                     </Drawer>
                                 </Box>
-
                             </Box>
                             <Divider borderColor={"grey"} mt="2" />
                             <Box display={'flex'} justifyContent={"space-around"}>
