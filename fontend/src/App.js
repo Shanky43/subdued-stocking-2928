@@ -4,12 +4,10 @@ import Allroutes from "./routes/Allroutes";
 
 function App() {
   return (
-    <div>
+    <div id='app-body' >
       <Allroutes />
-      {/* <Sidebar /> */}
-
     </div>
+
   );
 }
-
 export default App;
