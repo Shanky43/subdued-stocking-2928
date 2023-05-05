@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from 'react-multi-carousel';
-import { Box, Image, HStack, Center, Heading } from '@chakra-ui/react'
+import { Box, Image, HStack, Center, Heading, Icon } from '@chakra-ui/react'
+import{BsCircle} from 'react-icons/bs'
 const Banner = () => {
 
     const bannerimagescarousel = ['https://onemg.gumlet.io/db71b6dc-79e6-42f5-abcd-6862193d7204_1667479564.jpg?w=863&h=200&format=auto',
@@ -35,11 +36,11 @@ const Banner = () => {
 
 
     return (
-        <Box boxShadow='base' p='6' rounded='md' bg='white' >
+        <Box boxShadow='base' p='6px' rounded='md' bg='white' width='98%' >
             <div style={{ display: "flex", zIndex: '-1', height: '5cm', gap: 'none', width: '99%', margin: 'auto' }}>
-                <Box width={{ base: '95%', xl: '75%' }} display={{ base: 'none', md: 'block' }} h={{ base: '10cm', xl: '5cm' }} >
+                <Box width={{ base: '95%', xl: '75%' }} display={{ base: 'none', xl: 'block' }} h={{ base: '10cm', xl: '5cm' }} >
 
-                    <Carousel partialVisible={true} responsive={responsive} infinite={true} showDots arrows={false} autoPlay='2000' >
+                    <Carousel responsive={responsive} infinite={true} customDot={<CustomDot/>} showDots arrows={false} autoPlay='2000' >
                         {
                             bannerimagescarousel.map((el, ind) =>
                                 <img width="100%" src={el} />
@@ -49,11 +50,10 @@ const Banner = () => {
                     </Carousel>
                 </Box>
 
-                <Image width={{ base: '95%', xl: '28%' }} height='5cm' src="https://onemg.gumlet.io/a_ignore,w_480,h_200,c_fit,q_auto,f_auto/b9391817-5d56-4424-9a49-ededb86ef897.png" alt="" />
+                <Image width={{ base: '98%', xl: '28%' }} m='auto' height='5cm' src="https://onemg.gumlet.io/a_ignore,w_480,h_200,c_fit,q_auto,f_auto/b9391817-5d56-4424-9a49-ededb86ef897.png" alt="" />
 
             </div>
-            {/* ///  <Image display={{base:'block',md:'none'}}  width='90%' m='7px' src="https://onemg.gumlet.io/a_ignore,w_480,h_200,c_fit,q_auto,f_auto/b9391817-5d56-4424-9a49-ededb86ef897.png" alt="" /> */}
-
+         
             <Center my={{ base: '2px', xl: '15px' }}>
 
                 <Heading fontSize='24px' fontWeight='400' colour='gray.500'> Tata 1mg: India’s Leading Online Pharmacy & Healthcare Platform</Heading>
@@ -67,20 +67,20 @@ export default Banner
 
 
 
-const MyDot = ({ isActive }) => {
-
-    return (<div
-        style={{
-            display: 'inline-flex',
-            borderRadius: '40%',
-            height: isActive ? '8px' : '5px',
-            width: isActive ? '8px' : '5px',
-            background: isActive ? '#ff6f61' : 'white',
-            position: 'absolute',
-            bottom: '30px',
-            justifyContent: 'space-between',
-            marginRight: '50px',
-
-        }}
-    > </div>)
-}
+const CustomDot = ({ onClick, ...rest }) => {
+    const {
+      onMove,
+      index,
+      active,
+      carouselState: { currentSlide, deviceType }
+    } = rest;
+ 
+    return (
+      <button style={{width:'50%',gap:'0'}}
+            className={active ? "activeDots" : "inactiveDots"}
+        onClick={() => onClick()}
+      >
+       <Icon fontSize='10px' backgroundColor={active?'#ff6f61':'white'} borderRadius={'50%'} m='2px' as={BsCircle} />
+      </button>
+    );
+  };

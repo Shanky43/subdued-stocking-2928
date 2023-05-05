@@ -282,3 +282,33 @@ text-align: center;
 #information>p{
   color: dimgray;
 }
+.only-for-desktop{
+  display: block;
+}
+
+
+/*********
+1148 max-width----for media Query
+*/
+
+
+.only_for_mobile{
+display: none;
+}
+
+@media (max-width: 1180px) {
+ 
+.only_for_desktop{
+  display: none;
+  opacity: 0;
+}
+
+
+.only_for_mobile{
+  display: block;
+  background-color: rgb(253, 249, 249);
+  }
+  
+
+
+}

@@ -6,6 +6,7 @@ import BrandRowCard from '../components/HomePage/BrandRowCard'
 import CheckupsRow from '../components/HomePage/CheckupsRow'
 import Footer from '../components/HomePage/Footer'
 import PopularCategory from '../components/HomePage/PopularCategory'
+import MobFooter from '../components/HomePage/MobFooter'
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
 
 {" "}
 <Footer/>
+<MobFooter/>
     </div>
   )
 }

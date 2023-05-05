@@ -8,7 +8,7 @@ const Footer = () => {
 
 
     return (
-        <>
+             <div className={styles.only_for_desktop}>
             <div id={styles.information} >
                 <h2>Stay Healthy with Tata 1mg: Your Favourite Online Pharmacy and Healthcare Platform</h2>
                 <h3>We Bring Care to Health.</h3>
@@ -155,8 +155,8 @@ const Footer = () => {
 
                 <p id={styles.reserve} >© 2023 Tata 1mg. All rights reserved. In compliance with Drugs and Cosmetics Act, 1940 and Drugs and Cosmetics Rules, 1945, we don't process requests for Schedule X and other habit forming drugs.</p> `
             </div>
-
-        </>
+            </div>
+       
 
     )
 }
