@@ -28,7 +28,7 @@ export default function MobileMenu({ isOpen, onOpen, onClose }) {
             {navData?.map(
               (label) => (
                 <Accordion allowMultiple>
-                  <AccordionItem color='blackAlpha.700'> 
+                  <AccordionItem color='blackAlpha.700'>
                     <h2>
                       <AccordionButton color='black'>
                         <Box as="span" color='blackAlpha.800' flex="1" textAlign="left">
@@ -38,7 +38,7 @@ export default function MobileMenu({ isOpen, onOpen, onClose }) {
                       </AccordionButton>
                     </h2>
                     {label?.alldata?.map((i) => (
-                      <AccordionPanel pb={2} display={{xl:'none'}} >
+                      <AccordionPanel pb={2} display={{ xl: 'none' }} >
                         <Link
                           to={`/products/${label.text}/${i.heading}`}>
                           {i.heading}
@@ -48,7 +48,7 @@ export default function MobileMenu({ isOpen, onOpen, onClose }) {
                   </AccordionItem>
                 </Accordion>
               )
-           
+
             )}
           </DrawerBody>
         </DrawerContent>

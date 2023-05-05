@@ -11,16 +11,16 @@ import MobFooter from '../components/HomePage/MobFooter'
 const HomePage = () => {
   return (
     <div>
-<Navbar/>
-<Banner/>
-<ProductRow/>
-<PopularCategory/>
-<BrandRowCard/>
-<CheckupsRow/>
+      <Navbar />
+      <Banner />
+      <ProductRow />
+      <PopularCategory />
+      <BrandRowCard />
+      <CheckupsRow />
 
-{" "}
-<Footer/>
-<MobFooter/>
+      {" "}
+      <Footer />
+      <MobFooter />
     </div>
   )
 }

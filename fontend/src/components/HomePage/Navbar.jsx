@@ -33,18 +33,18 @@ import MobileNav from './MobileNav';
 const Navbar = () => {
     return (
         <>
-     <VStack w="100%" mb='8px'>
-        <MobileNav/>
-        <Flex display={{base:"none", xl:"flex"}} w='100%' direction={"column"} id="maindiv">
-          
-        <UpperFullRow />
-            <SecondFullRow />
-            <NavDrop />
-        </Flex>
-        <Box w='96%'m='auto' display={{ base: 'block', xl: 'none' }} border='1px solid gray' borderStyle={'double'}  >
-                <SearchLocation  p={1}  righticon={BiSearchAlt2}  placeholder='Search for Medicines and Health Products' />
-            </Box>
-    </VStack>
+            <VStack w="100%" mb='8px'>
+                <MobileNav />
+                <Flex display={{ base: "none", xl: "flex" }} w='100%' direction={"column"} id="maindiv">
+
+                    <UpperFullRow />
+                    <SecondFullRow />
+                    <NavDrop />
+                </Flex>
+                <Box w='96%' m='auto' display={{ base: 'block', xl: 'none' }} border='1px solid gray' borderStyle={'double'}  >
+                    <SearchLocation p={1} righticon={BiSearchAlt2} placeholder='Search for Medicines and Health Products' />
+                </Box>
+            </VStack>
         </>
     )
 }
@@ -95,7 +95,7 @@ const UpperFullRow = () => {
         setMenuOpen(!menuOpen);
     }
 
-     const uppermostrow = [
+    const uppermostrow = [
         { title: "MEDICINE", active: true },
         { title: "LAB TESTS", badge: 'SAFE' },
         { title: "CONSULT DOCTORS" },
@@ -196,7 +196,7 @@ const SecondFullRow = () => {
                     <Text w={"200px"} fontSize='15px' >
                         QUICK BUY! Get 15% off on medicines*
                     </Text>
-                        <Menu px={4}
+                    <Menu px={4}
                         py={2}
                         transition='all 0.2s'
                         borderRadius='md'
@@ -221,7 +221,7 @@ const SecondFullRow = () => {
                     </Menu>
                 </HStack>
             </Flex>
-         
+
         </>
     )
 }
@@ -242,7 +242,7 @@ const SearchLocation = ({ width, lefticon, placeholder, righticon }) => {
                         variant={"solid"}
                         color={"gray.800"}
                         bgColor={"#f1f4f6"}
-                     
+
                         _placeholder={{
                             color: "gray.600",
                             fontWeight: '400',
