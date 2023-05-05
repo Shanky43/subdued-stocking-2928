@@ -1,6 +1,6 @@
 import {
     Box, Container, Divider, HStack, Image, Spacer, Text, Flex, Select, SimpleGrid, Checkbox, Button, Icon,
-    Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Center, RadioGroup, Stack, Radio
+    Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, RadioGroup, Stack, Radio
 } from '@chakra-ui/react'
 import { React, useEffect, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
@@ -14,9 +14,13 @@ import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { AiOutlineDown } from "react-icons/ai"
 import { BiSortAlt2 } from "react-icons/bi"
 import { RiFilter3Line } from "react-icons/ri"
+import { useLocation, useSearchParams } from 'react-router-dom';
 const Homeopathy = () => {
     const [city, setCity] = useState("Select City");
     const [value, setValue] = useState('')
+    const [category, setCategory] = useState([])
+    const [searchParams, setSearchParams] = useSearchParams()
+    const location = useLocation()
     const dispatch = useDispatch()
     const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)")
     const [isLargerThan769] = useMediaQuery("(min-width: 769px)")
@@ -63,20 +67,56 @@ const Homeopathy = () => {
             items: 2
         }
     };
+    // console.log(location.search, "line70")
+    const handleSelectChanges = (e, brand) => {
+        e.preventDefault();
+        let newCategory = [...category];
+        const value = e.target.value;
+      
+        if (newCategory.includes(value)) {
+          newCategory = newCategory.filter((el) => el !== value);
+        } else {
+          newCategory.push(value);
+        }
+      
+        setCategory(newCategory);
+      
+        let params = new URLSearchParams(searchParams);
+        params.delete("brand");
+      
+        if (newCategory.length > 0) {
+          newCategory.forEach((cat) => params.append("brand", cat));
+        } else {
+          params.delete("category");
+        }
+      
+        setSearchParams(params);
+      };
+      
+      useEffect(() => {
+        const params = { category: "Homeopathy" };
+        setSearchParams(new URLSearchParams(params));
+      }, []);
+      
+      useEffect(() => {
+        const decodedParams = new URLSearchParams(decodeURIComponent(searchParams.toString()));
+        dispatch(homeopathyProducts(decodedParams));
+      }, [dispatch, searchParams]);
+      
 
-    useEffect(() => {
-        dispatch(homeopathyProducts())
-    }, [dispatch])
 
+
+
+    
     const HomeopathyProducts = useSelector((state) => {
         return state.Homeopathy.products
     })
     // console.log(HomeopathyProducts)
-    const handleCitySelect = (selectedCity, option) => {
+    const handleCitySelect = (selectedCity) => {
         setCity(selectedCity);
         onCloseDrawer1();
     };
-console.log(value)
+    // console.log(value)
     return (
         <div >
             <Container maxW={"100%"} minH={"100vh"} bgColor={"#f6f6f6"} mt={20}>
@@ -118,7 +158,7 @@ console.log(value)
                                 </Box>
 
                             </Box>
-                            <Divider borderColor={"grey"} />
+                            <Divider borderColor={"grey"} mt="2" />
                             <Box display={'flex'} justifyContent={"space-around"}>
                                 <Box display={'flex'} justifyContent={"space-around"}>
                                     <Box display={'flex'} justifyContent={"space-around"}>
@@ -190,7 +230,7 @@ console.log(value)
                                                     {
                                                         brands.map((brands, index) => (
                                                             <HStack key={index}>
-                                                                <Checkbox pt="2"><Text fontSize={".8em"}>{brands.brand}</Text></Checkbox>
+                                                                <Checkbox pt="2" onChange={handleSelectChanges} value={brands.brand} ><Text fontSize={".8em"}>{brands.brand}</Text></Checkbox>
                                                                 <Spacer />
                                                                 <Box><Text fontSize={".8em"}>{brands.numbers}</Text></Box>
                                                             </HStack>
@@ -256,10 +296,10 @@ console.log(value)
 
 
 
-                        <Box maxW={["100%", "100%", "100%", "100%", "70%"]} mt="10" margin="auto">
+                        <Box maxW={["100%", "100%", "100%", "100%", "70%"]} mt="12" margin="auto">
                             <Container maxW={"100%"}>
                                 <Box ml={5}>
-                                    <Text fontSize={"2xl"} fontWeight={"bold"}>HOMEOPATHY</Text>
+                                    <Text fontSize={"2xl"} fontWeight={"bold"} mt="10">HOMEOPATHY</Text>
                                     {
                                         isLargerThan1024 ? <Box mt="5">
                                             <Image src='https://onemg.gumlet.io/c0a6a2ef-7fa4-4d42-b7df-fb90828aa145_1667474655.jpg?w=1062&h=124&format=auto' alt='banner'
@@ -281,7 +321,7 @@ console.log(value)
                                                 {
                                                     SpotlightAds.map((items, index) => (
                                                         <Box p="5" m="2" width={"100%"} _hover={{
-                                                            " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                                                            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"
                                                         }} borderRadius={"10"} key={index}>
                                                             <Box style={{ display: 'flex', justifyContent: "center" }}> <Image src={items.image} alt={items.name} width={"100px"} h={["100px", "170px"]} /></Box>
                                                             <Box><Text width={"100%"} height={"20"} pt="5" fontSize={".85em"} fontWeight={"600"}>{items.name}</Text></Box>
@@ -315,7 +355,7 @@ console.log(value)
                                                     popularbrands.map((items, index) => (
                                                         <Box p="5" key={index}>
                                                             <Box p="5" _hover={{
-                                                                " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                                                                boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"
                                                             }} borderRadius={"10"} >
                                                                 <Image src={items.image} alt={items.name} width={"250px"} />
                                                                 <Text textAlign={'center'} pt="5" fontWeight={500} fontSize={[".7em", ".9em"]}>{items.name}</Text>
@@ -344,7 +384,7 @@ console.log(value)
                                                     ShopByConcern.map((items, index) => (
                                                         <Box pl="5" pr="5" key={index} >
                                                             <Box p="5" _hover={{
-                                                                " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                                                                boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"
                                                             }} borderRadius={"10"} >
                                                                 <Image src={items.image} alt={items.name} width={"250px"} />
                                                                 <Text textAlign={'center'} pt="5" fontWeight={500} fontSize={[".7em", ".9em"]}>{items.name}</Text>
@@ -370,7 +410,7 @@ console.log(value)
                                                     ShopByHomeopathy.map((items, index) => (
                                                         <Box pl="5" pr="5" key={index}>
                                                             <Box p="5" _hover={{
-                                                                " box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                                                                "boxShadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px"
                                                             }} borderRadius={"10"} >
                                                                 <Image src={items.image} alt={items.name} width={"250px"} />
                                                                 <Text textAlign={'center'} pt="5" fontSize={[".7em", ".9em"]} fontWeight={500}>{items.name}</Text>
@@ -392,6 +432,7 @@ console.log(value)
                                                     _focus={{ border: "1px solid white" }}
                                                     _hover={{ border: "1px solid white" }}
                                                     styles={{ option: { color: "red", backgroundColor: "blue", borderRadius: "4px" } }}
+
                                                 >
                                                     <option value="hightolow" bgColor="#FAFAFA">High to Low</option>
                                                     <option value="lowtohigh">Low to High</option>
@@ -404,7 +445,7 @@ console.log(value)
                                                 <SimpleGrid columns={[1, 2, 3, 4]} spacing={7}>
                                                     {
                                                         HomeopathyProducts.map((items, ind) => (
-                                                            <Box boxShadow="rgba(0, 0, 0, 0.16) 0px 1px 4px" bgColor={"white"}>
+                                                            <Box boxShadow="rgba(0, 0, 0, 0.16) 0px 1px 4px" bgColor={"white"} key={ind}>
                                                                 <Box p="5">
                                                                     <Image p="10" src={items.image} alt={items.name} style={{ display: "flex", justifyContent: "center", alignItems: "center", alignContent: 'center' }} width={"100%"} height={"250px"} />
                                                                     <Box height="10" >
