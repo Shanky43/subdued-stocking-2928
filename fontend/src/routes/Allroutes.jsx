@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom'
 import Homeopathy from '../Pages/Homeopathy.jsx'
 import Ayurvedaproducts from '../Pages/Ayurvedaproducts'
 
-
 const Allroutes = () => {
     return (
         <div>
