@@ -8,7 +8,7 @@ function App() {
     <div id='app-body' >
       {/* <Allroutes /> */}
       {/* <Sidebar /> */}
-<HomePage/>
+
     </div>
   );
 }
