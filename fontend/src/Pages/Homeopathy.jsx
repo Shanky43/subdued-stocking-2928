@@ -1,6 +1,6 @@
 import {
     Box, Container, Divider, HStack, Image, Spacer, Text, Flex, Select, SimpleGrid, Checkbox, Button, Icon,
-    Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, RadioGroup, Stack, Radio, Input, VStack
+    Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, RadioGroup, Stack, Radio, VStack
 } from '@chakra-ui/react'
 import { React, useEffect, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
@@ -9,7 +9,7 @@ import 'react-multi-carousel/lib/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { homeopathyProducts } from '../Redux/Homeopathy/action';
 import { useMediaQuery } from "@chakra-ui/react"
-import { SpotlightAds, popularbrands, ShopByConcern, ShopByHomeopathy, brands, discount, age, gender, cities } from "./Homeo_Pathy.js"
+import { SpotlightAds, popularbrands, ShopByConcern, ShopByHomeopathy, brands, age, gender, cities } from "./Homeo_Pathy.js"
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { AiOutlineDown } from "react-icons/ai"
 import { BiSortAlt2 } from "react-icons/bi"
@@ -175,7 +175,7 @@ const Homeopathy = () => {
                                             <Box alignContent="center" pr={["10px", "30px", "50px", "170px", "200px"]}>
                                                 <HStack>
                                                     <Box><BiSortAlt2 /></Box>
-                                                    <Box><Text>Sort by: <Button variant={"filled"} onClick={onOpenDrawer2}></Button></Text></Box>
+                                                    <Box><Button variant={"filled"} onClick={onOpenDrawer2} onChange={handleDiscountChanges}><Text>Sort by</Text></Button></Box>
                                                 </HStack>
                                                 <Box>
                                                     <Drawer
@@ -191,10 +191,10 @@ const Homeopathy = () => {
                                                             <DrawerBody >
                                                                 <RadioGroup onChange={setValue} value={value}>
                                                                     <Stack direction='column'>
-                                                                        <Radio value='hightolow' color='#ff6f61'>High to Low</Radio>
-                                                                        <Radio value='lowtohigh' color='#ff6f61'>Low to High</Radio>
-                                                                        <Radio value='discount5%-10%' color='#ff6f61'>Discount 5% - 10%</Radio>
-                                                                        <Radio value='discount20%-50%' color='#ff6f61'>Discount 20% - 50%</Radio>
+                                                                        <Radio onChange={handleDiscountChanges} value='hightolow' color='#ff6f61'>High to Low</Radio>
+                                                                        <Radio onChange={handleDiscountChanges} value='lowtohigh' color='#ff6f61'>Low to High</Radio>
+                                                                        <Radio onChange={handleDiscountChanges} value='discount5%-10%' color='#ff6f61'>Discount 5% - 10%</Radio>
+                                                                        <Radio onChange={handleDiscountChanges} value='discount20%-50%' color='#ff6f61'>Discount 20% - 50%</Radio>
                                                                     </Stack>
                                                                 </RadioGroup>
                                                             </DrawerBody>
