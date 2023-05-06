@@ -22,9 +22,14 @@ import { useSearchParams } from 'react-router-dom';
 const Homeopathy = () => {
     const [city, setCity] = useState("Select City");
     const [value, setValue] = useState('')
-    const [category, setCategory] = useState([])
-    const [order, setOrder] = useState("")
+  
+
     const [searchParams, setSearchParams] = useSearchParams()
+    const initialOrder = searchParams.has("order") ? searchParams.getAll("order")[0] : "";
+    const [order, setOrder] = useState(initialOrder)
+    const initialCategory=searchParams.getAll("brand")
+    const [category, setCategory] = useState(initialCategory||[])
+
     // const location = useLocation()
     const dispatch = useDispatch()
     const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)")
@@ -191,8 +196,8 @@ const Homeopathy = () => {
                                                             <DrawerBody >
                                                                 <RadioGroup onChange={setValue} value={value}>
                                                                     <Stack direction='column'>
-                                                                        <Radio onChange={handleDiscountChanges} value='hightolow' color='#ff6f61'>High to Low</Radio>
-                                                                        <Radio onChange={handleDiscountChanges} value='lowtohigh' color='#ff6f61'>Low to High</Radio>
+                                                                        <Radio onChange={handleDiscountChanges} value='hightolow' color='#ff6f61' defaultChecked={order === "hightolow"}>High to Low</Radio>
+                                                                        <Radio onChange={handleDiscountChanges} value='lowtohigh' color='#ff6f61' defaultChecked={order === "lowtohigh"}>Low to High</Radio>
                                                                         <Radio onChange={handleDiscountChanges} value='discount5%-10%' color='#ff6f61'>Discount 5% - 10%</Radio>
                                                                         <Radio onChange={handleDiscountChanges} value='discount20%-50%' color='#ff6f61'>Discount 20% - 50%</Radio>
                                                                     </Stack>
@@ -255,8 +260,8 @@ const Homeopathy = () => {
                                                         <VStack alignItems={"left"}>
                                                             <Box> <RadioGroup >
                                                                 <Stack direction='column'>
-                                                                    <Radio onChange={handleDiscountChanges} value='hightolow' color='#ff6f61'><Text fontSize={".8em"} >High to Low</Text></Radio>
-                                                                    <Radio onChange={handleDiscountChanges} value='lowtohigh' color='#ff6f61'><Text fontSize={".8em"} >Low to High</Text></Radio>
+                                                                    <Radio onChange={handleDiscountChanges} value='hightolow' color='#ff6f61' defaultChecked={order === "hightolow"}><Text fontSize={".8em"} >High to Low</Text></Radio>
+                                                                    <Radio onChange={handleDiscountChanges} value='lowtohigh' color='#ff6f61' defaultChecked={order === "lowtohigh"}><Text fontSize={".8em"} >Low to High</Text></Radio>
                                                                 </Stack>
                                                             </RadioGroup></Box>
                                                             <Box><Checkbox pt="2" value={"discount5%-10%"} onChange={handleDiscountChanges}><Text fontSize={".8em"} >Discount 5% - 10%</Text></Checkbox></Box>
