@@ -11,7 +11,7 @@ const medSchema = mongoose.Schema(
         price: { type: Number, required: true },
         mainprice: { type: String, required: true },
         category: { type: String, required: true },
-        "price-box": { type: String, required: true }
+        "price-box": { type: String }
     },
     {
         versionKey: false,
