@@ -2,12 +2,15 @@ const express = require("express");
 const app = express();
 const connection = require("./db");
 
+const { auth } = require("./middleware/auth.middleware");
+
 const { medRouter } = require("./Routes/med.route");
 const cors = require("cors");
 require("dotenv").config();
 
 //Import userRouter
 const { userRouter } = require("./Routes/user.router");
+const { CartRouter } = require("./Routes/cart.router");
 
 app.use(cors());
 app.use(express.json());
@@ -20,6 +23,8 @@ app.use("/", medRouter);
 
 //By neeraj ==> for register,login
 app.use("/users", userRouter);
+
+app.use("/cart", auth, CartRouter);
 
 app.listen(process.env.port, async () => {
   try {
