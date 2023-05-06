@@ -4,9 +4,10 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import { GiHamburgerMenu, GiExitDoor } from 'react-icons/gi'
 import { FcFlashOn } from 'react-icons/fc'
 import logo from '../../Assests/logo.png'
+import style from '../../App.css'
 import {
     Text, Badge, HStack, Box, Center, Flex, Link, Icon, Divider, FormControl,
-    Input,
+    Input,Select,
     Button,
     InputGroup,
     InputLeftElement,
@@ -181,7 +182,7 @@ const SecondFullRow = () => {
 
             <Flex display={{ base: 'none', xl: 'flex' }} justifyContent='space-between' mx='50px' mr='20px' >
                 <Box pr='5px' >
-                    <SearchLocation width='180px' lefticon='true' placeholder='Location' righticon={MdOutlineMyLocation} />
+                    <SearchLocation width='180px' select={true} lefticon='true' placeholder='Location' righticon={MdOutlineMyLocation} />
                 </Box>
 
                 <Box>
@@ -227,7 +228,7 @@ const SecondFullRow = () => {
 }
 
 
-const SearchLocation = ({ width, lefticon, placeholder, righticon }) => {
+const SearchLocation = ({ width, lefticon, placeholder, righticon,select }) => {
 
 
     return (
@@ -238,26 +239,87 @@ const SearchLocation = ({ width, lefticon, placeholder, righticon }) => {
                         pointerEvents="none"
                         children={<MdLocationPin color='blackAlpha.600' />}
                     />}
-                    <Input
-                        variant={"solid"}
-                        color={"gray.800"}
-                        bgColor={"#f1f4f6"}
 
-                        _placeholder={{
-                            color: "gray.600",
-                            fontWeight: '400',
-                            fontSize: '13px'
-                        }}
-                        type={"email"}
-                        required
-                        placeholder={placeholder}
-                        height={"35px"}
-                        borderRadius={"none"}
-                    />
+  { select?  <>
+  <Select name="Select You Country" id="country_homepage"   gap={2} >
+  <option value="New Delhi">New Delhi</option>
+  <option value="Andorra">Andorra</option>
+                <option value="Angola">Angola</option>
+                <option value="Anguilla">Anguilla</option>
+                <option value="Antartica">Antarctica</option>
+                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Armenia">Armenia</option>
+                <option value="Aruba">Aruba</option>
+                <option value="Australia">Australia</option>
+                <option value="Austria">Austria</option>
+                <option value="Azerbaijan">Azerbaijan</option>
+                <option value="Bahamas">Bahamas</option>
+                <option value="Bahrain">Bahrain</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Barbados">Barbados</option>
+                <option value="Belarus">Belarus</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Belize">Belize</option>
+                <option value="Benin">Benin</option>
+                <option value="Bermuda">Bermuda</option>
+                <option value="Bhutan">Bhutan</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Bosnia and Herzegowina">Bosnia and Herzegowina</option>
+                <option value="Botswana">Botswana</option>
+                <option value="Bouvet Island">Bouvet Island</option>
+                <option value="Brazil">Brazil</option>
+                <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                <option value="Brunei Darussalam">Brunei Darussalam</option>
+                <option value="Bulgaria">Bulgaria</option>
+                <option value="Burkina Faso">Burkina Faso</option>
+                <option value="Burundi">Burundi</option>
+                <option value="Cambodia">Cambodia</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Canada">Canada</option>
+                <option value="Cape Verde">Cape Verde</option>
+                <option value="Cayman Islands">Cayman Islands</option>
+                <option value="Central African Republic">Central African Republic</option>
+                <option value="Chad">Chad</option>
+                <option value="Chile">Chile</option>
+                <option value="China">China</option>
+                <option value="Christmas Island">Christmas Island</option>
+                <option value="Cocos Islands">Cocos (Keeling) Islands</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Comoros">Comoros</option>
+  </Select>
+  
+  
+  </> :(
+
+<Input
+variant={"solid"}
+color={"gray.800"}
+bgColor={"#f1f4f6"}
+
+_placeholder={{
+    color: "gray.600",
+    fontWeight: '400',
+    fontSize: '13px'
+}}
+type={"email"}
+required
+placeholder={placeholder}
+height={"35px"}
+borderRadius={"none"}
+/>
+
+
+  )  }
+
+
+                 
                     <InputRightElement>
                         <Icon as={righticon} color='blackAlpha.600' />
                     </InputRightElement>
                 </InputGroup>
+
+
             </FormControl>
         </>
     )

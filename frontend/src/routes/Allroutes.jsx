@@ -4,6 +4,7 @@ import Homeopathy from '../Pages/Homeopathy'
 import Ayurvedaproducts from '../Pages/Ayurvedaproducts'
 import Adminlogin from "../Admin_Page/Pages/AdminLogin"
 import Admin from '../Admin_Page/Pages/Admin'
+import HomePage from '../Pages/HomePage'
 
 const Allroutes = () => {
     return (
@@ -13,6 +14,7 @@ const Allroutes = () => {
                 <Route path='/ayurveda' element={<Ayurvedaproducts />}></Route>
                 <Route path='/adminlogin'element={<Adminlogin/>}></Route>
                 <Route path='/admin'element={<Admin/>}></Route>
+            
             </Routes>
         </div>
     )
