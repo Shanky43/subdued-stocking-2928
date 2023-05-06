@@ -436,7 +436,7 @@ const Homeopathy = () => {
 
                                     <Box mt="5" width={"100%"} mb="5">
                                         <Box>
-                                            <HStack>
+                                            {isLargerThan1024 ? <HStack>
                                                 <Text textAlign={"left"} fontWeight={"600"}>All Products</Text>
                                                 <Spacer />
                                                 <Select variant='filled' bgColor={"white"} width={["65%", "20%"]} borderColor="white"
@@ -451,7 +451,7 @@ const Homeopathy = () => {
                                                     <option value="discount20%-50%">Discount 20% - 50%</option>
                                                 </Select>
 
-                                            </HStack>
+                                            </HStack> : null}
                                             <Box mt="5">
                                                 <SimpleGrid columns={[1, 2, 3, 4]} spacing={7}>
                                                     {
