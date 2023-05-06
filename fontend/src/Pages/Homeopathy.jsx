@@ -9,7 +9,7 @@ import 'react-multi-carousel/lib/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { homeopathyProducts } from '../Redux/Homeopathy/action';
 import { useMediaQuery } from "@chakra-ui/react"
-import { SpotlightAds, popularbrands, ShopByConcern, ShopByHomeopathy, brands, age, gender, cities } from "./Homeo_Pathy.js"
+import { SpotlightAds, popularbrands, ShopByConcern, ShopByHomeopathy, brands, age, gender, cities, responsive, responsive1, filterCategories } from "./Homeo_Pathy.js"
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { AiOutlineDown } from "react-icons/ai"
 import { BiSortAlt2 } from "react-icons/bi"
@@ -22,14 +22,14 @@ import { useSearchParams } from 'react-router-dom';
 const Homeopathy = () => {
     const [city, setCity] = useState("Select City");
     const [value, setValue] = useState('')
-  
+
 
     const [searchParams, setSearchParams] = useSearchParams()
     const initialOrder = searchParams.has("order") ? searchParams.getAll("order")[0] : "";
     const [order, setOrder] = useState(initialOrder)
-    const initialCategory=searchParams.getAll("brand")
-    const [category, setCategory] = useState(initialCategory||[])
-
+    const initialCategory = searchParams.getAll("brand")
+    const [category, setCategory] = useState(initialCategory || [])
+    const [filterCategorie, setFilterCategorie] = useState("brand")
     // const location = useLocation()
     const dispatch = useDispatch()
     const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)")
@@ -38,45 +38,12 @@ const Homeopathy = () => {
 
     const { isOpen: isOpenDrawer1, onOpen: onOpenDrawer1, onClose: onCloseDrawer1 } = useDisclosure();
     const { isOpen: isOpenDrawer2, onOpen: onOpenDrawer2, onClose: onCloseDrawer2 } = useDisclosure();
+    const { isOpen: isOpenDrawer3, onOpen: onOpenDrawer3, onClose: onCloseDrawer3 } = useDisclosure();
+
     // const [selectedOption, setSelectedOption] = useState("");
 
 
-    const responsive = {
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 5
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 800 },
-            items: 3
-        },
-        ipad: {
-            breakpoint: { max: 800, min: 500 },
-            items: 3
-        },
-        mobile: {
-            breakpoint: { max: 500, min: 0 },
-            items: 1
-        }
-    };
-    const responsive1 = {
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 5
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 800 },
-            items: 4
-        },
-        ipad: {
-            breakpoint: { max: 800, min: 500 },
-            items: 3
-        },
-        mobile: {
-            breakpoint: { max: 500, min: 0 },
-            items: 2
-        }
-    };
+
     // console.log(location.search, "line70")
     const handleSelectChanges = (e) => {
         e.preventDefault();
@@ -165,7 +132,7 @@ const Homeopathy = () => {
                                                 ))}
                                             </DrawerBody>
                                             <DrawerFooter>
-
+                                                <Button onClick={onCloseDrawer1} bgColor={"#ff6f61"} color={"black"}>Apply Changes</Button>
                                             </DrawerFooter>
                                         </DrawerContent>
                                     </Drawer>
@@ -204,8 +171,9 @@ const Homeopathy = () => {
                                                                 </RadioGroup>
                                                             </DrawerBody>
                                                             <DrawerFooter>
-
+                                                                <Button onClick={onCloseDrawer2} bgColor={"#ff6f61"} color={"white"}>Apply Changes</Button>
                                                             </DrawerFooter>
+
                                                         </DrawerContent>
                                                     </Drawer>
                                                 </Box>
@@ -216,7 +184,76 @@ const Homeopathy = () => {
                                             <Box textAlign="center" pl={["10px", "30px", "50px", "170px", "200px"]}>
                                                 <HStack>
                                                     <Box><RiFilter3Line /></Box>
-                                                    <Box><Text> <Text as="span">Filter</Text></Text></Box>
+                                                    <Box><Button variant={"filled"} onClick={onOpenDrawer3} onChange={handleDiscountChanges}> <Text as="span">Filter</Text></Button></Box>
+                                                    <Box>
+                                                        <Drawer
+                                                            isOpen={isOpenDrawer3}
+                                                            placement="bottom"
+                                                            onClose={onCloseDrawer3}
+                                                            finalFocusRef={null}
+                                                        >
+                                                            <DrawerOverlay />
+                                                            <DrawerContent height={"30em"}>
+                                                                <DrawerCloseButton />
+                                                                <DrawerHeader fontSize={"1.5em"}>Filter</DrawerHeader>
+                                                                <Divider orientation='horizontal' borderColor={"black"} width={"100%"} />
+                                                                <DrawerBody >
+                                                                    <Box width={"100%"} >
+                                                                        <HStack>
+                                                                            <Box pl={["1", "10"]} pr={["1", "10"]} style={{ display: "grid", alignItems: "top" }}>
+                                                                                {filterCategories.map((items, index) => (
+                                                                                    <Box key={index}>
+                                                                                        <Text pt="5" fontSize={"1.1em"} onClick={() => setFilterCategorie(items.value)} >{items.item}</Text>
+                                                                                    </Box>
+                                                                                ))}
+                                                                            </Box>
+                                                                            <Divider orientation='vertical' borderColor={"black"} height={"30vh"} />
+                                                                            <Box pl={["1", "20%"]}>
+                                                                                {
+                                                                                    filterCategorie === "brand" ? <Box width={"100%"} >  {
+                                                                                        brands.map((brands, index) => (
+                                                                                            <HStack key={index}>
+                                                                                                <Checkbox pt="2" onChange={handleSelectChanges} value={brands.brand} ><Text fontSize={"1em"}>{brands.brand}</Text></Checkbox>
+                                                                                                <Spacer />
+                                                                                                <Box><Text fontSize={"1em"}>{brands.numbers}</Text></Box>
+                                                                                            </HStack>
+
+                                                                                        ))
+                                                                                    }
+                                                                                    </Box> : filterCategorie === "age" ? <Box>
+                                                                                        {
+                                                                                            age.map((items, index) => (
+                                                                                                <HStack key={index}>
+                                                                                                    <Checkbox pt="2"><Text fontSize={"1em"}>{items.age}</Text></Checkbox>
+                                                                                                    <Spacer />
+                                                                                                    <Box><Text fontSize={"1em"}>{items.numbers}</Text></Box>
+                                                                                                </HStack>
+
+                                                                                            ))
+                                                                                        }
+                                                                                    </Box> : filterCategorie === "gender" ? < Box >
+                                                                                        {
+                                                                                            gender.map((items, index) => (
+                                                                                                <HStack key={index}>
+                                                                                                    <Checkbox pt="2"><Text fontSize={"1em"}>{items.gender}</Text></Checkbox>
+                                                                                                    <Spacer />
+                                                                                                    <Box><Text fontSize={"1em"}>{items.numbers}</Text></Box>
+                                                                                                </HStack>
+
+                                                                                            ))
+                                                                                        }
+                                                                                    </Box> : null
+                                                                                }</Box>
+                                                                        </HStack>
+                                                                    </Box>
+
+                                                                </DrawerBody>
+                                                                <DrawerFooter>
+                                                                    <Button onClick={onCloseDrawer3} bgColor={"#ff6f61"} color={"black"}>Apply Changes</Button>
+                                                                </DrawerFooter>
+                                                            </DrawerContent>
+                                                        </Drawer>
+                                                    </Box>
                                                 </HStack>
                                             </Box>
                                         </HStack>
@@ -463,7 +500,7 @@ const Homeopathy = () => {
                                                         HomeopathyProducts.map((items, ind) => (
                                                             <Box boxShadow="rgba(0, 0, 0, 0.16) 0px 1px 4px" bgColor={"white"} key={ind}>
                                                                 <Box p="5">
-                                                                    <Image p="10" src={items.image} alt={items.name} style={{ display: "flex", justifyContent: "center", alignItems: "center", alignContent: 'center' }} width={"100%"} height={"250px"} />
+                                                                    <Image p="10" src={items.image} alt={items.name} style={{ display: "flex", justifyContent: "center", alignItems: "center", alignContent: 'center' }} width={"100%"} height={["200px", "250px"]} />
                                                                     <Box height="10" >
                                                                         <Text width={"100%"} height={"100%"} pt="5" fontSize={".85em"} fontWeight={"500"}>{items.name}</Text>
                                                                     </Box>

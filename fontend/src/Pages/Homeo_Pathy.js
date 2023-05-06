@@ -227,3 +227,44 @@ export const cities = [
     { city: "Terdal" },
     { city: "Thiruvananthapur" }
 ]
+export const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 5
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 800 },
+        items: 3
+    },
+    ipad: {
+        breakpoint: { max: 800, min: 500 },
+        items: 3
+    },
+    mobile: {
+        breakpoint: { max: 500, min: 0 },
+        items: 1
+    }
+};
+export const responsive1 = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 5
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 800 },
+        items: 4
+    },
+    ipad: {
+        breakpoint: { max: 800, min: 500 },
+        items: 3
+    },
+    mobile: {
+        breakpoint: { max: 500, min: 0 },
+        items: 2
+    }
+};
+export const filterCategories = [
+    { item: "BRAND", value: "brand" },
+    { item: "AGE", value: "age" },
+    { item: "GENDER", value: "gender" }
+]
