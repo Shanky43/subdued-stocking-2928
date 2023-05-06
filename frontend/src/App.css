@@ -1,3 +1,44 @@
+@font-face {
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#app-body {
+  color: #666;
+  background-color: #666;
+  min-height: 480px;
+  min-width: 320px;
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+/* HOMEPAGE STYLEs
+*/
+
+.carousel-container-homepage {
+  boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px';
+  padding: 6px 15px;
+  background: white;
+
+
+
+}
+
+.carousel-container-checkup {
+  padding: 10px;
+  border: '2px solid black'
+}
+
+.activeDots {
+  /* color:#ff6f61 ; */
+
+
+}
+
+.inactiveDots {
+  /* color:'white';
+width:'8px'; */
+
+}
 * {
   text-align: center;
 
