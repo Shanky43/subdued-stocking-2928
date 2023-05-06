@@ -32,20 +32,20 @@ import {
 } from "react-icons/fi";
 import { MdAddShoppingCart } from "react-icons/md";
 import { AiOutlineHome } from "react-icons/ai";
+import { AdminRoutes } from "../Pages/AdminRoutes";
 import healthcube from "../images/healthcube.png"
-import { AdminRoutes } from "../AdminRoutes";
 
 
 const LinkItems = [
+  { name: "Add Product", icon: MdAddShoppingCart, path: "/add-product" },
+  { name: "Dashboard", icon: FiHome, path: "/dashboard" },
   { name: "Home", icon: AiOutlineHome, path: "/" },
-  { name: "Dashboard", icon: FiHome, path: "/admin/dashboard" },
-  { name: "Add Product", icon: MdAddShoppingCart, path: "/admin/add-product" },
-  { name: "Users", icon: FiUsers, path: "/admin/users" },
-  { name: "Orders", icon: FiShoppingBag, path: "/admin/orders" },
-  { name: "Products", icon: FiShoppingCart, path: "/admin/products" },
+  { name: "Users", icon: FiUsers, path: "/users" },
+  { name: "Orders", icon: FiShoppingBag, path: "/orders" },
+  { name: "Products", icon: FiShoppingCart, path: "/products" },
 ];
 
-export default function SidebarWithHeader({ children }) {
+export default function SidebarWithHeader() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
@@ -69,7 +69,7 @@ export default function SidebarWithHeader({ children }) {
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
-        {children}
+        <AdminRoutes/>
       </Box>
     </Box>
   );
@@ -90,7 +90,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
           {/* Logo */}
-          <Image src={healthcube} alt='logo' width='150px' h="70px"/>
+          <Image src={healthcube} alt='logo' />
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
