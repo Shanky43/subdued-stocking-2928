@@ -103,7 +103,7 @@ const Cart = () => {
           mb={"10px"}
           boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
         >
-          <Text pb={5} color={"orange.400"} className={styles.shopCart}>
+          <Text pb={5} color={"#ff6f61"} className={styles.shopCart}>
             {" "}
             Shopping Cart
           </Text>
@@ -171,6 +171,7 @@ const Cart = () => {
                     <Text
                       className={styles.purple}
                       m={"5px 0px"}
+                      bg={"#ff6f61"}
                       display={i % 2 != 0 ? "none " : "inline"}
                     >
                       #1 Best Seller
@@ -207,9 +208,9 @@ const Cart = () => {
                         className={styles.img}
                         src="https://assets-global.website-files.com/59ee0c0f13651700017e6ed2/5d7e518fc5774119be64fbca_hc.jpeg"
                       ></Img>
-                      <span className={styles.purple}>
+                      <Text bg={"#ff6f61"} className={styles.purple}>
                         Health Cube Delivered
-                      </span>
+                      </Text>
                     </Text>
                     <Text fontWeight={450} mb={"10px"} fontSize={"15px"}>
                       Gift options not available.Gift options not available.
@@ -283,8 +284,8 @@ const Cart = () => {
               {/* <span className={styles.priceCart}>{total}.00</span> */}
               <Link to={"/checkout"}>
                 <Button
+                  bg={"#ff6f61"}
                   w={"100%"}
-                  bg="orange.400"
                   borderRadius={"15px"}
                   m={"20px 0px "}
                   _hover={"red"}

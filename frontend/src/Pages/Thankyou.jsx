@@ -19,7 +19,7 @@ function Thankyou() {
             <Heading color={"teal.300"} pb={4} size="lg" fontSize="50px">
               Thank-you
             </Heading>
-            <Heading color={"orange.400"} size={"md"}>
+            <Heading color={"ff6f61"} size={"md"}>
               Thank you for your purchase! Your order has been received and is
               being processed. We appreciate your business and look forward to
               serving you again in the future.

@@ -137,7 +137,7 @@ const Checkout = () => {
         </Text>
       </Flex>
       <Text
-        color={"#c45500"}
+        color={"#ff6f61"}
         fontWeight={700}
         fontSize={"25px"}
         lineHeight={"20px"}
@@ -355,7 +355,7 @@ const Checkout = () => {
             <Button
               m={"auto"}
               // display="flex"
-              bg={"orange.300"}
+              bg={"#ff6f61"}
               width={"40%"}
               mt={"4"}
               color={"black"}
@@ -410,7 +410,7 @@ const Checkout = () => {
 
             <Button
               mt={"3"}
-              bg={"orange.300"}
+              bg={"#ff6f61"}
               color="black"
               className={styles.PaymenUsebtn}
               style={{ width: "100%" }}
@@ -428,7 +428,7 @@ const Checkout = () => {
           position={"relative"}
         >
           <Text
-            color={"#c45500"}
+            color={"#ff6f61"}
             fontWeight={700}
             fontSize={"18px"}
             lineHeight={"24px"}
@@ -580,7 +580,7 @@ const Checkout = () => {
           m="10px 0px"
           p={"10px"}
           cursor={"pointer"}
-          color={"#c45500"}
+          color={"#ff6f61"}
           onClick={() => setdeliver(!deliver)}
         >
           Review items and delivery
@@ -701,7 +701,7 @@ const Checkout = () => {
           </Text>
 
           <Button
-            bg={"orange.300"}
+            bg={"#ff6f61"}
             mt={"4"}
             color="black"
             className={styles.PaymenUsebtn}
