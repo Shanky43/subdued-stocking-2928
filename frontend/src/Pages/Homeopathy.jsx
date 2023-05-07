@@ -14,7 +14,7 @@ import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { AiOutlineDown } from "react-icons/ai"
 import { BiSortAlt2 } from "react-icons/bi"
 import { RiFilter3Line } from "react-icons/ri"
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 
 
@@ -30,6 +30,7 @@ const Homeopathy = () => {
     const initialCategory = searchParams.getAll("brand")
     const [category, setCategory] = useState(initialCategory || [])
     const [filterCategorie, setFilterCategorie] = useState("brand")
+    const [settingCategory, setSettingCategory] = useState("")
     // const location = useLocation()
     const dispatch = useDispatch()
     const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)")
@@ -41,8 +42,21 @@ const Homeopathy = () => {
     const { isOpen: isOpenDrawer3, onOpen: onOpenDrawer3, onClose: onCloseDrawer3 } = useDisclosure();
 
     // const [selectedOption, setSelectedOption] = useState("");
+    const path = window.location.pathname;
+    let pathName = path.toLowerCase()
+    console.log(pathName, "line46")
+    useEffect(() => {
+        if (pathName.includes("homeopathy")) {
+            setSettingCategory("Homeopathy")
 
+        } else if (pathName.includes("diabetes")) {
+            setSettingCategory("diabetes")
+        } else if (pathName.includes("ayurveda")) {
+            setSettingCategory("ayurveda")
+        }
 
+    }, [pathName])
+    console.log(settingCategory)
 
     // console.log(location.search, "line70")
     const handleSelectChanges = (e) => {
@@ -72,27 +86,21 @@ const Homeopathy = () => {
 
     // console.log(order)
     useEffect(() => {
-        const params = { category: "Homeopathy" };
+        const params = { category: settingCategory };
         category.length > 0 && (params.brand = category.join(','));
         order && (params.order = order);
         setSearchParams(new URLSearchParams(params));
-    }, [category, order]);
-
-
-
+    }, [category, order,settingCategory]);
 
     useEffect(() => {
         const decodedParams = new URLSearchParams(decodeURIComponent(searchParams.toString()));
         dispatch(homeopathyProducts(decodedParams));
     }, [dispatch, searchParams]);
 
-
-
-
     const HomeopathyProducts = useSelector((state) => {
         return state.Homeopathy.products
     })
-    // console.log(HomeopathyProducts)
+    console.log(HomeopathyProducts, "line89")
     const handleCitySelect = (selectedCity) => {
         setCity(selectedCity);
         onCloseDrawer1();
@@ -132,7 +140,7 @@ const Homeopathy = () => {
                                                 ))}
                                             </DrawerBody>
                                             <DrawerFooter>
-                                                <Button onClick={onCloseDrawer1} bgColor={"#ff6f61"} color={"black"}>Apply Changes</Button>
+                                                <Button onClick={onCloseDrawer1} bgColor={"#ff6f61"} color={"black"}><Text fontSize={".8em"}>Apply Changes</Text></Button>
                                             </DrawerFooter>
                                         </DrawerContent>
                                     </Drawer>
@@ -171,7 +179,7 @@ const Homeopathy = () => {
                                                                 </RadioGroup>
                                                             </DrawerBody>
                                                             <DrawerFooter>
-                                                                <Button onClick={onCloseDrawer2} bgColor={"#ff6f61"} color={"white"}>Apply Changes</Button>
+                                                                <Button onClick={onCloseDrawer2} bgColor={"#ff6f61"} color={"black"}><Text fontSize={".8em"}>Apply Changes</Text></Button>
                                                             </DrawerFooter>
 
                                                         </DrawerContent>
@@ -249,7 +257,7 @@ const Homeopathy = () => {
 
                                                                 </DrawerBody>
                                                                 <DrawerFooter>
-                                                                    <Button onClick={onCloseDrawer3} bgColor={"#ff6f61"} color={"black"}>Apply Changes</Button>
+                                                                    <Button onClick={onCloseDrawer3} bgColor={"#ff6f61"} color={"black"}><Text fontSize={".8em"}>Apply Changes</Text></Button>
                                                                 </DrawerFooter>
                                                             </DrawerContent>
                                                         </Drawer>
@@ -359,7 +367,6 @@ const Homeopathy = () => {
                                                 width={"100%"} />
                                         </Box> : null
                                     }
-
 
                                     <Box mt="5" width={"100%"}>
                                         <Text textAlign={"left"} fontWeight={"600"}>In the Spotlight</Text>
@@ -498,26 +505,28 @@ const Homeopathy = () => {
                                                 <SimpleGrid columns={[1, 2, 3, 4]} spacing={7}>
                                                     {
                                                         HomeopathyProducts.map((items, ind) => (
-                                                            <Box boxShadow="rgba(0, 0, 0, 0.16) 0px 1px 4px" bgColor={"white"} key={ind}>
-                                                                <Box p="5">
-                                                                    <Image p="10" src={items.image} alt={items.name} style={{ display: "flex", justifyContent: "center", alignItems: "center", alignContent: 'center' }} width={"100%"} height={["200px", "250px"]} />
-                                                                    <Box height="10" >
-                                                                        <Text width={"100%"} height={"100%"} pt="5" fontSize={".85em"} fontWeight={"500"}>{items.name}</Text>
-                                                                    </Box>
-                                                                    <Box pt="10">
-                                                                        <Text width={"100%"} height={"100%"} fontSize={".6em"} color={"gray"} fontWeight={"500"}>{items.brand}</Text>
-                                                                    </Box>
-                                                                    <Box style={{ display: "flex" }} pt="3" h={["80%", "100%"]}>
-                                                                        <Box style={{ display: "flex" }} color={"white"}
-                                                                            bgColor={"#1aab2a"} pl="2" width={"50px"}><Text fontSize={".85em"}>{"4." + (Math.floor(Math.random() * 5) + 1)}</Text>
-                                                                            <AiFillStar style={{ justifyContent: 'center', alignItems: 'center', margin: "auto" }} textAlign="center" />
+                                                            <Link to={`/${items._id}`}>
+                                                                <Box boxShadow="rgba(0, 0, 0, 0.16) 0px 1px 4px" bgColor={"white"} key={ind}>
+                                                                    <Box p="5">
+                                                                        <Image p="10" src={items.image} alt={items.name} style={{ display: "flex", justifyContent: "center", alignItems: "center", alignContent: 'center' }} width={"100%"} height={["200px", "250px"]} />
+                                                                        <Box height="10" >
+                                                                            <Text width={"100%"} height={"100%"} pt="5" fontSize={".85em"} fontWeight={"500"}>{items.name}</Text>
                                                                         </Box>
-                                                                        <Text pl="2" fontSize={".8em"} color={'gray'}>{(Math.floor(Math.random() * 10) + 10) * ind} ratings</Text>
+                                                                        <Box pt="10">
+                                                                            <Text width={"100%"} height={"100%"} fontSize={".6em"} color={"gray"} fontWeight={"500"}>{items.brand}</Text>
+                                                                        </Box>
+                                                                        <Box style={{ display: "flex" }} pt="3" h={["80%", "100%"]}>
+                                                                            <Box style={{ display: "flex" }} color={"white"}
+                                                                                bgColor={"#1aab2a"} pl="2" width={"50px"}><Text fontSize={".85em"}>{"4." + (Math.floor(Math.random() * 5) + 1)}</Text>
+                                                                                <AiFillStar style={{ justifyContent: 'center', alignItems: 'center', margin: "auto" }} textAlign="center" />
+                                                                            </Box>
+                                                                            <Text pl="2" fontSize={".8em"} color={'gray'}>{(Math.floor(Math.random() * 10) + 10) * ind} ratings</Text>
+                                                                        </Box>
+                                                                        <Text mt="5" fontSize={".85em"} color={"gray"}>MRP <Text as={"span"} textDecoration={"line-through"}>₹ {items.mainprice}</Text> <Text color="green" as={"span"}>{items.discount}</Text></Text>
+                                                                        <Box mt="2"><HStack><Text fontWeight={"bold"}>₹{items.price}</Text> <Spacer /> <Text color={"#ff6f61"} cursor={"pointer"} fontWeight={"bold"}>ADD</Text></HStack></Box>
                                                                     </Box>
-                                                                    <Text mt="5" fontSize={".85em"} color={"gray"}>MRP <Text as={"span"} textDecoration={"line-through"}>₹ {items.mainprice}</Text> <Text color="green" as={"span"}>{items.discount}</Text></Text>
-                                                                    <Box mt="2"><HStack><Text fontWeight={"bold"}>₹{items.price}</Text> <Spacer /> <Text color={"#ff6f61"} cursor={"pointer"} fontWeight={"bold"}>ADD</Text></HStack></Box>
                                                                 </Box>
-                                                            </Box>
+                                                            </Link>
                                                         ))
                                                     }
                                                 </SimpleGrid>

@@ -88,7 +88,7 @@ export const navData = [
       },
   
     {
-      text: "Homeppathy",
+      text: "Homeopathy",
     
         alldata: [
           {

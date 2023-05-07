@@ -10,7 +10,7 @@ export const homeopathyProducts = (params) => (dispatch) => {
   axios.get("http://localhost:8080/products", { params })
     .then((res) => {
       let filteredData = res.data;
-
+      console.log(res.data.products)
       // Apply filters
       if (params.has("brand")) {
         filteredData = filteredData.filter((product) =>
