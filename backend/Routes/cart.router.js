@@ -38,6 +38,21 @@ CartRouter.delete("/:productId", async (req, res) => {
   }
 });
 
+// ""delete all the product after purchase from the cart""
+CartRouter.post("/delete/all", async (req, res) => {
+  try {
+    const { userId } = req.body;
+    const deletedProducts = await CartModel.deleteMany({ userId });
+    if (!deletedProducts.deletedCount) {
+      return res.status(404).send("No products found for user");
+    }
+    res.status(200).send(`Deleted ${deletedProducts.deletedCount} products`);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server error");
+  }
+});
+
 // Get all products in cart
 CartRouter.get("/", async (req, res) => {
   try {
