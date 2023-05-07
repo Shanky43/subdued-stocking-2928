@@ -9,10 +9,10 @@ const Allroutes = () => {
     return (
         <div>
             <Routes>
-                <Route path='/homeopathy' element={<Homeopathy />}></Route>
-                <Route path='/ayurveda' element={<Ayurvedaproducts />}></Route>
+                {/* <Route path='/homeopathy' element={<Homeopathy />}></Route>
+                <Route path='/ayurveda' element={<Ayurvedaproducts />}></Route> */}
                 <Route path='/adminlogin'element={<Adminlogin/>}></Route>
-                <Route path='/admin'element={<Admin/>}></Route>
+                <Route path='/admin/*'element={<Admin/>}></Route>
 
             </Routes>
         </div>

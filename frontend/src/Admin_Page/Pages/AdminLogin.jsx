@@ -56,8 +56,8 @@ const AdminLogin = () => {
           <Stack spacing={7} mx={"auto"} maxW={"lg"} py={4} px={6} h="500px" w="500px">
             <Box box-shadow=" rgba(0, 0, 0, 0.35) 0px 5px 15px" h="100%" w="100%" rounded={"lg"} bg={useColorModeValue("white", "gray.700")} boxShadow={"lg"} p={8}>
               <Stack mt="20px" mb="10px">
-                <Text fontSize="20px" color={"gray.600"} textColor="black" fontWeight="800">
-                  Login to view your Adminpage ✌️
+                <Text fontSize="22px" color={"gray.600"} textColor="black" fontWeight="800">
+                  Login to view your Admin Page
                 </Text>
               </Stack>
               <Stack spacing={10} pt="40px">
