@@ -6,11 +6,6 @@ CartRouter.post("/add", async (req, res) => {
   try {
     const { image, name, price, quantity, category, userId, userName } =
       req.body;
-
-    // if (!name || !price || !description || !userId || !userName) {
-    //   return res.status(400).send("Missing required fields");
-    // }
-
     const product = new CartModel({
       image,
       name,
@@ -55,35 +50,6 @@ CartRouter.get("/", async (req, res) => {
       userId,
     }); // Retrieve products that match user ID
     res.status(200).send(products);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Server error");
-  }
-});
-
-CartRouter.put("/decrease", async (req, res) => {
-  try {
-    const { productId } = req.body;
-
-    if (!productId) {
-      return res.status(400).send("Missing required fields");
-    }
-
-    const product = await CartModel.findOne({ _id: productId });
-    if (!product) {
-      return res.status(404).send("Product not found");
-    }
-
-    if (product.quantity === 1) {
-      // If quantity is already 1, remove the product
-      await CartModel.deleteOne({ _id: productId });
-      res.status(200).send("Product removed from cart");
-    } else {
-      // Decrease the quantity of the product by 1
-      product.quantity -= 1;
-      await product.save();
-      res.status(200).send(product);
-    }
   } catch (err) {
     console.error(err);
     res.status(500).send("Server error");
