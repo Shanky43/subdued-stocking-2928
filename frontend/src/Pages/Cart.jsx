@@ -174,7 +174,10 @@ const Cart = () => {
                       display={i % 2 == 0 ? "none " : "block"}
                       m={"5px 0px"}
                     >
-                      <img src="https://m.media-amazon.com/images/G/31/marketing/fba/fba-badge_18px._CB485936079_.png"></img>
+                      <img
+                        width={30}
+                        src="https://assets-global.website-files.com/59ee0c0f13651700017e6ed2/5d7e518fc5774119be64fbca_hc.jpeg"
+                      ></img>
                     </Text>
                     <Text className={styles.cartGreen} fontSize={"14px"}>
                       In Stock
