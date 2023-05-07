@@ -1,0 +1,145 @@
+.shopCart {
+    font-weight: 650;
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .deselect {
+    text-decoration: none;
+    color: #007185;
+    cursor: pointer;
+  }
+  
+  .deselect:hover {
+    text-decoration: underline;
+    color: brown;
+    font-weight: 400;
+  }
+  
+  .right {
+    position: absolute;
+    right: 20px;
+    top: 55px;
+  }
+  .title {
+    font-size: 23px;
+    font-weight: 500;
+    color: #0f1111;
+  }
+  .bywhom {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .purple {
+    position: relative;
+    background: #e47911;
+    color: #fff;
+    padding: 0 6px 0 10px;
+    font-size: 13px;
+    height: 20px;
+    line-height: 20px;
+    flex-shrink: 0;
+  }
+  .img {
+    height: 30px;
+    width: 30px;
+  }
+  .priceCart {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  .cartGreen {
+    color: #007600;
+  }
+  
+  .cartUnderLine:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #c45500;
+  }
+  .sold {
+    font-weight: 500;
+  }
+  .free {
+    color: #565959;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .cartDays {
+    color: #c45500;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  
+  .cartSelect {
+    background-color: transparent;
+    display: block;
+    font-size: 15px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 600;
+    border: 1px solid gray;
+    cursor: pointer;
+  }
+  .cartSelect:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .subtotal {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+  
+  .cartbtn {
+    background-color: #ffd814;
+    padding: 5px 10px;
+    border-radius: 7px;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .cartbtn:hover,
+  .cartbtnsingle:hover {
+    background-color: rgb(228, 133, 37);
+    border: 1px solid teal;
+    box-shadow: teal 0px 1px 5px;
+  }
+  
+  .saveLater {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    text-rendering: optimizeLegibility;
+    color: #0f1111;
+    font-family: Arial, sans-serif;
+    padding: 20px 0px;
+  }
+  .ulsingle > li {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .hoversingle:hover {
+    box-shadow: #f29e1f 0px 2px 8px 0px;
+  }
+  .cartbtnsingle {
+    background-color: #ffd814;
+    padding: 5px 10px;
+    border-radius: 7px;
+    margin-top: 10px;
+    font-size: 12px;
+    width: 100%;
+    margin: 15px 0px;
+  }
+  .speciallisingle>li{
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .parasingle{
+    font-size: 14px;
+    padding-left: 10px;
+  }
+  .seprateBox{
+    padding-bottom: 5px;
+  }
