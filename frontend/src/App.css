@@ -4,7 +4,6 @@
 
 #app-body {
   color: #666;
-  background-color: #666;
   min-height: 480px;
   min-width: 320px;
   font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -44,3 +43,26 @@ width:'8px'; */
 
 }
 
+#country_homepage>option {
+padding: 3px;
+margin: 2px;
+border-bottom: 1mm solid black.500;
+
+}
+option {
+  font-size: 18px;
+  background-color: #ffffff;
+}
+
+option:before {
+  content: ">";
+  font-size: 20px;
+  display: none;
+  padding-right: 10px;
+  padding-left: 5px;
+  color: #fff;
+}
+
+option:hover:before {
+  display: inline;
+}

@@ -10,8 +10,8 @@ import MobFooter from '../components/HomePage/MobFooter'
 
 const HomePage = () => {
   return (
-    <div>
-      <Navbar />
+    <div id='app-body'>
+      {/* <Navbar /> */}
       <Banner />
       <ProductRow />
       <PopularCategory />

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Ayurvedaproducts = () => {
   return (
-    <div>Ayurvedaproducts</div>
+    <div>Ayurvedaproducts  hello</div>
   )
 }
 
