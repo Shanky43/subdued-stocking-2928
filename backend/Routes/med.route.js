@@ -22,34 +22,14 @@ medRouter.get("/", async (req, res) => {
     }
 });
 
-//for Static filters
-// medRouter.get("/:category", async (req, res) => {
-    
-//    let filters={}   
-//    const {category}=req.params
-//    if(req.query.brand){
-//     filters.brand=req.query.brand
-//    }
-//    if(req.query.subcat2){
-//     filters.brand=req.query.subcat2
-//    }
-  
-//   if(category){
-//     filters.category=category
-//   }
-//    console.log(filters)
-//     try {
-//         const medi = await MedModel.find(filters);
-//         res.status(200).send({ products: medi });
-//     } catch (err) {
-//         res.status(400).send({ err: err.message });
-//     }
-// });
+
 
 medRouter.get("/:category", async (req, res) => {
     let filters = { category: req.params.category };
     let value=0
-    console.log(req.query)
+    const {sortrange}=req.query
+    console.log(req.query.sortrange, typeof sortrange)
+
     if (req.query.brandrange) {
       filters.brand = req.query.brandrange;
     }
@@ -62,12 +42,14 @@ medRouter.get("/:category", async (req, res) => {
       filters.name = { $regex: req.query.name, $options: "i" };
     }
     
-    if (req.query.priceMin) {
-      filters.price = { $gte: parseFloat(req.query.priceMin) };
+    if (req.query.sortrange) {
+      let priceMin=req.query.sortrange==Object ? req.query.sortrange.join("").split("-")[0]: req.query.sortrange.split("-")[0]
+      filters.price = { $gte: parseFloat(priceMin) };
     }
     
     if (req.query.priceMax) {
-      filters.price = { ...filters.price, $lte: parseFloat(req.query.priceMax) };
+      let priceMax=req.query.sortrange ==Object? req.query.sortrange.join("").split("-")[1]: req.query.sortrange.split("-")[1]
+      filters.price = { ...filters.price, $lte: parseFloat(priceMax) };
     }
       if (req.query.sortingByPrice === "asc") {
        value=Number(1)
@@ -78,7 +60,7 @@ medRouter.get("/:category", async (req, res) => {
       }
       
     try {
-      let medi = await MedModel.find(filters).sort({price:value});
+      let medi = await MedModel.find(filters).sort({price:value}).limit(20);
 
       
       res.status(200).send({ products: medi });

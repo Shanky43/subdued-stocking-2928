@@ -1,6 +1,11 @@
 import {
     Box, Container, Divider, HStack, Image, Spacer, Text, Flex, Select, SimpleGrid, Checkbox, Button, Icon,
     Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, RadioGroup, Stack, Radio, VStack
+    ,Accordion,
+    AccordionButton,
+    AccordionIcon,
+    AccordionItem,
+    AccordionPanel,
 } from '@chakra-ui/react'
 import { React, useEffect, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
@@ -123,6 +128,7 @@ const Homeopathy = () => {
     return (
         <div >
             <Container maxW={"100%"} minH={"100vh"} bgColor={"#f6f6f6"} mt={20}>
+             
                 {/* {
                     isLargerThan1024 ? null :
                         <Box>
@@ -300,6 +306,8 @@ const Homeopathy = () => {
                                                 <Box> <Text width={"100%"} fontSize={"1em"} fontWeight={"600"}>Brands</Text></Box>
 
                                                 <Box>
+
+                                                    
                                                 {Object.keys(brands).map((brand, index) => (
       <HStack key={index}>
         <Checkbox
@@ -325,8 +333,8 @@ const Homeopathy = () => {
                                                         <VStack alignItems={"left"}>
                                                             <Box> <RadioGroup >
                                                                 <Stack direction='column'>
-                                                                    <Radio onChange={(e) => setSortingByPrice(e.target.value)} value='desc' color='#ff6f61' defaultChecked={sortingByPrice === "desc"}><Text fontSize={".8em"} >High to Low</Text></Radio>
-                                                                    <Radio onChange={(e) => setSortingByPrice(e.target.value)} value='asc' color='#ff6f61' defaultChecked={sortingByPrice === "asc"}><Text fontSize={".8em"} >Low to High</Text></Radio>
+                                                                    <Radio onChange={(e) => setSortingByPrice(e.target.value)} value='desc' color='#ff6f61' isChecked={sortingByPrice === "desc"}><Text fontSize={".8em"} >High to Low</Text></Radio>
+                                                                    <Radio onChange={(e) => setSortingByPrice(e.target.value)} value='asc' color='#ff6f61' isChecked={sortingByPrice === "asc"}><Text fontSize={".8em"} >Low to High</Text></Radio>
                                                                 </Stack>
                                                             </RadioGroup></Box>
                                                             <Box><Checkbox pt="2" value={"discount5%-10%"} onChange={handleDiscountChanges}><Text fontSize={".8em"} >Discount 5% - 10%</Text></Checkbox></Box>
@@ -335,8 +343,68 @@ const Homeopathy = () => {
                                                         </VStack>
                                                     </Box>
                                                 </Box>
-                                                {/* <Divider mt="5" borderColor={"black"} />
-                                                <Box mt="5">
+
+
+
+ <Divider mt="5" borderColor={"black"} />
+
+
+{/* /***
+filter in the price range   
+ */ }
+
+<Box maxH="400px" overflowY="scroll" w="full" >
+                    <Accordion flex="1" allowToggle>
+                      <AccordionItem>
+                        <h2>
+                        <AccordionButton>
+        <Box as="span" flex='1' textAlign='left'>
+    Price
+        </Box>
+         <AccordionIcon />
+         </AccordionButton>
+                          <Box  as="span" flex="1" textAlign="left">
+                            <Flex>
+                                
+                            
+                              <AccordionPanel >
+                                <Box p={1} > 
+                                <Checkbox  _hover={{ color: "#24a3b5", fontWeight: "bold" }} isChecked={sortrange.includes("100-699")} name='sortrange' onChange={handlesort}  my={2}value='100-699' >100-699</Checkbox>
+                                </Box>
+                    <Box p={1}>
+                    <Checkbox  _hover={{ color: "#24a3b5", fontWeight: "bold" }} isChecked={sortrange.includes("700-1499")} value='700-1499' name='sortrange' onChange={handlesort}  my={2}>700-1499</Checkbox>
+   
+                    </Box>
+                    <Box p={1}>
+                    <Checkbox  _hover={{ color: "#24a3b5", fontWeight: "bold" }}  value='1500-2299' isChecked={sortrange.includes("1500-2299")} name='sortrange' onChange={handlesort} my={2}>1500-2299</Checkbox>
+                      </Box>
+                      <Box p={1}>
+                      <Checkbox  _hover={{ color: "#24a3b5", fontWeight: "bold" }}  value='2300-3199' isChecked={sortrange.includes("2300-3199")} name='sortrange' onChange={handlesort} my={2}>2300-3199</Checkbox>
+                      </Box>
+                      <Box p={1}>
+                      <Checkbox  _hover={{ color: "#24a3b5", fontWeight: "bold" }}  value='3200-5000' isChecked={sortrange.includes("3200-5000")} name='sortrange' onChange={handlesort} my={2}>3200-5000</Checkbox>
+                      </Box>
+                      <Box>
+                      
+                      </Box>
+                      <Box>
+                      
+                      </Box>
+
+    </AccordionPanel>
+                            </Flex>
+                          </Box>
+                        </h2>
+                      </AccordionItem>
+                    </Accordion>
+                  </Box>
+
+
+
+
+
+
+                                              {/*  <Box mt="5">
                                                     <Box> <Text width={"100%"} fontSize={"1em"} fontWeight={"600"}>AGE</Text></Box>
                                                     <Box>
                                                         {
@@ -572,6 +640,10 @@ const Homeopathy = () => {
                     </Flex>
                 </Box >
             </Container >
+
+
+
+
 
         </div >
     )
