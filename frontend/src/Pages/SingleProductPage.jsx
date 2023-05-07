@@ -1,4 +1,4 @@
-import { Box, Center, Container, Stack, Image, useMediaQuery, Text, Radio, HStack, Button, Select } from '@chakra-ui/react';
+import { Box, Center, Container, Stack, Image, useMediaQuery, Text, Radio, HStack, Button, Select, VStack } from '@chakra-ui/react';
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
@@ -26,7 +26,7 @@ const SingleProductPage = () => {
       .catch((err) => console.log(err))
   }, [id])
   const { image, brand, category, discount, mainprice, name, price } = product
-  const [isLargerThan969] = useMediaQuery("(min-width: 969px)");
+  const [isLargerThan969] = useMediaQuery("(min-width: 1025px)");
   const handlePrice = (value) => {
     setPrices(value)
   }
@@ -67,7 +67,7 @@ const SingleProductPage = () => {
                     isLargerThan969 ? "center" : "left",
                   ]}
                 >
-                  <Image src={image} width={"500px"} height={"300px"} />
+                  <Image src={image} width={["100%", "100%", "100%", "500px", "500px"]} height={"300px"} transform={["none", "scale(1)", "scale(1)", "scale(1.25)", "scale(1.25)"]} />
                 </Box>
                 <Box width={"100%"}>
                   <Box>
@@ -170,23 +170,92 @@ const SingleProductPage = () => {
                       </HStack>
                     </Box>
                   </Box>
-                  <Box mt="5">
-                    <Image src={AdvertisementBanner[(Math.floor(Math.random() * 8))].image} alt="banner" borderRadius={"5px"} />
+                  {
+                    isLargerThan969 ? <Box mt="5">
+                      <Image src={AdvertisementBanner[(Math.floor(Math.random() * 8))].image} alt="banner" borderRadius={"5px"} />
+                    </Box> : null
+                  }
+                  {
+                    isLargerThan969 ? <Box mt="5" mb="5">
+                      <Box border={"1px dashed black"} borderRadius={"20px"} width={"100%"} >
+                        <HStack pt="8" pb="8" pl="7" pr="10">
+                          <BsFillTagFill size={40} color="#1aab2a" />
+                          <Text fontSize={".8em"} pl="2" fontWeight={500} >Amazon Pay: Pay with Amazon Pay on Tata 1mg for Rs. 100 and more and earn 1% cashback up to Rs. 500. Valid till 31st May 2023</Text>
+                        </HStack>
+
+                      </Box>
+                    </Box> : null
+                  }
+                </Box>
+              </Stack >
+            </Box >
+
+          </Center >
+          <Center bgColor={"#f8f8f8"}>
+            <Box mt="10" width={"100%"} mb="10">
+              <Stack direction={["column", "column", "column", "row", "row"]} width={["90%", "90%", "90%", "90%"]} margin={["auto", "auto", "auto", "auto", "auto"]}>
+                <Box width={["300px", "400px", "500px", "200%"]} margin={"center"} bgColor={"white"} p="10">
+                  <Text fontWeight={"500"} fontSize={"1.2em"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex corporis amet error fugiat odit, aliquid porro nulla exercitationem quisquam voluptatibus dolorum quo sequi, ut quidem labore blanditiis modi quos ullam?</Text>
+                  <Text mt="5"><Text as={"span"} fontWeight={"500"} >Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text> Quae iure quisquam labore obcaecati necessitatibus incidunt sed iste ullam expedita nisi vitae, doloribus, saepe porro aspernatur molestiae. Repellendus ab quod voluptatum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus quae in architecto quos cumque odio ea iste aspernatur vel ducimus.</Text>
+                  <Box>
+                    <Text fontWeight={"500"} mt="5">Key Ingredients:</Text>
+                    <ul>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elitillo atque! Provident natus, eveniet fugit incidunt repudiandae voluptatibus beatae . </li>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elit. </li>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elitProvident natus, eveniet fugit incidunt repudiandae. </li>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elitillo atque! Provident natus, eveniet fugit incidunt repudiandae voluptatibus beatae . </li>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elit. </li>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elitillo atque! Provident natus, eveniet fugit incidunt repudiandae voluptatibus beatae . </li>
+                    </ul>
                   </Box>
-                  <Box mt="5" mb="5">
-                    <Box border={"1px dashed black"} borderRadius={"20px"} >
-                      <HStack pt="8" pb="8" pl="7" pr="10">
-                        <BsFillTagFill size={40} color="#1aab2a" />
-                        <Text fontSize={".8em"} pl="2"fontWeight={500} >Amazon Pay: Pay with Amazon Pay on Tata 1mg for Rs. 100 and more and earn 1% cashback up to Rs. 500. Valid till 31st May 2023</Text>
-                      </HStack>
+                  <Box>
+                    <Text fontWeight={"500"} mt="5">Key Benefits:</Text>
+                    <ul>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elitProvident natus, eveniet fugit incidunt repudiandae. </li>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elit. </li>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elitillo atque! Provident natus, eveniet fugit incidunt repudiandae voluptatibus beatae . </li>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elitProvident natus, eveniet fugit incidunt repudiandae. </li>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elit. </li>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elitillo atque! Provident natus, eveniet fugit incidunt repudiandae voluptatibus beatae . </li>
+                    </ul>
+                  </Box>
+                  <Box>
+                    <Text fontWeight={"500"} mt="5">Good to Know</Text>
+                    <ul>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elitProvident natus, eveniet fugit incidunt repudiandae. </li>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elit. </li>
+                      <li style={{ marginTop: "10px" }}>  Lorem ipsum dolor, sit amet consectetur adipisicing elitillo atque! Provident natus, eveniet fugit incidunt repudiandae voluptatibus beatae . </li>
+
+                    </ul>
+                  </Box>
+                  <Box>
+
+                  </Box>
+
+                </Box>
+
+                <Box pl="5%" width={["200px", "300px", "400px", "450px", "1300px"]} margin={["auto", "auto", "auto", "auto", "auto"]}>
+                  <Box>
+                    <Box display={"flex"} justifyContent={"center"} bgColor={"white"} p="10" borderRadius={"10px"}>
+                      <VStack>
+                        <Image src={"https://1mgstaticfiles.s3.amazonaws.com/skuicons/labs.png"} alt="banner" />
+                        <Box pt="10"><Button outlineColor={"#ff6f61"} width={"100%"} color="#ff6f61"><Text p="2">BOOK A LAB TEST</Text></Button></Box>
+                      </VStack>
+
+                    </Box>
+                    <Box display={"flex"} mt="10" justifyContent={"center"} bgColor={"white"} p="10" borderRadius={"10px"}>
+                      <VStack>
+                        <Image pt="5" src={"https://onemg.gumlet.io/Doctor_xqon4h.png"} alt="banner" width={"100px"} height={"100px"} />
+                        <Box pt="10"><Button outlineColor={"#ff6f61"} width={"100%"} color="#ff6f61"><Text p="2">CONSULT A DOCTOR ONLINE</Text></Button></Box>
+                      </VStack>
 
                     </Box>
                   </Box>
                 </Box>
-              </Stack >
-            </Box >
-            
-          </Center >
+
+              </Stack>
+            </Box>
+          </Center>
         </Box >
       </Container >
     </div >
