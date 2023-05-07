@@ -44,7 +44,7 @@ export default function Login() {
     }
   }, []);
 
-  const baseUrl = "http://localhost:8080";
+  const baseUrl = "https://healthcube.onrender.com";
   const handleSubmit = async () => {
     try {
       axios
@@ -65,7 +65,7 @@ export default function Login() {
 
             console.log(authState);
             //use this to useNavigate here
-            Navigate("/cart");
+            Navigate("/");
           }
         })
         .catch((error) => {

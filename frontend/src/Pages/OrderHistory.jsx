@@ -14,7 +14,7 @@ const OrderHistory = () => {
 
   React.useEffect(() => {
     axios
-      .get("http://localhost:8080/order", config)
+      .get("https://healthcube.onrender.com/order", config)
       .then((res) => setMyOrder(res.data));
   }, []);
 
@@ -33,7 +33,7 @@ const OrderHistory = () => {
         <hr />
 
         {myOrder &&
-          myOrder.map((el, i) => {
+          myOrder?.map((el, i) => {
             return (
               <Grid
                 key={i}
@@ -78,10 +78,10 @@ const OrderHistory = () => {
                     </Text>
                   </Box>
 
-                  <Text>
-                    Usually dispatched in {Math.floor(Math.random() * 10) || 2}
-                    Days.
+                  <Text as={"b"}>
+                    Order Date :<Text color="teal.400">{el.date}</Text>
                   </Text>
+
                   <Text as="b">by {el.brand}</Text>
                   <Text
                     m={"5px 0px"}

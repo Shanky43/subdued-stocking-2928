@@ -73,7 +73,10 @@ const Checkout = () => {
         return;
       }
 
-      const res = await axios.get("http://localhost:8080/cart", config);
+      const res = await axios.get(
+        "https://healthcube.onrender.com/cart",
+        config
+      );
       const cartItems = res.data.map((item) => ({
         ...item,
         totalPrice: item.price * item.quantity,
@@ -111,7 +114,11 @@ const Checkout = () => {
       });
       navigate("/thankyou");
     }
-    await axios.post("http://localhost:8080/order/add", cardData, config);
+    await axios.post(
+      "https://healthcube.onrender.com/order/add",
+      cardData,
+      config
+    );
     getCartData();
   };
 
@@ -149,7 +156,7 @@ const Checkout = () => {
       >
         <GridItem border={"1px solid #d5d9d9"} p={"30px"} borderRadius={"10px"}>
           <Text
-            color={"orange.500"}
+            color={"ff6f61"}
             fontWeight={700}
             lineHeight={"32px"}
             fontSize={"24px"}

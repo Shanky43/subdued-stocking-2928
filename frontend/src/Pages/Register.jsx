@@ -33,7 +33,7 @@ export default function Register() {
   });
 
   const Navigate = useNavigate();
-  const baseUrl = "http://localhost:8080";
+  const baseUrl = "https://healthcube.onrender.com";
   const { email, password, username, name } = userData;
 
   const [emailError, setEmailError] = React.useState("");
