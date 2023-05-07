@@ -1,10 +1,11 @@
-import { Box, Center, Container, Stack, Image, useMediaQuery, Text, Radio, HStack, Button, Select, VStack } from '@chakra-ui/react';
+import { Box, Center, Container, Stack, Image, useMediaQuery, Text, Radio, HStack, Button, Select, VStack, Spacer } from '@chakra-ui/react';
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
 import { useParams } from 'react-router-dom';
-import { AdvertisementBanner, cities } from './Homeo_Pathy';
+import { AdvertisementBanner, SpotlightAds, cities, responsive } from './Homeo_Pathy';
 import { BsFillTagFill } from 'react-icons/bs';
+import Carousel from 'react-multi-carousel';
 const SingleProductPage = () => {
   let param = useParams();
   const [product, setProduct] = useState("")
@@ -45,12 +46,12 @@ const SingleProductPage = () => {
     setPincode(pin[0].pincode)
   }
 
-  console.log("price", typeof price, price)
-  console.log(prices)
+  // console.log("price", typeof price, price)
+  // console.log(prices)
   // console.log("Mprice", typeof Number(mainprice))
   return (
     <div>
-      <Container maxW={"100%"} pl="2%" pr="2%">
+      <Container maxW={"100%"}>
         <Box mt="10%">
           <Center>
             <Box>
@@ -71,10 +72,10 @@ const SingleProductPage = () => {
                 </Box>
                 <Box width={"100%"}>
                   <Box>
-                    <Box><Text width={"100%"} fontSize={"1.8em"} fontWeight={"500"}>{name}</Text></Box>
-                    <Box mt="3"><Text color={"#ff6f61"} fontWeight={"500"}>MKT : {brand}</Text></Box>
-                    <Box style={{ display: "flex" }} pt="4" h={["80%", "100%"]}>
-                      <Box style={{ display: "flex" }} color={"white"}
+                    <Box><Text width={"100%"} fontSize={["1.2em", "1.2em", "1.4em", "1.6em", "1.8em"]} textAlign={["center", "center", "left", "left", "left"]} fontWeight={"500"}>{name}</Text></Box>
+                    <Box mt="3"><Text color={"#ff6f61"} fontWeight={"500"} pl={["12%", "16%", "0", "0", "0"]} >MKT : {brand}</Text></Box>
+                    <Box style={{ display: "flex" }} pt="4" pl={["12%", "16%", "0", "0", "0",]} h={["80%", "100%"]}>
+                      <Box style={{ display: "flex" }} color={"white"} alignItems={["center", "center", "left", "left", "left"]}
                         bgColor={"#1aab2a"} pl="2" width={"50px"}><Text fontSize={".85em"}>{"4." + (Math.floor(Math.random() * 5) + 1)}</Text>
                         <AiFillStar style={{ justifyContent: 'center', alignItems: 'center', margin: "auto" }} textAlign="center" />
                       </Box>
@@ -83,7 +84,7 @@ const SingleProductPage = () => {
                         <Text fontSize={".9em"} fontWeight={"550"} color={'#ff6f61'}>{(Math.floor(Math.random() * 10) + 10) * 20}Reviews</Text>
                       </HStack>
                     </Box>
-                    <Box mt="5"><HStack><Image src={"https://onemg.gumlet.io/marketing/qubet60eokwth4ki5btj.png"} width={"40px"} /> <Text fontSize={".9em"} fontWeight={"500"} color={"#ff6f61"}>in {category}</Text></HStack>
+                    <Box mt="5" pl={["12%", "16%", "0", "0", "0",]}><HStack><Image src={"https://onemg.gumlet.io/marketing/qubet60eokwth4ki5btj.png"} width={"40px"} /> <Text fontSize={".9em"} fontWeight={"500"} color={"#ff6f61"}>in {category}</Text></HStack>
                     </Box>
                     {
                       isLargerThan969 ? <Box mt="5">
@@ -109,8 +110,9 @@ const SingleProductPage = () => {
                     }
 
                     <Box mt="5">
-                      <Text fontWeight={500}>Product highlights</Text>
-                      <Box mt="2">
+                      <Text fontWeight={500} pl={["12%", "16%", "0", "0", "0"]}>Product highlights</Text>
+                      {/*  */}
+                      <Box mt="2" pl={["12%", "16%", "0", "0", "0"]} >
                         <ul >
                           <li> Made from high-quality, natural ingredients. </li>
                           <li> Manufactured using advanced technology and rigorous quality control standards. </li>
@@ -121,11 +123,11 @@ const SingleProductPage = () => {
                         </ul>
                       </Box>
                     </Box>
-
+                    <br />
                   </Box>
                 </Box>
                 <Box pl="4%" mt={isLargerThan969 ? "10" : null}>
-                  <Box boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px" borderRadius={"15px"} width={"400px"}>
+                  <Box boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px" borderRadius={"15px"} width={["350px", "400px", "400px", "400px", "400px"]} margin={["auto", "auto", "auto", "auto", "auto"]}>
                     <Box pt="10" pl="10" pb="10">
                       <Radio defaultChecked={"true"} >
                         <HStack><Text fontSize={"1.3em"} pl="5" fontWeight={"600"} color={"#5C5C5C"}>₹{prices}</Text>
@@ -153,7 +155,8 @@ const SingleProductPage = () => {
                     </Box>
 
                   </Box>
-                  <Box mt="7" boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px" borderRadius={"15px"} width={"400px"}>
+                  <br />
+                  <Box mt="7" boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px" borderRadius={"15px"} width={["350px", "400px", "400px", "400px", "400px"]} margin={["auto", "auto", "auto", "auto", "auto"]}>
                     <Box p="10">
                       <Text fontSize={"1.3em"} fontWeight={"600"} color={"#5C5C5C"}> Earliest delivery by <Text as="span" color={"#1aab2a"}>Tomorrow</Text></Text>
                       <HStack mt="2">
@@ -188,13 +191,15 @@ const SingleProductPage = () => {
                   }
                 </Box>
               </Stack >
+              <br />
+              <br />
             </Box >
-
+           
           </Center >
           <Center bgColor={"#f8f8f8"}>
             <Box mt="10" width={"100%"} mb="10">
-              <Stack direction={["column", "column", "column", "row", "row"]} width={["90%", "90%", "90%", "90%"]} margin={["auto", "auto", "auto", "auto", "auto"]}>
-                <Box width={["300px", "400px", "500px", "200%"]} margin={"center"} bgColor={"white"} p="10">
+              <Stack direction={["column", "column", "column", "row", "row"]} width={["100%", "90%", "90%", "90%"]} margin={["auto", "auto", "auto", "auto", "auto"]}>
+                <Box width={["100%", "100%", "100%", "200%"]} margin={"center"} bgColor={"white"} p="10">
                   <Text fontWeight={"500"} fontSize={"1.2em"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex corporis amet error fugiat odit, aliquid porro nulla exercitationem quisquam voluptatibus dolorum quo sequi, ut quidem labore blanditiis modi quos ullam?</Text>
                   <Text mt="5"><Text as={"span"} fontWeight={"500"} >Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text> Quae iure quisquam labore obcaecati necessitatibus incidunt sed iste ullam expedita nisi vitae, doloribus, saepe porro aspernatur molestiae. Repellendus ab quod voluptatum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus quae in architecto quos cumque odio ea iste aspernatur vel ducimus.</Text>
                   <Box>
@@ -228,33 +233,71 @@ const SingleProductPage = () => {
 
                     </ul>
                   </Box>
-                  <Box>
+                  <Box width={["100%", "100%", "100%", "500px", "900px"]}>
+                    <Box mt="5" width={"100%"} >
+                      <Text textAlign={"left"} fontWeight={"600"}>In the Spotlight</Text>
+                      <Box bgColor={"white"}
+                        mt="5">
+                        <Carousel
+                          swipeable={false}
+                          draggable={false}
+                          // showDots={true}
+                          responsive={responsive}
+                        >
+                          {
+                            SpotlightAds.map((items, index) => (
+                              <Box p="5" m="2" width={"100%"} _hover={{
+                                boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                              }} borderRadius={"10"} key={index}>
+                                <Box style={{ display: 'flex', justifyContent: "center" }}> <Image src={items.image} alt={items.name} width={"100px"} h={["100px", "170px"]} /></Box>
+                                <Box><Text width={"100%"} height={"20"} pt="5" fontSize={".85em"} fontWeight={"600"}>{items.name}</Text></Box>
+                                <Box><Text fontSize={".8em"} pt="1" color={"gray"}>{items.description}</Text></Box>
+                                <Box style={{ display: "flex" }} pt="3" h={["80%", "100%"]}>
+                                  <Box style={{ display: "flex" }} color={"white"}
+                                    bgColor={"#1aab2a"} pl="2" width={"50px"}><Text fontSize={".85em"}>{items.rating}</Text>
+                                    <AiFillStar style={{ justifyContent: 'center', alignItems: 'center', margin: "auto" }} textAlign="center" />
+                                  </Box>
+                                  <Text pl="2" fontSize={".8em"} color={'gray'}>{items.users_rating}</Text>
+                                </Box>
+                                <Box> <Text mt="5" fontSize={".85em"} color={"gray"}>MRP <Text as={"span"} textDecoration={"line-through"}>₹ {items.mrp}</Text> <Text color="green" as={"span"}>{items.offer}</Text></Text></Box>
+                                <Box><HStack><Text fontWeight={"bold"}>₹{items.price}</Text> <Spacer /> <Text color={"#ff6f61"} cursor={"pointer"} fontWeight={"bold"}>ADD</Text></HStack></Box>
 
+                              </Box>
+                            ))
+                          }
+                        </Carousel>
+                      </Box>
+                    </Box>
                   </Box>
 
                 </Box>
 
-                <Box pl="5%" width={["200px", "300px", "400px", "450px", "1300px"]} margin={["auto", "auto", "auto", "auto", "auto"]}>
-                  <Box>
-                    <Box display={"flex"} justifyContent={"center"} bgColor={"white"} p="10" borderRadius={"10px"}>
-                      <VStack>
-                        <Image src={"https://1mgstaticfiles.s3.amazonaws.com/skuicons/labs.png"} alt="banner" />
-                        <Box pt="10"><Button outlineColor={"#ff6f61"} width={"100%"} color="#ff6f61"><Text p="2">BOOK A LAB TEST</Text></Button></Box>
-                      </VStack>
+                {
+                  isLargerThan969 ? <Box pl="5%" width={["200px", "300px", "400px", "450px", "1300px"]} margin={["auto", "auto", "auto", "auto", "auto"]}>
+                    <Box>
+                      <Box display={"flex"} justifyContent={"center"} bgColor={"white"} p="10" borderRadius={"10px"}>
+                        <VStack>
+                          <Image src={"https://1mgstaticfiles.s3.amazonaws.com/skuicons/labs.png"} alt="banner" />
+                          <Box pt="10"><Button outlineColor={"#ff6f61"} width={"100%"} color="#ff6f61"><Text p="2">BOOK A LAB TEST</Text></Button></Box>
+                        </VStack>
 
-                    </Box>
-                    <Box display={"flex"} mt="10" justifyContent={"center"} bgColor={"white"} p="10" borderRadius={"10px"}>
-                      <VStack>
-                        <Image pt="5" src={"https://onemg.gumlet.io/Doctor_xqon4h.png"} alt="banner" width={"100px"} height={"100px"} />
-                        <Box pt="10"><Button outlineColor={"#ff6f61"} width={"100%"} color="#ff6f61"><Text p="2">CONSULT A DOCTOR ONLINE</Text></Button></Box>
-                      </VStack>
+                      </Box>
+                      <Box display={"flex"} mt="10" justifyContent={"center"} bgColor={"white"} p="10" borderRadius={"10px"}>
+                        <VStack>
+                          <Image pt="5" src={"https://onemg.gumlet.io/Doctor_xqon4h.png"} alt="banner" width={"100px"} height={"100px"} />
+                          <Box pt="10"><Button outlineColor={"#ff6f61"} width={"100%"} color="#ff6f61"><Text p="2">CONSULT A DOCTOR ONLINE</Text></Button></Box>
+                        </VStack>
 
+                      </Box>
                     </Box>
-                  </Box>
-                </Box>
+                  </Box> : null
+                }
 
               </Stack>
             </Box>
+          </Center>
+          <Center>
+
           </Center>
         </Box >
       </Container >
