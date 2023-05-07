@@ -86,8 +86,12 @@ const Checkout = () => {
         0
       );
 
-      setTotalSum(findSum);
+      await axios
+        .post("https://healthcube.onrender.com/cart/delete/all")
+        .then((res) => console.log(res))
+        .catch((error) => console.log(error));
 
+      setTotalSum(findSum);
       setCardData(cartItems);
     } catch (err) {
       console.error(err);
@@ -119,6 +123,7 @@ const Checkout = () => {
       cardData,
       config
     );
+
     getCartData();
   };
 

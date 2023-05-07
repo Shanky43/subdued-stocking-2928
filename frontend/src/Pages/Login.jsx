@@ -32,7 +32,7 @@ export default function Login() {
   const { email, password } = userData;
 
   const { authState, Login } = useContext(AuthContext);
-  console.log(authState, Login);
+
   const toast = useToast();
 
   const Navigate = useNavigate();
