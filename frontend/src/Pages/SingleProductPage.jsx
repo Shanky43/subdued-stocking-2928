@@ -93,15 +93,15 @@ const SingleProductPage = () => {
                           <HStack >
                             <Box p="2" width={"90px"} height={"70px"} borderRadius={"6px"} border={"1px solid black"} _hover={{ bgColor: "#fff3e3" }}>
                               <Text textAlign="center" fontWeight={"500"} color={"#983329"} fontSize={".9em"} >pack of 2</Text>
-                              <Text textAlign="center" fontWeight={"500"} color={"#983329"} pt="2" fontSize={".9em"} p="1" onClick={() => handlePrice((price * 0.5 + price))}>₹ {((price * 0.5 + price)).toFixed(2)}</Text>
+                              <Text textAlign="center" fontWeight={"500"} color={"#983329"} pt="2" fontSize={".9em"} p="1" onClick={() => handlePrice((price * 0.5 + price).toFixed(2))}>₹ {((price * 0.5 + price)).toFixed(2)}</Text>
                             </Box>
                             <Box p="2" width={"90px"} height={"70px"} borderRadius={"6px"} border={"1px solid black"} _hover={{ bgColor: "#fff3e3" }}>
                               <Text textAlign="center" fontWeight={"500"} color={"#983329"} fontSize={".9em"} >pack of 3</Text>
-                              <Text textAlign="center" fontWeight={"500"} color={"#983329"} pt="2" fontSize={".9em"} p="1" onClick={() => handlePrice((price * 0.75 + price))}>₹ {((price * 0.75 + price)).toFixed(2)}</Text>
+                              <Text textAlign="center" fontWeight={"500"} color={"#983329"} pt="2" fontSize={".9em"} p="1" onClick={() => handlePrice((price * 0.75 + price).toFixed(2))}>₹ {((price * 0.75 + price)).toFixed(2)}</Text>
                             </Box>
                             <Box p="2" width={"90px"} height={"70px"} borderRadius={"6px"} border={"1px solid black"} _hover={{ bgColor: "#fff3e3" }}>
                               <Text textAlign="center" fontWeight={"500"} color={"#983329"} fontSize={".9em"} >pack of 4</Text>
-                              <Text textAlign="center" fontWeight={"500"} color={"#983329"} pt="2" fontSize={".9em"} p="1" onClick={() => handlePrice((price * 0.9 + price))}>₹ {((price * 0.9 + price)).toFixed(2)}</Text>
+                              <Text textAlign="center" fontWeight={"500"} color={"#983329"} pt="2" fontSize={".9em"} p="1" onClick={() => handlePrice((price * 0.9 + price).toFixed(2))}>₹ {((price * 0.9 + price)).toFixed(2)}</Text>
                             </Box>
 
                           </HStack>
@@ -194,7 +194,7 @@ const SingleProductPage = () => {
               <br />
               <br />
             </Box >
-           
+
           </Center >
           <Center bgColor={"#f8f8f8"}>
             <Box mt="10" width={"100%"} mb="10">

@@ -368,7 +368,6 @@ const Homeopathy = () => {
                                         </Box> : null
                                     }
 
-
                                     <Box mt="5" width={"100%"}>
                                         <Text textAlign={"left"} fontWeight={"600"}>In the Spotlight</Text>
                                         <Box bgColor={"white"}
