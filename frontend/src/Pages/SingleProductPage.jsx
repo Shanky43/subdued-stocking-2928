@@ -1,12 +1,19 @@
 import { Box, Center, Container, Stack, Image, useMediaQuery, Text, Radio, HStack, Button, Select } from '@chakra-ui/react';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
 import { useParams } from 'react-router-dom';
-
+import { AdvertisementBanner, cities } from './Homeo_Pathy';
+import { BsFillTagFill } from 'react-icons/bs';
 const SingleProductPage = () => {
   let param = useParams();
   const [product, setProduct] = useState("")
+  const [prices, setPrices] = useState(0)
+  const City = JSON.parse(localStorage.getItem('City'));
+  const PinCode = JSON.parse(localStorage.getItem('Pincode'));
+  const [city, setCity] = useState(City || "Bangalore")
+  const [pinCode, setPincode] = useState(PinCode || "560001")
+
   console.log(param._id)
   let id = param._id
   useEffect(() => {
@@ -14,12 +21,32 @@ const SingleProductPage = () => {
       .then((res) => {
         setProduct(res.data[0])
         console.log("data", res.data[0])
+        setPrices(res.data[0].price)
       })
       .catch((err) => console.log(err))
   }, [id])
   const { image, brand, category, discount, mainprice, name, price } = product
   const [isLargerThan969] = useMediaQuery("(min-width: 969px)");
-  // console.log("price", typeof price)
+  const handlePrice = (value) => {
+    setPrices(value)
+  }
+  const handlePriceOnSelect = (e) => {
+    let Pricevalue = e.target.value
+    Pricevalue === "2" ? setPrices((((price * 0.5 + price)).toFixed(2))) :
+      Pricevalue === "3" ? setPrices((((price * 0.75 + price)).toFixed(2))) :
+        setPrices((((price * 0.9 + price)).toFixed(2)))
+  }
+  const handleCityAndPincode = (e) => {
+    const city = e.target.value
+    setCity(city)
+    localStorage.setItem('City', JSON.stringify(city));
+    let pin = cities.filter((el) => el.city === city)
+    localStorage.setItem('Pincode', JSON.stringify(pin[0].pincode));
+    setPincode(pin[0].pincode)
+  }
+
+  console.log("price", typeof price, price)
+  console.log(prices)
   // console.log("Mprice", typeof Number(mainprice))
   return (
     <div>
@@ -60,27 +87,40 @@ const SingleProductPage = () => {
                     </Box>
                     {
                       isLargerThan969 ? <Box mt="5">
-                        <Box ><Text>Pack Size (3)</Text></Box>
+                        <Box ><Text fontWeight={500}>Pack Size (3)</Text></Box>
                         <Box mt="5">
                           <HStack >
                             <Box p="2" width={"90px"} height={"70px"} borderRadius={"6px"} border={"1px solid black"} _hover={{ bgColor: "#fff3e3" }}>
                               <Text textAlign="center" fontWeight={"500"} color={"#983329"} fontSize={".9em"} >pack of 2</Text>
-                              <Text textAlign="center" fontWeight={"500"} color={"#983329"} pt="2" fontSize={".9em"} p="1">₹ {(price * .5 + price)}</Text>
+                              <Text textAlign="center" fontWeight={"500"} color={"#983329"} pt="2" fontSize={".9em"} p="1" onClick={() => handlePrice((price * 0.5 + price))}>₹ {((price * 0.5 + price)).toFixed(2)}</Text>
                             </Box>
                             <Box p="2" width={"90px"} height={"70px"} borderRadius={"6px"} border={"1px solid black"} _hover={{ bgColor: "#fff3e3" }}>
                               <Text textAlign="center" fontWeight={"500"} color={"#983329"} fontSize={".9em"} >pack of 3</Text>
-                              <Text textAlign="center" fontWeight={"500"} color={"#983329"} pt="2" fontSize={".9em"} p="1">₹ {(price * .75 + price)}</Text>
+                              <Text textAlign="center" fontWeight={"500"} color={"#983329"} pt="2" fontSize={".9em"} p="1" onClick={() => handlePrice((price * 0.75 + price))}>₹ {((price * 0.75 + price)).toFixed(2)}</Text>
                             </Box>
                             <Box p="2" width={"90px"} height={"70px"} borderRadius={"6px"} border={"1px solid black"} _hover={{ bgColor: "#fff3e3" }}>
                               <Text textAlign="center" fontWeight={"500"} color={"#983329"} fontSize={".9em"} >pack of 4</Text>
-                              <Text textAlign="center" fontWeight={"500"} color={"#983329"} pt="2" fontSize={".9em"} p="1">₹ {(price * .9 + price)}</Text>
+                              <Text textAlign="center" fontWeight={"500"} color={"#983329"} pt="2" fontSize={".9em"} p="1" onClick={() => handlePrice((price * 0.9 + price))}>₹ {((price * 0.9 + price)).toFixed(2)}</Text>
                             </Box>
+
                           </HStack>
                         </Box>
                       </Box> : null
                     }
 
-
+                    <Box mt="5">
+                      <Text fontWeight={500}>Product highlights</Text>
+                      <Box mt="2">
+                        <ul >
+                          <li> Made from high-quality, natural ingredients. </li>
+                          <li> Manufactured using advanced technology and rigorous quality control standards. </li>
+                          <li> Non-allergenic and free from harmful chemicals or additives.</li>
+                          <li> Good customer reviews and satisfaction ratings. </li>
+                          <li>Suitable for all ages and genders.</li>
+                          <li>Affordable and competitive pricing.</li>
+                        </ul>
+                      </Box>
+                    </Box>
 
                   </Box>
                 </Box>
@@ -88,13 +128,13 @@ const SingleProductPage = () => {
                   <Box boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px" borderRadius={"15px"} width={"400px"}>
                     <Box pt="10" pl="10" pb="10">
                       <Radio defaultChecked={"true"} >
-                        <HStack><Text fontSize={"1.3em"} pl="5" fontWeight={"600"} color={"#5C5C5C"}>₹{price}</Text>
+                        <HStack><Text fontSize={"1.3em"} pl="5" fontWeight={"600"} color={"#5C5C5C"}>₹{prices}</Text>
                           <Text fontSize={".8em"} textDecoration={"line-through"} fontWeight={"600"} color={"#5C5C5C"}>₹{mainprice}</Text>
                           <Text fontSize={".8em"} p="1" borderRadius={"5px"} bgColor={"#edf2f7"} fontWeight={"bold"} color={"#1aab2a"}>{discount}</Text>
                         </HStack>
                       </Radio>
                       <Radio defaultChecked={"true"} pt="5">
-                        <HStack><Text fontSize={"1.3em"} pl="5" fontWeight={"600"} color={"#5C5C5C"}>₹{price}</Text>
+                        <HStack><Text fontSize={"1.3em"} pl="5" fontWeight={"600"} color={"#5C5C5C"}>₹{prices}</Text>
                           <Text fontSize={".8em"} fontWeight={"600"} color={"#5C5C5C"}>
                             + free shipping and 3% Extra NeuCoins
                           </Text>
@@ -102,10 +142,10 @@ const SingleProductPage = () => {
                       </Radio>
                       <Box pt="5">
                         <Text fontSize={".7em"} pb="3" fontWeight={"600"} color={"#5C5C5C"}>Inclusive of all taxes</Text>
-                        <Select width={"60px"}>
+                        <Select width={"60px"} onChange={handlePriceOnSelect}>
                           <option value="2">2</option>
+                          <option value="3">3</option>
                           <option value="4">4</option>
-                          <option value="6">6</option>
                         </Select>
                         <Box pr="10" pt="6"><Button _hover={{ bgColor: "none" }} width={"100%"} bgColor={"#ff6f61"}>ADD TO CART</Button></Box>
                       </Box>
@@ -113,9 +153,39 @@ const SingleProductPage = () => {
                     </Box>
 
                   </Box>
+                  <Box mt="7" boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px" borderRadius={"15px"} width={"400px"}>
+                    <Box p="10">
+                      <Text fontSize={"1.3em"} fontWeight={"600"} color={"#5C5C5C"}> Earliest delivery by <Text as="span" color={"#1aab2a"}>Tomorrow</Text></Text>
+                      <HStack mt="2">
+                        <Text fontSize={"1em"} fontWeight={"600"}>Delivering to: {pinCode}</Text>
+                        <Select width={"50%"} border={"none"} onChange={handleCityAndPincode} placeholder={city} outline={"none"}
+                          _focusVisible={{ outline: "none" }}
+                        >
+                          {
+                            cities.map((city) => (
+                              <option value={city.city}><Text fontSize={".8em"}>{city.city}</Text></option>
+                            ))
+                          }
+                        </Select>
+                      </HStack>
+                    </Box>
+                  </Box>
+                  <Box mt="5">
+                    <Image src={AdvertisementBanner[(Math.floor(Math.random() * 8))].image} alt="banner" borderRadius={"5px"} />
+                  </Box>
+                  <Box mt="5" mb="5">
+                    <Box border={"1px dashed black"} borderRadius={"20px"} >
+                      <HStack pt="8" pb="8" pl="7" pr="10">
+                        <BsFillTagFill size={40} color="#1aab2a" />
+                        <Text fontSize={".8em"} pl="2"fontWeight={500} >Amazon Pay: Pay with Amazon Pay on Tata 1mg for Rs. 100 and more and earn 1% cashback up to Rs. 500. Valid till 31st May 2023</Text>
+                      </HStack>
+
+                    </Box>
+                  </Box>
                 </Box>
               </Stack >
             </Box >
+            
           </Center >
         </Box >
       </Container >
