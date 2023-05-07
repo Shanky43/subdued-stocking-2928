@@ -30,8 +30,9 @@ app.use("/order", auth, OrderRouter);
 app.listen(process.env.port, async () => {
   try {
     await connection;
-    console.log("Port 8080 is running");
+    console.log("mongo connected");
   } catch (err) {
     console.log("cannot connect to the db");
   }
+  console.log("Port 8080 is running");
 });

@@ -12,9 +12,67 @@ medRouter.post("/add", async (req, res) => {
         res.status(400).send({ err: err.message });
     }
 });
-
-
+//get all Products
 medRouter.get("/", async (req, res) => {
+    try {
+        const medi = await MedModel.find();
+        res.status(200).send({ products: medi });
+    } catch (err) {
+        res.status(400).send({ err: err.message });
+    }
+});
+
+
+
+medRouter.get("/:category", async (req, res) => {
+    let filters = { category: req.params.category };
+    let value=0
+    const {sortrange}=req.query
+    console.log(req.query.sortrange, typeof sortrange)
+
+    if (req.query.brandrange) {
+      filters.brand = req.query.brandrange;
+    }
+    
+    if (req.query.subcat2) {
+      filters.subcat2 = req.query.subcat2;
+    }
+    
+    if (req.query.name) {
+      filters.name = { $regex: req.query.name, $options: "i" };
+    }
+    
+    if (req.query.sortrange) {
+      let priceMin=req.query.sortrange==Object ? req.query.sortrange.join("").split("-")[0]: req.query.sortrange.split("-")[0]
+      filters.price = { $gte: parseFloat(priceMin) };
+    }
+    
+    if (req.query.priceMax) {
+      let priceMax=req.query.sortrange ==Object? req.query.sortrange.join("").split("-")[1]: req.query.sortrange.split("-")[1]
+      filters.price = { ...filters.price, $lte: parseFloat(priceMax) };
+    }
+      if (req.query.sortingByPrice === "asc") {
+       value=Number(1)
+      } else if (req.query.sortingByPrice === "desc") {
+        value=Number(-1)
+      }else{
+        value=0
+      }
+      
+    try {
+      let medi = await MedModel.find(filters).sort({price:value}).limit(20);
+
+      
+      res.status(200).send({ products: medi });
+    
+    } catch (err) {
+      res.status(400).send({ err: err.message });
+    }
+  });
+  
+
+//get particular Products for logged-in user
+medRouter.get("/admin", async (req, res) => {
     try {
         const medi = await MedModel.find({ authorID: req.body.authorID });
         res.status(200).send({ products: medi });
