@@ -8,10 +8,10 @@ import Allroutes from "./routes/Allroutes";
 function App() {
   return (
     <div id='app-body' >
-      <Navbar/>
+      <Navbar />
       <Allroutes />
-
     </div>
+
   );
 }
 
