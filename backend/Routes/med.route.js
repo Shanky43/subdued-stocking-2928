@@ -13,6 +13,29 @@ medRouter.post("/add", async (req, res) => {
     }
 });
 
+// const getSinglePlayer = async (req, res) => {
+//     try {
+//         const { id } = req.params
+//         const single_player = await Players.findById(id)
+//         res.status(200).send({ Player: single_player })
+//     } catch (error) {
+//         res.status(400).send(error.message)
+//     }
+// }
+
+// FootballRouter.get("/:id", getSinglePlayer)
+
+
+medRouter.get("/:id", async (req, res) => {
+    try {
+        const { id } = req.params
+        const medi = await MedModel.findById({ _id: id })
+        res.status(200).send({ products: medi });
+    } catch (err) {
+        res.status(400).send({ err: err.message });
+    }
+});
+
 
 medRouter.get("/", async (req, res) => {
     try {

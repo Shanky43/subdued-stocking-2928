@@ -40,7 +40,7 @@ export const AddProduct = () => {
     }
 
     // connecting FE with BE
-    axios.post("https://onemg-sz6i.onrender.com/add",payload )
+    axios.post("https://onemg-w2kv.onrender.com/products/add",payload )
       .then(res => console.log(res.data))
       
       .catch(err => console.log(err))
@@ -52,7 +52,6 @@ export const AddProduct = () => {
       setSubCategory("")
       setBrand("")
       setPrice("")
-      setMainPrice("")
       setMainPrice("")
       setCategory("")
       setprice_box("")
