@@ -13,28 +13,7 @@ medRouter.post("/add", async (req, res) => {
   }
 });
 
-// const getSinglePlayer = async (req, res) => {
-//     try {
-//         const { id } = req.params
-//         const single_player = await Players.findById(id)
-//         res.status(200).send({ Player: single_player })
-//     } catch (error) {
-//         res.status(400).send(error.message)
-//     }
-// }
 
-// FootballRouter.get("/:id", getSinglePlayer)
-
-
-
-medRouter.get("/", async (req, res) => {
-    try {
-        const medi = await MedModel.find({ authorID: req.body.authorID });
-        res.status(200).send({ products: medi });
-    } catch (err) {
-        res.status(400).send({ err: err.message });
-    }
-});
 
 
 medRouter.get("/", async (req, res) => {
@@ -85,10 +64,7 @@ medRouter.get("/:category", async (req, res) => {
 
   try {
     let medi = await MedModel.find(filters).sort({ price: value }).limit(20);
-
-
     res.status(200).send({ products: medi });
-
   } catch (err) {
     res.status(400).send({ err: err.message });
   }
@@ -130,11 +106,10 @@ medRouter.delete("/delete/:id", async (req, res) => {
   }
 });
 
-medRouter.get("/products/:ids", async (req, res) => {
-  const { ids } = req.params
-  console.log(ids)
+medRouter.get("/card/:id", async (req, res) => {
+  const { id } = req.params
   try {
-    const medi = await MedModel.findById({ _id: ids })
+    const medi = await MedModel.findById({ _id: id })
     res.status(200).send({ products: medi });
   } catch (err) {
     res.status(400).send({ err: err.message });
