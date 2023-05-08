@@ -6,6 +6,7 @@ import {
     AccordionIcon,
     AccordionItem,
     AccordionPanel,
+    Toast,
 } from '@chakra-ui/react'
 import { React, useEffect, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
@@ -138,6 +139,11 @@ const Homeopathy = () => {
 
     }
 
+    const token = localStorage.getItem("token");
+    const baseUrl = "http://localhost:8080";
+
+
+
 
 
     // const HomeopathyProducts = useSelector((state) => {
@@ -150,6 +156,28 @@ const Homeopathy = () => {
     };
     // let isLargerThan1024 = true
     // console.log(value)
+    const handleCart = (product) => {
+        // const product = products.filter((el) => el._id === id)
+        console.log(product)
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(product),
+        };
+
+        axios.post(`${baseUrl}/cart/add`, config).then(() =>
+            Toast({
+                title: "Product added to the cart.",
+                description: "Redirecting to the cart page",
+                status: "success",
+                duration: 9000,
+                isClosable: true,
+            })
+        
+        ).catch(err=>console.log(err))
+
+    }
     return (
         <div >
             <Container maxW={"100%"} minH={"100vh"} bgColor={"#f6f6f6"} >
@@ -489,7 +517,7 @@ filter in the price range
                                     }
 
 
-                                    <Box mt="5" width={"100%"}>
+                                    {/* <Box mt="5" width={"100%"}>
                                         <Text textAlign={"left"} fontWeight={"600"}>In the Spotlight</Text>
                                         <Box bgColor={"white"}
                                             mt="5">
@@ -522,7 +550,7 @@ filter in the price range
                                                 }
                                             </Carousel>
                                         </Box>
-                                    </Box>
+                                    </Box> */}
                                     <Box mt="5" width={"100%"} >
                                         <Text textAlign={"left"} fontWeight={"600"}>Popular brands</Text>
                                         <Box bgColor={"white"} mt="5" >
@@ -643,7 +671,7 @@ filter in the price range
                                                                             <Text pl="2" fontSize={".8em"} color={'gray'}>{(Math.floor(Math.random() * 10) + 10) * ind} ratings</Text>
                                                                         </Box>
                                                                         <Text mt="5" fontSize={".85em"} color={"gray"}>MRP <Text as={"span"} textDecoration={"line-through"}>₹ {items.mainprice}</Text> <Text color="green" as={"span"}>{items.discount}</Text></Text></Link>
-                                                                    <Box mt="2"><HStack><Text fontWeight={"bold"}>₹{items.price}</Text> <Spacer /> <Text color={"#ff6f61"} cursor={"pointer"} fontWeight={"bold"}>ADD</Text></HStack></Box>
+                                                                    <Box mt="2"><HStack><Text fontWeight={"bold"}>₹{items.price}</Text> <Spacer /> <Text color={"#ff6f61"} cursor={"pointer"} fontWeight={"bold"} onClick={() => handleCart(items)}>ADD</Text></HStack></Box>
                                                                 </Box>
                                                             </Box>
                                                         ))
