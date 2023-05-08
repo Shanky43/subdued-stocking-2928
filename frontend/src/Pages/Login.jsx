@@ -51,7 +51,7 @@ export default function Login() {
         .post(`${baseUrl}/users/login`, userData)
         .then((res) => {
           const getToken = res.data.token;
-          
+
           console.log(res, "line55")
 
           if (getToken) {
@@ -63,11 +63,12 @@ export default function Login() {
               status: "success",
               duration: 2000,
               isClosable: true,
+              position: "top"
             });
 
             console.log(authState);
             //use this to useNavigate here
-            // Navigate("/");
+            Navigate("/");
           }
         })
         .catch((error) => {
@@ -78,6 +79,7 @@ export default function Login() {
             status: "error",
             duration: 1000,
             isClosable: true,
+            position: "top"
           });
         });
     } catch (error) {

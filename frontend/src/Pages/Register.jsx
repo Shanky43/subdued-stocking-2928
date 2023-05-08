@@ -75,6 +75,7 @@ export default function Register() {
           status: "success",
           duration: 1000,
           isClosable: true,
+          position: "top"
         });
         Navigate("/login");
       }
@@ -87,6 +88,7 @@ export default function Register() {
         status: "error",
         duration: 1000,
         isClosable: true,
+        position: "top"
       });
     }
   };
