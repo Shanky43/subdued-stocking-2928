@@ -1,39 +1,40 @@
 {
     "products": [
         {
+            
             "image": "https://www.netmeds.com/images/product-v1/150x150/844107/himalaya_erina_ep_powder_150_gm_0.jpg",
             "discount": "10% OFF",
             "name": "Himalaya Erina-Ep Powder 150 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 180,
             "mainprice": "Rs.200.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/844110/himalaya_himcal_pet_200_ml_0.jpg",
             "discount": "10% OFF",
             "name": "Himalaya Himcal Pet 200 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 135,
             "mainprice": "Rs.150.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/844103/himalaya_anxocare_vet_tablets_60_s_0.jpg",
             "discount": "10% OFF",
             "name": "Himalaya Anxocare Vet Tablets 60's",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 154.8,
             "mainprice": "Rs.172.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
@@ -45,379 +46,379 @@
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 144,
             "mainprice": "Rs.160.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/844097/himalaya_erina_coat_cleanser_450_ml_0.jpg",
             "discount": "10% OFF",
             "name": "Himalaya Erina Coat Cleanser 450 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 405,
             "mainprice": "Rs.450.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/844099/himalaya_furglow_oral_coat_conditioner_200_ml_0.jpg",
             "discount": "10% OFF",
             "name": "Himalaya Furglow Oral Coat Conditioner 200 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 288,
             "mainprice": "Rs.320.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/844096/himalaya_erina_coat_cleanser_200_ml_0.png",
             "discount": "10% OFF",
             "name": "Himalaya Erina Coat Cleanser 200 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 220.5,
             "mainprice": "Rs.245.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/844098/himalaya_erina_plus_coat_cleanser_with_conditioner_200_ml_0.jpg",
             "discount": "10% OFF",
             "name": "Himalaya Erina Plus Coat Cleanser with Conditioner 200 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 270,
             "mainprice": "Rs.300.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/844102/himalaya_freshcoat_spray_400_ml_0.jpg",
             "discount": "10% OFF",
             "name": "Himalaya Freshcoat Spray 400 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 495,
             "mainprice": "Rs.550.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1069696/pet_mankind_caniboon_joint_support_supplement_tablet_30s_509133_0_1.jpg",
             "discount": "22% OFF",
             "name": "Pet Mankind Caniboon Joint Support Supplement Tablet 30's",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Pet Mankind (Mankind Pharma)",
             "price": 624,
             "mainprice": "Rs.800.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1072191/himalaya_vet_liv_52_pet_liquid_200_ml_504906_0_0.jpg",
             "discount": "5% OFF",
             "name": "Himalaya Vet Liv 52 Pet Liquid 200 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 164.35,
             "mainprice": "Rs.173.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1069377/wiggles_pet_dogs_cats_sanitizer_spray_100_ml_495122_0_2.jpg",
             "discount": "33% OFF",
             "name": "Wiggles Pet Dogs &amp; Cats Sanitizer Spray 100 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Sixth Sense Retail Private Limited",
             "price": 221.1,
             "mainprice": "Rs.330.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1066454/canine_creek_adult_dry_dog_food_ultra_premium_1200_gm_496789_0_0.jpg",
             "discount": "24% OFF",
             "name": "Canine Creek Adult Dog Food, Ultra Premium 1200 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Abis Exports (India) Pvt. Ltd.",
             "price": 448.4,
             "mainprice": "Rs.590.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1072188/himalaya_vet_digyton_plus_liquid_100_ml_504903_0_0.jpg",
             "discount": "10% OFF",
             "name": "Himalaya Vet Digyton Plus Liquid 100 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 207,
             "mainprice": "Rs.230.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1070423/wiggles_floor_cleaner_liquid_pet_friendly_lemongrass_500_ml_526211_0_0.jpg",
             "discount": "45% OFF",
             "name": "Wiggles Floor Cleaner Liquid Pet Friendly (Lemongrass) 500 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Sixth Sense Retail Private Limited",
             "price": 219.45,
             "mainprice": "Rs.399.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1072186/himalaya_vet_liv_52_forte_tablet_60s_504901_0_0.jpg",
             "discount": "4% OFF",
             "name": "Himalaya Vet Liv 52 Forte Tablet 60's",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 134.4,
             "mainprice": "Rs.140.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1063443/natural_remedies_natlife_paste_30_ml_481341_0_0.jpg",
             "discount": "17% OFF",
             "name": "Natural Remedies Natlife Paste 30 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Natural Remedies Pvt. Ltd.",
             "price": 398.4,
             "mainprice": "Rs.480.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1072189/himalaya_vet_immunol_liquid_100_ml_504904_0_0.jpg",
             "discount": "10% OFF",
             "name": "Himalaya Vet Immunol Liquid 100 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 131.4,
             "mainprice": "Rs.146.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1085418/drools_kitten_complete_nutrition_kitten_pet_food_ocean_fish_3_kg_542698_0_1.jpg",
             "discount": "15% OFF",
             "name": "Drools Kitten Complete Nutrition Kitten Pet Food - Ocean Fish 3 kg",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Abis Exports (India) Pvt. Ltd.",
             "price": 680,
             "mainprice": "Rs.800.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1066495/drools_100_vegetarian_adult_dry_dog_food_3_kg_with_free_1_2kg_4200_gm_497050_0_0.jpg",
             "discount": "18% OFF",
             "name": "Drools 100% Vegetarian Adult Dry Dog Food, 3 kg with Free 1.2kg 4200 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Abis Exports (India) Pvt. Ltd.",
             "price": 615,
             "mainprice": "Rs.750.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1065590/whiskas_adult_tuna_flavour_480_gm_495285_0_0.jpg",
             "discount": "8% OFF",
             "name": "Whiskas Adult Tuna Flavour 480 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Mars International India Pvt Ltd",
             "price": 184,
             "mainprice": "Rs.200.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1069701/pet_mankind_nephroways_syrup_200_ml_509145_0_1.jpg",
             "discount": "22% OFF",
             "name": "Pet Mankind Nephroways Syrup 200 ml",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Pet Mankind (Mankind Pharma)",
             "price": 234,
             "mainprice": "Rs.300.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1069699/pet_mankind_multistar_chew_tablet_30s_509139_0_1.jpg",
             "discount": "20% OFF",
             "name": "Pet Mankind Multistar Chew Tablet 30's",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Pet Mankind (Mankind Pharma)",
             "price": 320,
             "mainprice": "Rs.400.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1069360/wiggles_kittystix_cat_treats_salmon_hemp_70_gm_495006_0_1.jpg",
             "discount": "5% OFF",
             "name": "Wiggles Kittystix Cat Treats Salmon &amp; Hemp 70 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Sixth Sense Retail Private Limited",
             "price": 236.55,
             "mainprice": "Rs.249.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1072195/himalaya_healthy_adult_dog_treats_chicken_flavor_1000_gm_504910_0_0.jpg",
             "discount": "8% OFF",
             "name": "Himalaya Healthy Adult Dog Treats- Chicken Flavor 1000 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 340.4,
             "mainprice": "Rs.370.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1066559/purepet_all_life_stages_wet_cat_food_real_tuna_and_chicken_liver_in_gravy_24_pouches_24_x_70g_1600_gm_497697_0_0.jpg",
             "discount": "15% OFF",
             "name": "Purepet All Life Stages Wet Cat Food, Real Tuna and Chicken Liver in Gravy, 24 Pouches (24 x 70g) 1600 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Abis Exports (India) Pvt. Ltd.",
             "price": 510,
             "mainprice": "Rs.600.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1069361/wiggles_kittystix_cat_treats_chicken_herbs_70_gm_495013_0_2.jpg",
             "discount": "29% OFF",
             "name": "Wiggles Kittystix Cat Treats Chicken &amp; Herbs 70 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Sixth Sense Retail Private Limited",
             "price": 169.69,
             "mainprice": "Rs.239.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1070411/wiggles_kittibles_kitten_baby_cats_food_dry_chicken_tuna_fish_recipe_1000_gm_526199_0_0.jpg",
             "discount": "31% OFF",
             "name": "Wiggles Kittibles Kitten Baby Cats Food Dry Chicken Tuna Fish Recipe 1000 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Sixth Sense Retail Private Limited",
             "price": 247.71,
             "mainprice": "Rs.359.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1065646/pedigree_adult_chicken_liver_chunks_in_gravy_pack_of_70gm_x_30_2100_gm_495749_0_0.jpg",
             "discount": "5% OFF",
             "name": "Pedigree Adult Chicken &amp; Liver Chunks in Gravy (Pack of 70gm x 30) 2100 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Mars International India Pvt Ltd",
             "price": 1425,
             "mainprice": "Rs.1500.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1072198/himalaya_healthy_puppy_pet_food_chicken_rice_1200_gm_504913_0_0.jpg",
             "discount": "12% OFF",
             "name": "Himalaya Healthy Puppy Pet Food- Chicken &amp; Rice 1200 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Himalaya Wellness Company",
             "price": 356.4,
             "mainprice": "Rs.405.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1066451/canine_creek_puppy_dry_dog_food_ultra_premium_1200_gm_496771_0_0.jpg",
             "discount": "22% OFF",
             "name": "Canine Creek Puppy Dry Dog Food, Ultra Premium 1200 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Abis Exports (India) Pvt. Ltd.",
             "price": 546,
             "mainprice": "Rs.700.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1070412/wiggles_kittibles_kitten_baby_cats_food_dry_chicken_tuna_fish_recipe_3000_gm_526200_0_0.jpg",
             "discount": "30% OFF",
             "name": "Wiggles Kittibles Kitten Baby Cats Food Dry Chicken Tuna Fish Recipe 3000 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Sixth Sense Retail Private Limited",
             "price": 699.3,
             "mainprice": "Rs.999.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1084118/purepet_complete_adult_cat_pet_food_mackerel_6_kg_538066_0_0.jpg",
             "discount": "8% OFF",
             "name": "Purepet Complete Adult Cat Pet Food - Mackerel 6 kg",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Abis Exports (India) Pvt. Ltd.",
             "price": 919.08,
             "mainprice": "Rs.999.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1084113/drools_complete_nutrition_pet_food_for_cats_ocean_fish_3_kg_538048_0_0.jpg",
             "discount": "20% OFF",
             "name": "Drools Complete Nutrition Pet Food for Cats - Ocean Fish 3 kg",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Abis Exports (India) Pvt. Ltd.",
             "price": 639.2,
             "mainprice": "Rs.799.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1073349/pet_mankind_petstar_puppy_food_milk_and_wheat_3000_gm_531774_0_2.jpg",
             "discount": "10% OFF",
             "name": "Pet Mankind Petstar Puppy Food-Milk and Wheat 3000 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Mankind Life Sciences Pvt Ltd",
             "price": 2429.1,
             "mainprice": "Rs.2699.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
 
@@ -432,48 +433,48 @@
             "image": "https://www.netmeds.com/images/product-v1/150x150/1069365/wiggles_barkstix_dog_treats_berry_blast_100_gm_495037_0_1.jpg",
             "discount": "31% OFF",
             "name": "Wiggles Barkstix Dog Treats Berry Blast 100 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Sixth Sense Retail Private Limited",
             "price": 158.01,
             "mainprice": "Rs.229.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1066589/canine_creek_adult_dry_dog_food_ultra_premium_4000_gm_497909_0_0.jpg",
             "discount": "20% OFF",
             "name": "Canine Creek Adult Dog Food, Ultra Premium 4000gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Abis Exports (India) Pvt. Ltd.",
             "price": 1760,
             "mainprice": "Rs.2200.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1066443/kitty_yums_dry_persian_cat_food_ocean_fish_3000_gm_496706_0_0.jpg",
             "discount": "18% OFF",
             "name": "Kitty Yums Dry Persian Cat Food, Ocean Fish 3000 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Abis Exports (India) Pvt. Ltd.",
             "price": 963.5,
             "mainprice": "Rs.1175.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/1065636/pedigree_puppy_chicken_liver_chunks_flavour_in_gravy_with_vegetables_pack_of_70gm_x_30_2100_gm_495661_0_2.jpg",
             "discount": "10% OFF",
             "name": "Pedigree Puppy Chicken &amp; Liver Chunks Flavour in Gravy with Vegetables (Pack of 70gm x 30) 2100 gm",
-            "subcat2": "Veterinary",
+            "subcat2": "veterinary",
             "subcategory": "Petcare",
             "brand": "Mkt: Mars International India Pvt Ltd",
             "price": 1080,
             "mainprice": "Rs.1200.00",
-            "category": "Veterinary",
+            "category": "veterinary",
             "price-box": "Best price"
         },
         {
@@ -959,7 +960,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 27,
             "mainprice": "Rs.30.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -971,7 +972,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 124.5,
             "mainprice": "Rs.150.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -983,7 +984,7 @@
             "brand": "Mkt: Emcure Pharmaceuticals Ltd",
             "price": 353.64,
             "mainprice": "Rs.421.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -995,7 +996,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 144.5,
             "mainprice": "Rs.170.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1007,7 +1008,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 144,
             "mainprice": "Rs.160.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1019,7 +1020,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 153,
             "mainprice": "Rs.180.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1031,7 +1032,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 218.5,
             "mainprice": "Rs.230.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1043,7 +1044,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 386.75,
             "mainprice": "Rs.455.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1055,7 +1056,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 164,
             "mainprice": "Rs.200.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1067,7 +1068,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 141.9,
             "mainprice": "Rs.165.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1079,7 +1080,7 @@
             "brand": "Mkt: Seth Brothers",
             "price": 99,
             "mainprice": "Rs.110.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1091,7 +1092,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 103.84,
             "mainprice": "Rs.118.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1103,7 +1104,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 51.15,
             "mainprice": "Rs.55.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1115,7 +1116,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 137.6,
             "mainprice": "Rs.160.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1127,7 +1128,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 29.1,
             "mainprice": "Rs.30.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1139,7 +1140,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 167.7,
             "mainprice": "Rs.195.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1151,7 +1152,7 @@
             "brand": "Mkt: Emami Ltd",
             "price": 39.9,
             "mainprice": "Rs.42.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1163,7 +1164,7 @@
             "brand": "Mkt: Emami Ltd",
             "price": 90,
             "mainprice": "Rs.100.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1175,7 +1176,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 162,
             "mainprice": "Rs.180.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1187,7 +1188,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 160.2,
             "mainprice": "Rs.180.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1199,7 +1200,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 108,
             "mainprice": "Rs.120.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1211,7 +1212,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 174,
             "mainprice": "Rs.200.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1223,7 +1224,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 131.75,
             "mainprice": "Rs.155.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1235,7 +1236,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 52.25,
             "mainprice": "Rs.55.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1247,7 +1248,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 144,
             "mainprice": "Rs.160.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1259,7 +1260,7 @@
             "brand": "Mkt: Pankajakasthuri Herbals India Pvt Ltd",
             "price": 324,
             "mainprice": "Rs.360.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1271,7 +1272,7 @@
             "brand": "Mkt: Pankajakasthuri Herbals India Pvt Ltd",
             "price": 115,
             "mainprice": "Rs.125.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1283,7 +1284,7 @@
             "brand": "Mkt: Herbalify Global",
             "price": 144,
             "mainprice": "Rs.180.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1295,7 +1296,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 52.25,
             "mainprice": "Rs.55.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1307,7 +1308,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 126,
             "mainprice": "Rs.140.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1319,7 +1320,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 247.5,
             "mainprice": "Rs.275.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1331,7 +1332,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 367.35,
             "mainprice": "Rs.395.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1343,7 +1344,7 @@
             "brand": "Mkt: Pankajakasthuri Herbals India Pvt Ltd",
             "price": 264,
             "mainprice": "Rs.300.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1355,7 +1356,7 @@
             "brand": "Mkt: Herbalify Global",
             "price": 128.25,
             "mainprice": "Rs.135.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1367,7 +1368,7 @@
             "brand": "Mkt: Seth Brothers",
             "price": 88.11,
             "mainprice": "Rs.99.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1379,7 +1380,7 @@
             "brand": "Mkt: Emami Ltd",
             "price": 45.6,
             "mainprice": "Rs.48.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1391,7 +1392,7 @@
             "brand": "Mkt: Shree Baidyanath Ayurved Bhawan Pvt Ltd,Kolkata",
             "price": 99,
             "mainprice": "Rs.110.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1403,7 +1404,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 131.75,
             "mainprice": "Rs.155.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1415,7 +1416,7 @@
             "brand": "Mkt: Charak Pharma Pvt Ltd",
             "price": 127.5,
             "mainprice": "Rs.150.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1427,7 +1428,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 68.4,
             "mainprice": "Rs.76.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1439,7 +1440,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 68.4,
             "mainprice": "Rs.76.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1451,7 +1452,7 @@
             "brand": "Mkt: Sanzyme Pvt Ltd",
             "price": 440.35,
             "mainprice": "Rs.494.77",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1463,7 +1464,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 180,
             "mainprice": "Rs.200.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1475,7 +1476,7 @@
             "brand": "Mkt: Herbalify Global",
             "price": 480,
             "mainprice": "Rs.600.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1487,7 +1488,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 52.25,
             "mainprice": "Rs.55.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1499,7 +1500,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 180,
             "mainprice": "Rs.200.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1511,7 +1512,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 52.25,
             "mainprice": "Rs.55.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1523,7 +1524,7 @@
             "brand": "Mkt: Emami Ltd",
             "price": 127.02,
             "mainprice": "Rs.146.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1535,7 +1536,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 72.2,
             "mainprice": "Rs.76.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1547,7 +1548,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 32.4,
             "mainprice": "Rs.36.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1559,7 +1560,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 89.1,
             "mainprice": "Rs.99.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1571,7 +1572,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 114,
             "mainprice": "Rs.120.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1583,7 +1584,7 @@
             "brand": "Mkt: Chaturbhuj Pharmaceutical Co",
             "price": 178.2,
             "mainprice": "Rs.198.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1595,7 +1596,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 85.5,
             "mainprice": "Rs.90.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1607,7 +1608,7 @@
             "brand": "Mkt: Alarsin Pharmaceuticals",
             "price": 184.5,
             "mainprice": "Rs.205.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1619,7 +1620,7 @@
             "brand": "Mkt: Adret Retail Pvt Ltd, (Kapiva)",
             "price": 269.1,
             "mainprice": "Rs.299.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1631,7 +1632,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 170,
             "mainprice": "Rs.200.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1643,7 +1644,7 @@
             "brand": "Mkt: The Himalaya Drug Company",
             "price": 170,
             "mainprice": "Rs.200.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1655,7 +1656,7 @@
             "brand": "Mkt: Patanjali Ayurved Ltd",
             "price": 142.1,
             "mainprice": "Rs.145.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1667,7 +1668,7 @@
             "brand": "Mkt: Adret Retail Pvt Ltd, (Kapiva)",
             "price": 434.13,
             "mainprice": "Rs.499.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1679,7 +1680,7 @@
             "brand": "Mkt: Dabur India Ltd",
             "price": 23.75,
             "mainprice": "Rs.25.00",
-            "category": "ayurveda",
+            "category": "ayurveda products",
             "price-box": "Best price",
             "subcategory": "health",
             "subcat2": "health"
@@ -1692,9 +1693,9 @@
             "price": 55.25,
             "mainprice": "Rs. 65.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/821945/sbl_scalptone_tablet_25_gm_0.jpg",
@@ -1704,9 +1705,9 @@
             "price": 131.75,
             "mainprice": "Rs. 155.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/ycs28mgr9ptqdbudiyeg/dr.-reckeweg-r5-stomach-and-digestion-drop.jpg",
@@ -1716,9 +1717,9 @@
             "price": 141.75,
             "mainprice": "Rs. 155.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/ycs28mgr9ptqdbudiyeg/dr.-reckeweg-r5-stomach-and-digestion-drop.jpg",
@@ -1728,9 +1729,9 @@
             "price": 141.75,
             "mainprice": "Rs. 155.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/oqzulvwz7vikwd63ccco/sbl-syzygium-jambolanum-mother-tincture-q.jpg",
@@ -1740,9 +1741,9 @@
             "price": 151.75,
             "mainprice": "Rs. 155.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/826128/dr_reckeweg_r19_euglandin_m_drops_22_ml_0_0.jpg",
@@ -1752,9 +1753,9 @@
             "price": 243,
             "mainprice": "Rs. 270.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/uwhk4ptayzpmu57kkbe4/dr.-reckeweg-r71-sciatica-drop.jpg",
@@ -1764,9 +1765,9 @@
             "price": 253,
             "mainprice": "Rs. 270.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/i6vpnss1mvrivh2gmsfu/bjain-baryta-carbonica-dilution-30-ch.jpg",
@@ -1776,9 +1777,9 @@
             "price": 263,
             "mainprice": "Rs. 270.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/821951/sbl_vertefine_drops_30_ml_0.jpg",
@@ -1788,9 +1789,9 @@
             "price": 106.25,
             "mainprice": "Rs. 125.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/a7b2e58301744aa38798aa649cf751c7/bjain-syzygium-jambolanum-mother-tincture-q.jpg",
@@ -1800,9 +1801,9 @@
             "price": 110.25,
             "mainprice": "Rs. 125.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/syzqdci2dlkskg6a7swm/sbl-liv-t-tonic.jpg",
@@ -1812,9 +1813,9 @@
             "price": 116.25,
             "mainprice": "Rs. 125.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/826156/dr_reckeweg_bc_21_tablet_20_gm_0.jpg",
@@ -1824,9 +1825,9 @@
             "price": 166.5,
             "mainprice": "Rs. 185.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/821943/sbl_rite_hite_tablet_25_gm_0.jpg",
@@ -1836,9 +1837,9 @@
             "price": 131.75,
             "mainprice": "Rs. 155.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/826132/dr_reckeweg_r13_prohaemorrin_drops_22_ml_0.jpg",
@@ -1848,9 +1849,9 @@
             "price": 243,
             "mainprice": "Rs. 270.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/cropped/hiedptuhev2bvrfe26eo/sbl-calcarea-phosphorica-biochemic-tablet-6x.jpg",
@@ -1860,9 +1861,9 @@
             "price": 233,
             "mainprice": "Rs. 270.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/ymjoo4q8nrktlpoknstg/bakson-s-rheum-aid-tablet.jpg",
@@ -1872,9 +1873,9 @@
             "price": 253,
             "mainprice": "Rs. 270.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/wagmpzwkyp3t7xij1thu/sbl-kali-phosphoricum-biochemic-tablet-6x.jpg",
@@ -1884,9 +1885,9 @@
             "price": 143,
             "mainprice": "Rs. 270.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/ycs28mgr9ptqdbudiyeg/dr.-reckeweg-r5-stomach-and-digestion-drop.jpg",
@@ -1896,9 +1897,9 @@
             "price": 233,
             "mainprice": "Rs. 270.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/aubtrz5by9wed3lceyby/dr.-reckeweg-r25-prostatitis-drop.jpg",
@@ -1908,9 +1909,9 @@
             "price": 243,
             "mainprice": "Rs. 270.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/826077/dr_reckeweg_r71_ischialgin_drops_22_ml_0.jpg",
@@ -1920,9 +1921,9 @@
             "price": 243,
             "mainprice": "Rs. 270.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/826077/dr_reckeweg_r71_ischialgin_drops_22_ml_0.jpg",
@@ -1932,9 +1933,9 @@
             "price": 243,
             "mainprice": "Rs. 270.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/826105/dr_reckeweg_r42_haemovenin_drops_22_ml_0.jpg",
@@ -1944,9 +1945,9 @@
             "price": 243,
             "mainprice": "Rs. 270.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/821946/sbl_tonicard_gold_drops_30_ml_0.jpg",
@@ -1956,9 +1957,9 @@
             "price": 165.75,
             "mainprice": "Rs. 195.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/djrsnsaxywmwysny56za/bakson-s-y-lax-tablet.jpg",
@@ -1968,9 +1969,9 @@
             "price": 175.75,
             "mainprice": "Rs. 195.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/cropped/foky68h8xcjfifjc6dzx/sbl-arnica-montana-hair-oil-with-tjc.png",
@@ -1980,9 +1981,9 @@
             "price": 185.75,
             "mainprice": "Rs. 195.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/cropped/hax8duqvqweauwfbhddo/bhargava-spondin-drop.jpg",
@@ -1992,9 +1993,9 @@
             "price": 265.75,
             "mainprice": "Rs. 295.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/826066/dr_reckeweg_r84_inhallergol_drops_30_ml_0_1.jpg",
@@ -2004,9 +2005,9 @@
             "price": 279,
             "mainprice": "Rs. 310.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/cropped/ie3vmqkzsq1wxtsnzavt/dr-willmar-schwabe-india-berberis-aquifolium-mother-tincture-q.png",
@@ -2016,9 +2017,9 @@
             "price": 259,
             "mainprice": "Rs. 310.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/cropped/leptfjo4jfvz2wlpl9cu/boericke-and-tafel-arnica-shampoo.png",
@@ -2028,9 +2029,9 @@
             "price": 299,
             "mainprice": "Rs. 310.00",
             "price-box": "Best price",
-            "category": "Homeopathy",
-            "subcategory": "Homeopathy",
-            "subcat2": "Homeopathy"
+            "category": "homeopathy",
+            "subcategory": "homeopathy",
+            "subcat2": "homeopathy"
         },
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/412270/manforce_stay_long_gel_8_gm_0_1.jpg",
@@ -2778,7 +2779,7 @@
             "price-box": "Best price*",
             "price": 902.14,
             "mainprice": "Rs.1049.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2790,7 +2791,7 @@
             "price-box": "Best price*",
             "price": 78.32,
             "mainprice": "Rs.88.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2802,7 +2803,7 @@
             "price-box": "Best price*",
             "price": 1159.15,
             "mainprice": "Rs.1195.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2814,7 +2815,7 @@
             "price-box": "Best price*",
             "price": 36.85,
             "mainprice": "Rs.55.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2826,7 +2827,7 @@
             "price-box": "Best price*",
             "price": 1608.63,
             "mainprice": "Rs.1849.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2838,7 +2839,7 @@
             "price-box": "Best price*",
             "price": 879.12,
             "mainprice": "Rs.999.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2850,7 +2851,7 @@
             "price-box": "Best price*",
             "price": 891.65,
             "mainprice": "Rs.1049.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2862,7 +2863,7 @@
             "price-box": "Best price*",
             "price": 641.25,
             "mainprice": "Rs.675.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2874,7 +2875,7 @@
             "price-box": "Best price*",
             "price": 61.6,
             "mainprice": "Rs.70.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2886,7 +2887,7 @@
             "price-box": "Best price*",
             "price": 116.25,
             "mainprice": "Rs.125.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2898,7 +2899,7 @@
             "price-box": "Best price*",
             "price": 375.25,
             "mainprice": "Rs.395.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2910,7 +2911,7 @@
             "price-box": "Best price*",
             "price": 40.29,
             "mainprice": "Rs.79.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2922,7 +2923,7 @@
             "price-box": "Best price*",
             "price": 24.75,
             "mainprice": "Rs.25.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2934,7 +2935,7 @@
             "price-box": "Best price*",
             "price": 611.28,
             "mainprice": "Rs.849.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2946,7 +2947,7 @@
             "price-box": "Best price*",
             "price": 1067.11,
             "mainprice": "Rs.1199.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2958,7 +2959,7 @@
             "price-box": "Best price*",
             "price": 264,
             "mainprice": "Rs.300.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2970,7 +2971,7 @@
             "price-box": "Best price*",
             "price": 639.2,
             "mainprice": "Rs.799.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2982,7 +2983,7 @@
             "price-box": "Best price*",
             "price": 166.25,
             "mainprice": "Rs.175.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -2994,7 +2995,7 @@
             "price-box": "Best price*",
             "price": 108,
             "mainprice": "Rs.180.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3006,7 +3007,7 @@
             "price-box": "Best price*",
             "price": 198,
             "mainprice": "Rs.360.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3018,7 +3019,7 @@
             "price-box": "Best price*",
             "price": 96.25,
             "mainprice": "Rs.275.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3030,7 +3031,7 @@
             "price-box": "Best price*",
             "price": 492,
             "mainprice": "Rs.600.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3042,7 +3043,7 @@
             "price-box": "Best price*",
             "price": 424.15,
             "mainprice": "Rs.499.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3054,7 +3055,7 @@
             "price-box": "Best price*",
             "price": 1082.03,
             "mainprice": "Rs.1145.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3066,7 +3067,7 @@
             "price-box": "Best price*",
             "price": 1350,
             "mainprice": "Rs.1500.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3078,7 +3079,7 @@
             "price-box": "Best price*",
             "price": 375.25,
             "mainprice": "Rs.395.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3090,7 +3091,7 @@
             "price-box": "Best price*",
             "price": 1165.6,
             "mainprice": "Rs.1240.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3102,7 +3103,7 @@
             "price-box": "Best price*",
             "price": 378.25,
             "mainprice": "Rs.425.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3114,7 +3115,7 @@
             "price-box": "Best price*",
             "price": 831.25,
             "mainprice": "Rs.875.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3126,7 +3127,7 @@
             "price-box": "Best price*",
             "price": 13.2,
             "mainprice": "Rs.22.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3138,7 +3139,7 @@
             "price-box": "Best price*",
             "price": 1405.98,
             "mainprice": "Rs.1445.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3150,7 +3151,7 @@
             "price-box": "Best price*",
             "price": 130,
             "mainprice": "Rs.325.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3162,7 +3163,7 @@
             "price-box": "Best price*",
             "price": 977.5,
             "mainprice": "Rs.1150.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3174,7 +3175,7 @@
             "price-box": "Best price*",
             "price": 1995.95,
             "mainprice": "Rs.2090.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3186,7 +3187,7 @@
             "price-box": "Best price*",
             "price": 446.25,
             "mainprice": "Rs.595.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3198,7 +3199,7 @@
             "price-box": "Best price*",
             "price": 420,
             "mainprice": "Rs.600.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3210,7 +3211,7 @@
             "price-box": "Best price*",
             "price": 13.2,
             "mainprice": "Rs.22.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3222,7 +3223,7 @@
             "price-box": "Best price*",
             "price": 164,
             "mainprice": "Rs.205.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3234,7 +3235,7 @@
             "price-box": "Best price*",
             "price": 122.15,
             "mainprice": "Rs.349.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3246,7 +3247,7 @@
             "price-box": "Best price*",
             "price": 630,
             "mainprice": "Rs.700.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3258,7 +3259,7 @@
             "price-box": "Best price*",
             "price": 630,
             "mainprice": "Rs.700.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3270,7 +3271,7 @@
             "price-box": "Best price*",
             "price": 391,
             "mainprice": "Rs.425.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3282,7 +3283,7 @@
             "price-box": "Best price*",
             "price": 712,
             "mainprice": "Rs.890.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3294,7 +3295,7 @@
             "price-box": "Best price*",
             "price": 674.1,
             "mainprice": "Rs.749.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3306,7 +3307,7 @@
             "price-box": "Best price*",
             "price": 272,
             "mainprice": "Rs.340.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3318,7 +3319,7 @@
             "price-box": "Best price*",
             "price": 361.8,
             "mainprice": "Rs.540.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3330,7 +3331,7 @@
             "price-box": "Best price*",
             "price": 1912.5,
             "mainprice": "Rs.2250.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3342,7 +3343,7 @@
             "price-box": "Best price*",
             "price": 883.19,
             "mainprice": "Rs.1147.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3354,7 +3355,7 @@
             "price-box": "Best price*",
             "price": 680,
             "mainprice": "Rs.850.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3366,7 +3367,7 @@
             "price-box": "Best price*",
             "price": 517.05,
             "mainprice": "Rs.1149.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3378,7 +3379,7 @@
             "price-box": "Best price*",
             "price": 425,
             "mainprice": "Rs.500.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3390,7 +3391,7 @@
             "price-box": "Best price*",
             "price": 383.4,
             "mainprice": "Rs.540.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3402,7 +3403,7 @@
             "price-box": "Best price*",
             "price": 97.9,
             "mainprice": "Rs.178.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3414,7 +3415,7 @@
             "price-box": "Best price*",
             "price": 744.15,
             "mainprice": "Rs.907.50",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3426,7 +3427,7 @@
             "price-box": "Best price*",
             "price": 304,
             "mainprice": "Rs.380.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3438,7 +3439,7 @@
             "price-box": "Best price*",
             "price": 150.4,
             "mainprice": "Rs.160.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3450,7 +3451,7 @@
             "price-box": "Best price*",
             "price": 645.45,
             "mainprice": "Rs.650.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3462,7 +3463,7 @@
             "price-box": "Best price*",
             "price": 73.44,
             "mainprice": "Rs.108.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3474,7 +3475,7 @@
             "price-box": "Best price*",
             "price": 437,
             "mainprice": "Rs.460.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3486,7 +3487,7 @@
             "price-box": "Best price*",
             "price": 378,
             "mainprice": "Rs.540.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3498,7 +3499,7 @@
             "price-box": "Best price*",
             "price": 254.7,
             "mainprice": "Rs.849.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3510,7 +3511,7 @@
             "price-box": "Best price*",
             "price": 187.96,
             "mainprice": "Rs.254.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3522,7 +3523,7 @@
             "price-box": "Best price*",
             "price": 210.6,
             "mainprice": "Rs.270.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3534,7 +3535,7 @@
             "price-box": "Best price*",
             "price": 520,
             "mainprice": "Rs.650.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3546,7 +3547,7 @@
             "price-box": "Best price*",
             "price": 284,
             "mainprice": "Rs.355.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3555,7 +3556,7 @@
             "subcategory": "Surgical Accessories",
             "brand": "Mkt: Deogratias Paranteral",
             "price": 6.3,
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3567,7 +3568,7 @@
             "price-box": "Best price*",
             "price": 284,
             "mainprice": "Rs.355.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3579,7 +3580,7 @@
             "price-box": "Best price*",
             "price": 272,
             "mainprice": "Rs.340.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3591,7 +3592,7 @@
             "price-box": "Best price*",
             "price": 1100,
             "mainprice": "Rs.1375.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3603,7 +3604,7 @@
             "price-box": "Best price*",
             "price": 375.25,
             "mainprice": "Rs.395.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3615,7 +3616,7 @@
             "price-box": "Best price*",
             "price": 129.5,
             "mainprice": "Rs.350.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3627,7 +3628,7 @@
             "price-box": "Best price*",
             "price": 1075.22,
             "mainprice": "Rs.1262.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3639,7 +3640,7 @@
             "price-box": "Best price*",
             "price": 284,
             "mainprice": "Rs.355.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3651,7 +3652,7 @@
             "price-box": "Best price*",
             "price": 66,
             "mainprice": "Rs.165.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3663,7 +3664,7 @@
             "price-box": "Best price*",
             "price": 2700,
             "mainprice": "Rs.3000.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3675,7 +3676,7 @@
             "price-box": "Best price*",
             "price": 264,
             "mainprice": "Rs.352.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3687,7 +3688,7 @@
             "price-box": "Best price*",
             "price": 192.5,
             "mainprice": "Rs.275.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3699,7 +3700,7 @@
             "price-box": "Best price*",
             "price": 516,
             "mainprice": "Rs.645.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3711,7 +3712,7 @@
             "price-box": "Best price*",
             "price": 251.1,
             "mainprice": "Rs.310.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3723,7 +3724,7 @@
             "price-box": "Best price*",
             "price": 265.5,
             "mainprice": "Rs.295.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3735,7 +3736,7 @@
             "price-box": "Best price*",
             "price": 220.5,
             "mainprice": "Rs.245.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3747,7 +3748,7 @@
             "price-box": "Best price*",
             "price": 304,
             "mainprice": "Rs.380.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3759,7 +3760,7 @@
             "price-box": "Best price*",
             "price": 488,
             "mainprice": "Rs.610.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3771,7 +3772,7 @@
             "price-box": "Best price*",
             "price": 376,
             "mainprice": "Rs.470.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3783,7 +3784,7 @@
             "price-box": "Best price*",
             "price": 192,
             "mainprice": "Rs.240.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3795,7 +3796,7 @@
             "price-box": "Best price*",
             "price": 153.75,
             "mainprice": "Rs.205.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3807,7 +3808,7 @@
             "price-box": "Best price*",
             "price": 189.6,
             "mainprice": "Rs.240.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3819,7 +3820,7 @@
             "price-box": "Best price*",
             "price": 513.5,
             "mainprice": "Rs.650.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3831,7 +3832,7 @@
             "price-box": "Best price*",
             "price": 193.5,
             "mainprice": "Rs.215.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3843,7 +3844,7 @@
             "price-box": "Best price*",
             "price": 169.5,
             "mainprice": "Rs.226.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3855,7 +3856,7 @@
             "price-box": "Best price*",
             "price": 1121.25,
             "mainprice": "Rs.1495.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3867,7 +3868,7 @@
             "price-box": "Best price*",
             "price": 80,
             "mainprice": "Rs.100.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3879,7 +3880,7 @@
             "price-box": "Best price*",
             "price": 365.75,
             "mainprice": "Rs.665.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3891,7 +3892,7 @@
             "price-box": "Best price*",
             "price": 1295.6,
             "mainprice": "Rs.1640.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3903,7 +3904,7 @@
             "price-box": "Best price*",
             "price": 2099.25,
             "mainprice": "Rs.2799.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3915,7 +3916,7 @@
             "price-box": "Best price*",
             "price": 712.5,
             "mainprice": "Rs.950.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3927,7 +3928,7 @@
             "price-box": "Best price*",
             "price": 432.25,
             "mainprice": "Rs.665.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3939,7 +3940,7 @@
             "price-box": "Best price*",
             "price": 104.58,
             "mainprice": "Rs.249.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3951,7 +3952,7 @@
             "price-box": "Best price*",
             "price": 163.24,
             "mainprice": "Rs.212.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3963,7 +3964,7 @@
             "price-box": "Best price*",
             "price": 204.05,
             "mainprice": "Rs.265.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {
@@ -3975,7 +3976,7 @@
             "price-box": "Best price*",
             "price": 32.4,
             "mainprice": "Rs.36.00",
-            "category": "devices",
+            "category": "healthcare devices",
             "subcat2": "devices"
         },
         {

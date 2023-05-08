@@ -6,15 +6,16 @@ CartRouter.post("/add", async (req, res) => {
   try {
     const { image, name, price, quantity, category, userId, userName } =
       req.body;
-    const product = new CartModel({
-      image,
-      name,
-      price,
-      category,
-      quantity,
-      userId,
-      userName,
-    });
+    // const product = new CartModel({
+    //   image,
+    //   name,
+    //   price,
+    //   category,
+    //   quantity,
+    //   userId,
+    //   userName,
+    // });
+    const product = new CartModel(req.body)
     await product.save();
     res.status(201).send(product);
   } catch (err) {

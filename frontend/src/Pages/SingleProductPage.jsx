@@ -7,22 +7,22 @@ import { AdvertisementBanner, SpotlightAds, cities, responsive } from './Homeo_P
 import { BsFillTagFill } from 'react-icons/bs';
 import Carousel from 'react-multi-carousel';
 const SingleProductPage = () => {
-  let param = useParams();
-  const [product, setProduct] = useState("")
+  let { id } = useParams();
+  const [product, setProduct] = useState({})
   const [prices, setPrices] = useState(0)
   const City = JSON.parse(localStorage.getItem('City'));
   const PinCode = JSON.parse(localStorage.getItem('Pincode'));
   const [city, setCity] = useState(City || "Bangalore")
   const [pinCode, setPincode] = useState(PinCode || "560001")
 
-  console.log(param._id)
-  let id = param._id
+
+  console.log(id)
   useEffect(() => {
-    axios.get(`http://localhost:8080/products?_id=${id}`)
+    axios.get(`http://localhost:8080/products/${id}`)
       .then((res) => {
-        setProduct(res.data[0])
-        console.log("data", res.data[0])
-        setPrices(res.data[0].price)
+        setProduct(res.data.products)
+        // console.log("data", res.data.products)
+        setPrices(res.data.products.price)
       })
       .catch((err) => console.log(err))
   }, [id])
@@ -52,7 +52,7 @@ const SingleProductPage = () => {
   return (
     <div>
       <Container maxW={"100%"}>
-        <Box mt="10%">
+        <Box>
           <Center>
             <Box>
               <Stack direction={["column", "column", "column", "row", "row"]} ml={[0, 0, 0, "10%"]}>

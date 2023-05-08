@@ -236,3 +236,4 @@ export const AdvertisementBanner = [
     { image: "https://onemg.gumlet.io/433d09c3-3d1c-4fbb-bb2d-99295d420e4e_1666345284.png?w=432&h=99&format=auto" },
     { image: "https://onemg.gumlet.io/6cbbc545-bb87-48a2-88cc-15e8feabb2e4_1669034884.jpg?w=432&h=99&format=auto" },
 ]
+

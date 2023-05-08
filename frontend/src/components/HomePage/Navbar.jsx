@@ -5,9 +5,10 @@ import { GiHamburgerMenu, GiExitDoor } from 'react-icons/gi'
 import { FcFlashOn } from 'react-icons/fc'
 import logo from '../../Assests/logo.png'
 import style from '../../App.css'
+
 import {
-    Text, Badge, HStack, Box, Center, Flex, Link, Icon, Divider, FormControl,
-    Input,Select,
+    Text, Badge, HStack, Box, Center, Flex, Icon, Divider, FormControl,
+    Input, Select,
     Button,
     InputGroup,
     InputLeftElement,
@@ -26,7 +27,7 @@ import {
 } from '@chakra-ui/react'
 import MobileMenu from './MobileMenu'
 
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { MdLocationPin, MdOutlineMyLocation } from "react-icons/md";
 import NavDrop from './NavDrop';
 import MobileNav from './MobileNav';
@@ -110,7 +111,7 @@ const UpperFullRow = () => {
         <>
             <HStack justifyContent={'space-between'} p={2} borderBottom='1px solid #f1f4f6' mb={'3px'} display={{ base: 'none', xl: 'flex' }} >
                 <Box role='logo' w='120px' mx='10px' >
-                    <Image src={logo} />
+                    <Link to="/">  <Image src={logo} /></Link>
                 </Box>
 
                 {" "}
@@ -228,7 +229,7 @@ const SecondFullRow = () => {
 }
 
 
-const SearchLocation = ({ width, lefticon, placeholder, righticon,select }) => {
+const SearchLocation = ({ width, lefticon, placeholder, righticon, select }) => {
 
 
     return (
@@ -240,80 +241,80 @@ const SearchLocation = ({ width, lefticon, placeholder, righticon,select }) => {
                         children={<MdLocationPin color='blackAlpha.600' />}
                     />}
 
-  { select?  <>
-  <Select name="Select You Country" id="country_homepage"   gap={2} >
-  <option value="New Delhi">New Delhi</option>
-  <option value="Andorra">Andorra</option>
-                <option value="Angola">Angola</option>
-                <option value="Anguilla">Anguilla</option>
-                <option value="Antartica">Antarctica</option>
-                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                <option value="Argentina">Argentina</option>
-                <option value="Armenia">Armenia</option>
-                <option value="Aruba">Aruba</option>
-                <option value="Australia">Australia</option>
-                <option value="Austria">Austria</option>
-                <option value="Azerbaijan">Azerbaijan</option>
-                <option value="Bahamas">Bahamas</option>
-                <option value="Bahrain">Bahrain</option>
-                <option value="Bangladesh">Bangladesh</option>
-                <option value="Barbados">Barbados</option>
-                <option value="Belarus">Belarus</option>
-                <option value="Belgium">Belgium</option>
-                <option value="Belize">Belize</option>
-                <option value="Benin">Benin</option>
-                <option value="Bermuda">Bermuda</option>
-                <option value="Bhutan">Bhutan</option>
-                <option value="Bolivia">Bolivia</option>
-                <option value="Bosnia and Herzegowina">Bosnia and Herzegowina</option>
-                <option value="Botswana">Botswana</option>
-                <option value="Bouvet Island">Bouvet Island</option>
-                <option value="Brazil">Brazil</option>
-                <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
-                <option value="Brunei Darussalam">Brunei Darussalam</option>
-                <option value="Bulgaria">Bulgaria</option>
-                <option value="Burkina Faso">Burkina Faso</option>
-                <option value="Burundi">Burundi</option>
-                <option value="Cambodia">Cambodia</option>
-                <option value="Cameroon">Cameroon</option>
-                <option value="Canada">Canada</option>
-                <option value="Cape Verde">Cape Verde</option>
-                <option value="Cayman Islands">Cayman Islands</option>
-                <option value="Central African Republic">Central African Republic</option>
-                <option value="Chad">Chad</option>
-                <option value="Chile">Chile</option>
-                <option value="China">China</option>
-                <option value="Christmas Island">Christmas Island</option>
-                <option value="Cocos Islands">Cocos (Keeling) Islands</option>
-                <option value="Colombia">Colombia</option>
-                <option value="Comoros">Comoros</option>
-  </Select>
-  
-  
-  </> :(
-
-<Input
-variant={"solid"}
-color={"gray.800"}
-bgColor={"#f1f4f6"}
-
-_placeholder={{
-    color: "gray.600",
-    fontWeight: '400',
-    fontSize: '13px'
-}}
-type={"email"}
-required
-placeholder={placeholder}
-height={"35px"}
-borderRadius={"none"}
-/>
+                    {select ? <>
+                        <Select name="Select You Country" id="country_homepage" gap={2} >
+                            <option value="New Delhi">New Delhi</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Anguilla">Anguilla</option>
+                            <option value="Antartica">Antarctica</option>
+                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Armenia">Armenia</option>
+                            <option value="Aruba">Aruba</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Azerbaijan">Azerbaijan</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Barbados">Barbados</option>
+                            <option value="Belarus">Belarus</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Belize">Belize</option>
+                            <option value="Benin">Benin</option>
+                            <option value="Bermuda">Bermuda</option>
+                            <option value="Bhutan">Bhutan</option>
+                            <option value="Bolivia">Bolivia</option>
+                            <option value="Bosnia and Herzegowina">Bosnia and Herzegowina</option>
+                            <option value="Botswana">Botswana</option>
+                            <option value="Bouvet Island">Bouvet Island</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                            <option value="Brunei Darussalam">Brunei Darussalam</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Burkina Faso">Burkina Faso</option>
+                            <option value="Burundi">Burundi</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Cape Verde">Cape Verde</option>
+                            <option value="Cayman Islands">Cayman Islands</option>
+                            <option value="Central African Republic">Central African Republic</option>
+                            <option value="Chad">Chad</option>
+                            <option value="Chile">Chile</option>
+                            <option value="China">China</option>
+                            <option value="Christmas Island">Christmas Island</option>
+                            <option value="Cocos Islands">Cocos (Keeling) Islands</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Comoros">Comoros</option>
+                        </Select>
 
 
-  )  }
+                    </> : (
+
+                        <Input
+                            variant={"solid"}
+                            color={"gray.800"}
+                            bgColor={"#f1f4f6"}
+
+                            _placeholder={{
+                                color: "gray.600",
+                                fontWeight: '400',
+                                fontSize: '13px'
+                            }}
+                            type={"email"}
+                            required
+                            placeholder={placeholder}
+                            height={"35px"}
+                            borderRadius={"none"}
+                        />
 
 
-                 
+                    )}
+
+
+
                     <InputRightElement>
                         <Icon as={righticon} color='blackAlpha.600' />
                     </InputRightElement>
