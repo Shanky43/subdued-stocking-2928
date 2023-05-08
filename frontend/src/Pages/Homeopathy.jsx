@@ -143,10 +143,10 @@ const Homeopathy = () => {
     const handleSelectChanges = () => { }
 
     const handleCart = (product) => {
-        
+
         console.log(token)
         console.log(product)
-        
+
         axios.post(`${baseUrl}/cart/add`, product, {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -342,8 +342,8 @@ const Homeopathy = () => {
                     <Flex>
                         {
                             isLargerThan1024 ?
-                                <Box maxW={"15%"} ml={"100px"} mt="10" >
-                                    <Box style={{ "box-shadow": " rgba(0, 0, 0, 0.16) 0px 1px 4px" }} p="5" bgColor={"white"}>
+                                <Box maxW={"15%"} ml={["50px","50px","50px","0px","50px"]} mr={["50px","50px","50px","50px","50px"]} mt="10" >
+                                    <Box style={{ "box-shadow": " rgba(0, 0, 0, 0.16) 0px 1px 4px" }} width={["400px", "400px", "100%", "150%", "150%"]} p="5" bgColor={"white"}>
                                         <Text fontSize={"md"} fontWeight={"bold"} color={"#ff6f61"}>FILTERS</Text>
                                         <Divider borderColor={"black"} pt="3" mb="3" />
                                         <Box>
@@ -561,10 +561,10 @@ filter in the price range
                                         </Box>
 
                                     </Box>
-                                    {isLargerThan769 ? <Box mt="5" mb="5">
+                                    {/* {isLargerThan769 ? <Box mt="5" mb="5">
                                         <Image src='https://onemg.gumlet.io/c0a6a2ef-7fa4-4d42-b7df-fb90828aa145_1667474655.jpg?w=1062&h=124&format=auto' alt='banner'
                                             width={"100%"} />
-                                    </Box> : null}
+                                    </Box> : null} */}
                                     <Box mt="5" width={"100%"} mb="5">
                                         <Text textAlign={"left"} fontWeight={"600"}>Shop by concern</Text>
                                         <Box bgColor={"white"} mt="5" >

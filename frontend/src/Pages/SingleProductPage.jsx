@@ -10,10 +10,10 @@ import { useToast } from '@chakra-ui/react'
 
 
 const SingleProductPage = () => {
+  
   let { id } = useParams();
   const [product, setProduct] = useState({})
   const ChangedPrice = (localStorage.getItem('ChangedPrice')) || 0;
-
   const [prices, setPrices] = useState(ChangedPrice)
   const City = JSON.parse(localStorage.getItem('City'));
   const PinCode = JSON.parse(localStorage.getItem('Pincode'));
@@ -22,6 +22,7 @@ const SingleProductPage = () => {
   const toast = useToast()
 
   console.log(id)
+
   useEffect(() => {
     axios.get(`http://localhost:8080/products/products/${id}`)
       .then((res) => {
@@ -60,6 +61,7 @@ const SingleProductPage = () => {
     localStorage.setItem('Pincode', JSON.stringify(pin[0].pincode));
     setPincode(pin[0].pincode)
   }
+
   const token = localStorage.getItem("token");
   const baseUrl = "https://healthcube.onrender.com";
 
