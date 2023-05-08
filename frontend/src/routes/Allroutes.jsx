@@ -11,6 +11,7 @@ import Cart from "../Pages/Cart.jsx";
 import Checkout from "../Pages/Checkout.jsx";
 import OrderHistory from "../Pages/OrderHistory.jsx";
 import Thankyou from "../Pages/Thankyou.jsx";
+import SingleProductPage from '../Pages/SingleProductPage.jsx'
 
 const Allroutes = () => {
   return (
@@ -27,6 +28,7 @@ const Allroutes = () => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/orderhistory" element={<OrderHistory />} />
         <Route path="/thankyou" element={<Thankyou />} />
+        <Route path='/:id' element={<SingleProductPage />}></Route>
       </Routes>
     </div>
   );
