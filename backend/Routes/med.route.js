@@ -26,10 +26,10 @@ medRouter.post("/add", async (req, res) => {
 // FootballRouter.get("/:id", getSinglePlayer)
 
 
-medRouter.get("/:id", async (req, res) => {
+
+medRouter.get("/", async (req, res) => {
     try {
-        const { id } = req.params
-        const medi = await MedModel.findById({ _id: id })
+        const medi = await MedModel.find({ authorID: req.body.authorID });
         res.status(200).send({ products: medi });
     } catch (err) {
         res.status(400).send({ err: err.message });

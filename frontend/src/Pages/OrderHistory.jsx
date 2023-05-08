@@ -5,6 +5,7 @@ import React from "react";
 const OrderHistory = () => {
   const [myOrder, setMyOrder] = React.useState([]);
 
+  const baseUrl = "https://healthcube.onrender.com";
   const token = localStorage.getItem("token");
   const config = {
     headers: {
@@ -13,9 +14,7 @@ const OrderHistory = () => {
   };
 
   React.useEffect(() => {
-    axios
-      .get("https://healthcube.onrender.com/order", config)
-      .then((res) => setMyOrder(res.data));
+    axios.get(`${baseUrl}/order`, config).then((res) => setMyOrder(res.data));
   }, []);
 
   console.log(myOrder);

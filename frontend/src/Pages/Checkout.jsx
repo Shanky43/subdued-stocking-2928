@@ -45,6 +45,7 @@ const Checkout = () => {
 
   const cartData = [];
 
+  const baseUrl = "https://healthcube.onrender.com";
   const token = localStorage.getItem("token");
   const config = {
     headers: {
@@ -73,10 +74,7 @@ const Checkout = () => {
         return;
       }
 
-      const res = await axios.get(
-        "https://healthcube.onrender.com/cart",
-        config
-      );
+      const res = await axios.get(`${baseUrl}/cart`, config);
       const cartItems = res.data.map((item) => ({
         ...item,
         totalPrice: item.price * item.quantity,
@@ -87,7 +85,7 @@ const Checkout = () => {
       );
 
       await axios
-        .post("https://healthcube.onrender.com/cart/delete/all")
+        .post(`${baseUrl}/cart/delete/all`)
         .then((res) => console.log(res))
         .catch((error) => console.log(error));
 
@@ -118,11 +116,7 @@ const Checkout = () => {
       });
       navigate("/thankyou");
     }
-    await axios.post(
-      "https://healthcube.onrender.com/order/add",
-      cardData,
-      config
-    );
+    await axios.post(`${baseUrl}/order/add`, cardData, config);
 
     getCartData();
   };
