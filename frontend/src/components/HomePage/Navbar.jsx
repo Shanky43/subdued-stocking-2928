@@ -147,12 +147,12 @@ const UpperFullRow = () => {
           justifyContent={"space-between"}
           w="100px"
         >
-          <Link href="/login">
+          <Link to="/login">
             {" "}
             <Text>Login</Text>{" "}
           </Link>
           <Text> | </Text>
-          <Link href="/register">
+          <Link to="/register">
             {" "}
             <Text>Sign Up</Text>{" "}
           </Link>

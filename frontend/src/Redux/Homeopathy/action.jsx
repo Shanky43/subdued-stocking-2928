@@ -57,7 +57,7 @@ export const homeopathyProducts = (param) => (dispatch) => {
 
 }
 
-import axios from "axios";
+
 import { POST_PRODUCT_FAILURE, POST_PRODUCT_REQUEST, POST_PRODUCT_SUCCESS } from "./actionType";
 // import queryString from 'query-string';
 
