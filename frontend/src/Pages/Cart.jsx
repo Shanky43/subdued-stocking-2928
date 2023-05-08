@@ -39,10 +39,7 @@ const Cart = () => {
         return;
       }
 
-      const res = await axios.get(
-        "https://healthcube.onrender.com/cart",
-        config
-      );
+      const res = await axios.get(`${baseUrl}/cart`, config);
 
       console.log(res);
       const cartItems = res.data.map((item) => ({
@@ -66,7 +63,7 @@ const Cart = () => {
     const headers = { Authorization: `Bearer ${token}` };
 
     axios
-      .delete(`https://healthcube.onrender.com/cart/${productId}`, { headers })
+      .delete(`${baseUrl}/cart/${productId}`, { headers })
       .then((response) => {
         // handle success response
         console.log(`Product with ID ${productId} deleted successfully`);
