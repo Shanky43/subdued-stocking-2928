@@ -51,6 +51,8 @@ export default function Login() {
         .post(`${baseUrl}/users/login`, userData)
         .then((res) => {
           const getToken = res.data.token;
+          
+          console.log(res, "line55")
 
           if (getToken) {
             localStorage.setItem("token", getToken);
@@ -65,7 +67,7 @@ export default function Login() {
 
             console.log(authState);
             //use this to useNavigate here
-            Navigate("/");
+            // Navigate("/");
           }
         })
         .catch((error) => {

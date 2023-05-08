@@ -34,4 +34,5 @@ app.listen(process.env.port, async () => {
   } catch (err) {
     console.log("cannot connect to the db");
   }
-});
+})
+

@@ -47,7 +47,11 @@ userRouter.post("/login", async (req, res) => {
             { userId: user._id, userName: user.name },
             "shhhhh"
           );
-          res.status(200).json({ message: "Login Sucessful", token });
+
+          console.log(result, user, token)
+
+          res.status(200).json({ message: "Login Sucessful", token, data: { result } });
+
         } else {
           res.status(401).json({ message: "Wrong Credentials" });
         }
