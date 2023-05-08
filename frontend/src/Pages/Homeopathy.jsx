@@ -20,7 +20,7 @@ import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { AiOutlineDown } from "react-icons/ai"
 import { BiSortAlt2 } from "react-icons/bi"
 import { RiFilter3Line } from "react-icons/ri"
-
+import { useToast } from '@chakra-ui/react'
 import { reducer } from '../Redux/Homeopathy/reducer';
 import axios from 'axios';
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
@@ -39,7 +39,7 @@ const Homeopathy = () => {
     // ----------------mine---------------------
     const [city, setCity] = useState("Select City");
     const [value, setValue] = useState('')
-
+    const toast = useToast()
 
 
     const { isOpen: isOpenDrawer1, onOpen: onOpenDrawer1, onClose: onCloseDrawer1 } = useDisclosure();
@@ -132,54 +132,36 @@ const Homeopathy = () => {
 
     console.log(searchParams)
 
-    const handleSelectChanges = () => {
-
-    }
-    const handleDiscountChanges = () => {
-
-    }
-
     const token = localStorage.getItem("token");
     const baseUrl = "https://healthcube.onrender.com";
 
-    // const HomeopathyProducts = useSelector((state) => {
-    //     return state.Homeopathy.products
-    // })
-    // console.log(HomeopathyProducts)
     const handleCitySelect = (selectedCity) => {
         setCity(selectedCity);
         onCloseDrawer1();
     };
-    // let isLargerThan1024 = true
-    // console.log(value)
-    const handleCart = (product) => {
+    const handleDiscountChanges = () => { }
+    const handleSelectChanges = () => { }
 
+    const handleCart = (product) => {
+        
         console.log(token)
-        // const product = products.filter((el) => el._id === id)
         console.log(product)
-        // const config = {
-        //     headers: {
-        //         Authorization: `Bearer ${token}`,
-        //     },
-        //     body: JSON.stringify(product),
-        // };
+        
         axios.post(`${baseUrl}/cart/add`, product, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
-        }).then((res) => console.log(res)).catch((err) => console.log(err))
-
-        // axios.post(`${baseUrl}/cart/add`, params).then((res) => {
-        //     console.log(res);
-        //     Toast({
-        //         title: "Product added to the cart.",
-        //         description: "Redirecting to the cart page",
-        //         status: "success",
-        //         duration: 3000,
-        //         isClosable: true,
-        //     })
-        // }
-        // ).catch(err => console.log(err))
+        }).then((res) => {
+            console.log(res)
+            toast({
+                title: "Product added to the cart.",
+                description: "Redirecting to the cart page",
+                status: "success",
+                duration: 3000,
+                isClosable: true,
+                position: "top"
+            })
+        }).catch((err) => console.log(err))
     }
     return (
         <div >

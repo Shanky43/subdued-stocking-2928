@@ -159,7 +159,7 @@ const UpperFullRow = () => {
         </Flex>{" "}
         <Text>Offers</Text>
         <Center>
-          <BsCart3 size="24px" />
+         <Link to="/cart"> <BsCart3 size="24px" /></Link>
         </Center>
         <Box w="100px" fontSize="14px">
           <Link to={"/orderhistory"}>

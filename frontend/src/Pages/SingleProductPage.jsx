@@ -1,20 +1,25 @@
 import { Box, Center, Container, Stack, Image, useMediaQuery, Text, Radio, HStack, Button, Select, VStack, Spacer } from '@chakra-ui/react';
 import axios from 'axios';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
 import { useParams } from 'react-router-dom';
 import { AdvertisementBanner, SpotlightAds, cities, responsive } from './Homeo_Pathy';
 import { BsFillTagFill } from 'react-icons/bs';
 import Carousel from 'react-multi-carousel';
+import { useToast } from '@chakra-ui/react'
+
+
 const SingleProductPage = () => {
   let { id } = useParams();
   const [product, setProduct] = useState({})
-  const [prices, setPrices] = useState(0)
+  const ChangedPrice = (localStorage.getItem('ChangedPrice')) || 0;
+
+  const [prices, setPrices] = useState(ChangedPrice)
   const City = JSON.parse(localStorage.getItem('City'));
   const PinCode = JSON.parse(localStorage.getItem('Pincode'));
   const [city, setCity] = useState(City || "Bangalore")
   const [pinCode, setPincode] = useState(PinCode || "560001")
-
+  const toast = useToast()
 
   console.log(id)
   useEffect(() => {
@@ -22,22 +27,31 @@ const SingleProductPage = () => {
       .then((res) => {
         setProduct(res.data.products)
         // console.log("data", res.data.products)
-        setPrices(res.data.products.price)
+        if (prices === 0) {
+          setPrices(res.data.products.price)
+        } else {
+          setPrices(localStorage.getItem("ChangedPrice"))
+        }
       })
       .catch((err) => console.log(err))
   }, [id])
 
   const { image, brand, category, discount, mainprice, name, price } = product
   const [isLargerThan969] = useMediaQuery("(min-width: 1025px)");
+
   const handlePrice = (value) => {
+    localStorage.setItem("ChangedPrice", (value))
     setPrices(value)
   }
+
+
   const handlePriceOnSelect = (e) => {
     let Pricevalue = e.target.value
     Pricevalue === "2" ? setPrices((((price * 0.5 + price)).toFixed(2))) :
       Pricevalue === "3" ? setPrices((((price * 0.75 + price)).toFixed(2))) :
         setPrices((((price * 0.9 + price)).toFixed(2)))
   }
+
   const handleCityAndPincode = (e) => {
     const city = e.target.value
     setCity(city)
@@ -46,10 +60,34 @@ const SingleProductPage = () => {
     localStorage.setItem('Pincode', JSON.stringify(pin[0].pincode));
     setPincode(pin[0].pincode)
   }
+  const token = localStorage.getItem("token");
+  const baseUrl = "https://healthcube.onrender.com";
 
-  // console.log("price", typeof price, price)
-  // console.log(prices)
-  // console.log("Mprice", typeof Number(mainprice))
+  const handleCart = (product) => {
+    console.log(product)
+    console.log(prices,"line68")
+
+    product = { ...product, "price": prices }
+
+    console.log(product, "line59")
+
+    axios.post(`${baseUrl}/cart/add`, product, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    }).then((res) => {
+      console.log(res)
+      toast({
+        title: "Product added to the cart.",
+        description: "Redirecting to the cart page",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top"
+      })
+    }).catch((err) => console.log(err))
+  }
+
   return (
     <div>
       <Container maxW={"100%"}>
@@ -150,7 +188,7 @@ const SingleProductPage = () => {
                           <option value="3">3</option>
                           <option value="4">4</option>
                         </Select>
-                        <Box pr="10" pt="6"><Button _hover={{ bgColor: "none" }} width={"100%"} bgColor={"#ff6f61"}>ADD TO CART</Button></Box>
+                        <Box pr="10" pt="6"><Button _hover={{ bgColor: "none" }} width={"100%"} bgColor={"#ff6f61"} onClick={handleCart}>ADD TO CART</Button></Box>
                       </Box>
 
                     </Box>
