@@ -3,6 +3,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import { Product } from "../Pages/Product";
 import { Dashboard } from "../Pages/Dashboard";
 import { AddProduct } from "../Pages/AddProduct";
+import EditButton from "./EditButton";
 
 export const AdminRoutes = () => {
   return (

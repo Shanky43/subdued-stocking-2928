@@ -66,10 +66,11 @@ export default function SidebarWithHeader() {
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
+
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
-        <AdminRoutes/>
+        <AdminRoutes />
       </Box>
     </Box>
   );
@@ -106,10 +107,11 @@ const SidebarContent = ({ onClose, ...rest }) => {
 const NavItem = ({ icon, children, ...rest }) => {
   return (
     <Link
-      href="#"
+      href="/admin/product"
       style={{ textDecoration: "none" }}
       _focus={{ boxShadow: "none" }}
     >
+
       <Flex
         align="center"
         p="4"
@@ -187,7 +189,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                 <Avatar
                   size={"sm"}
                   src={
-                    "https://rsaimanjunathnaik083.github.io/static/media/mypic.4dc41b65d0094e828069.jpg"
+                    "https://avatars.githubusercontent.com/u/112754947?s=400&u=e09cb15e70a42f8e4c0c3d6d6286b8c7b73788b3&v=4"
                   }
                 />
                 <VStack
@@ -196,7 +198,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">Manju Sai</Text>
+                  <Text fontSize="sm">Kunjan Ballawar</Text>
                   <Text fontSize="xs" color="gray.600">
                     Admin
                   </Text>
@@ -204,6 +206,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                 <Box display={{ base: "none", md: "flex" }}>
                   <FiChevronDown />
                 </Box>
+
               </HStack>
             </MenuButton>
             <MenuList

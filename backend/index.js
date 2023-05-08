@@ -16,7 +16,7 @@ app.use(express.json());
 //   res.status(200).send("Home page");
 // });
 
-app.use("/", medRouter);
+app.use("/products", medRouter);
 
 //By neeraj ==> for register,login
 app.use("/users", userRouter);
