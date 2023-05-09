@@ -1,7 +1,7 @@
 const express = require("express");
 const userRouter = express.Router();
 const jwt = require("jsonwebtoken");
-const { userModel } = require("../Model/user.model");
+const userModel = require("../Model/user.model");
 const bcrypt = require("bcrypt");
 
 //register the user
@@ -48,9 +48,16 @@ userRouter.post("/login", async (req, res) => {
             "shhhhh"
           );
 
-          console.log(result, user, token)
+          console.log(result, user, token);
 
-          res.status(200).json({ message: "Login Sucessful", token, userName: user.name, userId: user._id });
+          res
+            .status(200)
+            .json({
+              message: "Login Sucessful",
+              token,
+              userName: user.name,
+              userId: user._id,
+            });
         } else {
           res.status(401).json({ message: "Wrong Credentials" });
         }
