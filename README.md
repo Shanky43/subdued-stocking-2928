@@ -15,7 +15,7 @@ Tata 1mg, previously 1mg, is a healthcare platform based in Gurgaon, India. It p
 
 ## API Screenshots
 
-![App Screenshot]()
+![App Screenshot](https://github.com/Shanky43/subdued-stocking-2928/blob/main/frontend/src/Assests/API%20image.png?raw=true)
 
 
 ## Technologies We Used
@@ -44,18 +44,19 @@ A glimpse of our website
 
 The landing page where users can see various categories along with their Geolocation.
 
-![Landing Page](https://user-images.githubusercontent.com/91946820/174492873-df01a518-01b0-4fd4-9713-8c589cc84ef7.png)
+![Landing Page](https://github.com/Shanky43/subdued-stocking-2928/blob/main/frontend/src/Assests/HomePage%20Image.png?raw=true)
 
-### Search Function
+### All Product Page
 
 User can search any products according to their needs
 
-![search](https://user-images.githubusercontent.com/91946820/174493059-16e52074-fe9e-4018-a32b-46dbcbdee0c7.png)
+![Allproductpage](https://github.com/Shanky43/subdued-stocking-2928/blob/main/frontend/src/Assests/allproductpage1.png?raw=true)
+![Allproductpage](https://github.com/Shanky43/subdued-stocking-2928/blob/main/frontend/src/Assests/allproductpage2.png?raw=true)
 
-### SignUp Page
+### SignUp/SignIn Page
 Users can signup/signin based on whether the user is already registered or not.
-![signup](https://user-images.githubusercontent.com/91946820/174493100-2f357767-5aab-491a-9632-da027f3d8631.png)
-
+![signup](https://github.com/Shanky43/subdued-stocking-2928/blob/main/frontend/src/Assests/SignUpPage.png?raw=true)
+![signin](https://github.com/Shanky43/subdued-stocking-2928/blob/main/frontend/src/Assests/SignInPage.png?raw=true)
 ### Product Page
 
 Show Product data by Fetching Product data from our own database.
@@ -66,25 +67,25 @@ Show Product data by Fetching Product data from our own database.
 
 A complete detailed product page which displays all the details regarding the product with other functionality .
 
-![inprodpage](https://user-images.githubusercontent.com/91946820/174493233-433724a8-6c6b-4ad2-a702-d4bb43678d33.png)
+![inprodpage](https://github.com/Shanky43/subdued-stocking-2928/blob/main/frontend/src/Assests/ProductsPage.png?raw=true)
 
 ### Cart Page
 
  Manage All the items that are added to the cart/bag by the user
 
-![cart page](https://user-images.githubusercontent.com/91946820/174493259-f249e730-f51a-48a9-bdaf-f2cca1977998.png)
+![cart page](https://github.com/Shanky43/subdued-stocking-2928/blob/main/frontend/src/Assests/cartpage.png?raw=true)
 
 ### Payment Page
 
 On the checkout page, the user enters his shipping address and credit card details in order to place the order.
 
-![paymentpage](https://user-images.githubusercontent.com/91946820/174493404-99e75d76-13c6-4795-9a44-4a0821e18df6.png)
+![paymentpage](https://github.com/Shanky43/subdued-stocking-2928/blob/main/frontend/src/Assests/checkout%20page.png?raw=true)
 
 ### My Order Page
 
 Users can track their ordered product from this page
 
-![myorders](https://user-images.githubusercontent.com/91946820/174493463-cf318a4c-784f-4d01-90e8-99cb0bbab5b0.png)
+![myorders](https://github.com/Shanky43/subdued-stocking-2928/blob/main/frontend/src/Assests/OrderPage.png?raw=true)
 
 ### Footer Section
 
@@ -92,13 +93,13 @@ There is footer page where the user see terms and condition and connected to our
 
 ![footersec](https://user-images.githubusercontent.com/91946820/174493499-5077e966-2309-4c4c-84fa-5e3e88d0497b.png)
 ## Demo
-[![Netlify Status](https://api.netlify.com/api/v1/badges/40278c03-b5e9-47f7-b05e-4f5fe5891dda/deploy-status)](https://flourishing-lollipop-9ef694.netlify.app/)
-https://flourishing-lollipop-9ef694.netlify.app/
+[![Netlify Status](https://api.netlify.com/api/v1/badges/40278c03-b5e9-47f7-b05e-4f5fe5891dda/deploy-status)](https://healthcube.vercel.app/)
+https://healthcube.vercel.app/
 
 
 ## Authors
 
-- [Rajiv Suting](https://github.com/rajivsuting)
-- [Puja Deshmukh](https://github.com/pujadeshmukh1)
-- [Ujjwal Singh](https://github.com/ujjwalsingh13feb)
-- [Aditi Patil](https://github.com/Aditi101049)
+- [Shankar S](https://github.com/Shanky43)
+- [Neeraj Singh Bisht](https://github.com/bisht1418)
+- [Kunjan Ballawar](https://github.com/Kunjan0)
+- [Disha Gupta](https://github.com/DishaGup)
