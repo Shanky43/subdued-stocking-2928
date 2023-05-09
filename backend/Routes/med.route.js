@@ -48,11 +48,9 @@ medRouter.get("/:category", async (req, res) => {
   if (req.query.brandrange) {
     filters.brand = req.query.brandrange;
   }
-
   if (req.query.subcat2) {
     filters.subcat2 = req.query.subcat2;
   }
-
   if (req.query.name) {
     filters.name = { $regex: req.query.name, $options: "i" };
   }

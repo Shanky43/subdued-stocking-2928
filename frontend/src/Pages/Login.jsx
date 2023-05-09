@@ -51,11 +51,13 @@ export default function Login() {
         .post(`${baseUrl}/users/login`, userData)
         .then((res) => {
           const getToken = res.data.token;
+          const getName = res.data.userName
 
           console.log(res, "line55")
 
-          if (getToken) {
+          if (getToken && getName) {
             localStorage.setItem("token", getToken);
+            localStorage.setItem("UserName", getName)
             Login(getToken);
             toast({
               title: "Sucessfully Login.",
