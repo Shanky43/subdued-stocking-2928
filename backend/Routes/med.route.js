@@ -14,15 +14,16 @@ medRouter.post("/add", async (req, res) => {
 });
 
 
-
 medRouter.get("/", async (req, res) => {
-  try {
-    const medi = await MedModel.find();
-    res.status(200).send({ products: medi });
-  } catch (err) {
-    res.status(400).send({ err: err.message });
-  }
+    try {
+        const payload = req.body
+        const medi = await MedModel.find(payload);
+        res.status(200).send({ products: medi });
+    } catch (err) {
+        res.status(400).send({ err: err.message });
+    }
 });
+
 
 
 
