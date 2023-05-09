@@ -41,7 +41,6 @@ import NavDrop from "./NavDrop";
 import MobileNav from "./MobileNav";
 
 const Navbar = () => {
-
   return (
     <>
       <VStack w="100%" mb="8px">
@@ -111,8 +110,8 @@ const UpperFullRow = () => {
   function toggleMenu() {
     setMenuOpen(!menuOpen);
   }
-  const UserNameRef= useRef(null)
-
+  const UserNameRef = useRef(null);
+  let token = useRef(null);
   const uppermostrow = [
     { title: "MEDICINE", active: true },
     { title: "LAB TESTS", badge: "SAFE" },
@@ -121,9 +120,12 @@ const UpperFullRow = () => {
     { title: "AYURVEDA" },
     { title: "CARE PLAN", badge: "SAVE MORE" },
   ];
-
-
-    UserNameRef.current = localStorage.getItem("UserName") || null
+  console.log(UserNameRef.current, "....123");
+  useEffect(() => {
+    UserNameRef.current = localStorage.getItem("UserName") || "Admin";
+    token.current = localStorage.getItem("token");
+    console.log(UserNameRef.current);
+  }, []);
 
   return (
     <>
@@ -135,7 +137,9 @@ const UpperFullRow = () => {
         display={{ base: "none", xl: "flex" }}
       >
         <Box role="logo" w="120px" mx="10px">
-          <Image src={logo} />
+          <Link to={"/"}>
+            <Image src={logo} />
+          </Link>
         </Box>{" "}
         <Flex
           display={{ base: "none", xl: "flex" }}
@@ -146,32 +150,42 @@ const UpperFullRow = () => {
             <RowTextHeading key={ind} {...el} />
           ))}
         </Flex>{" "}
-        {
-          UserNameRef.current ? <Box>
-            <Flex> {UserNameRef.current.charAt(0).toUpperCase() + UserNameRef.current.slice(1)} &nbsp;<MdAccountCircle size={20} /></Flex>
-          </Box> :
-            <Box>
-              <Flex
-                display={{ base: "none", xl: "flex" }}
-                fontSize="15px"
-                justifyContent={"space-between"}
-                w="100px"
-              >
-                <Link to="/login">
-                  {" "}
-                  <Text>Login</Text>{" "}
-                </Link>
-                <Text> | </Text>
-                <Link to="/register">
-                  {" "}
-                  <Text>Sign Up</Text>{" "}
-                </Link>
-              </Flex>{" "}
-            </Box>
-        }
+        {token.current != null && UserNameRef.current != "Admin" ? (
+          <Box>
+            <Flex>
+              {" "}
+              {UserNameRef.current.charAt(0).toUpperCase() +
+                UserNameRef.current.slice(1)}{" "}
+              &nbsp;
+              <MdAccountCircle size={20} />
+            </Flex>
+          </Box>
+        ) : (
+          <Box>
+            <Flex
+              display={{ base: "none", xl: "flex" }}
+              fontSize="15px"
+              justifyContent={"space-between"}
+              w="100px"
+            >
+              <Link to="/login">
+                {" "}
+                <Text>Login</Text>{" "}
+              </Link>
+              <Text> | </Text>
+              <Link to="/register">
+                {" "}
+                <Text>Sign Up</Text>{" "}
+              </Link>
+            </Flex>{" "}
+          </Box>
+        )}
         <Text>Offers</Text>
         <Center>
-          <Link to="/cart"> <BsCart3 size="24px" /></Link>
+          <Link to="/cart">
+            {" "}
+            <BsCart3 size="24px" />
+          </Link>
         </Center>
         <Box w="100px" fontSize="14px">
           <Link to={"/orderhistory"}>
@@ -297,13 +311,19 @@ const SearchLocation = ({
           {lefticon && (
             <InputLeftElement
               pointerEvents="none"
+              mr="2px"
               children={<MdLocationPin color="blackAlpha.600" />}
             />
           )}
 
           {select ? (
             <>
-              <Select name="Select You Country" id="country_homepage" gap={2}>
+              <Select
+                name="Select You Country"
+                id="country_homepage"
+                gap={2}
+                ml="10px"
+              >
                 <option value="New Delhi">New Delhi</option>
                 <option value="Andorra">Andorra</option>
                 <option value="Angola">Angola</option>

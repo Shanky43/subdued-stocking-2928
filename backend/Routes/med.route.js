@@ -2,7 +2,6 @@ const express = require("express");
 const medRouter = express.Router();
 const MedModel = require("../Model/medicine.model");
 
-
 medRouter.post("/add", async (req, res) => {
   try {
     const medi = MedModel(req.body);
@@ -13,37 +12,21 @@ medRouter.post("/add", async (req, res) => {
   }
 });
 
-
-// FootballRouter.get("/:id", getSinglePlayer)
-
-
-
-// medRouter.get("/", async (req, res) => {
-//     try {
-//         const medi = await MedModel.find({ authorID: req.body.authorID });
-//         res.status(200).send({ products: medi });
-//     } catch (err) {
-//         res.status(400).send({ err: err.message });
-//     }
-// });
-
-
 medRouter.get("/", async (req, res) => {
   try {
-    const medi = await MedModel.find();
+    payload = req.body;
+    const medi = await MedModel.find(payload);
     res.status(200).send({ products: medi });
   } catch (err) {
     res.status(400).send({ err: err.message });
   }
 });
 
-
-
 medRouter.get("/:category", async (req, res) => {
   let filters = { category: req.params.category };
-  let value = 0
-  const { sortrange } = req.query
-  console.log(req.query)
+  let value = 0;
+  const { sortrange } = req.query;
+  console.log(req.query);
 
   if (req.query.brandrange) {
     filters.brand = req.query.brandrange;
@@ -56,30 +39,46 @@ medRouter.get("/:category", async (req, res) => {
   }
 
   if (req.query.sortrange) {
-    let priceMin = req.query.sortrange == Object ? req.query.sortrange.join("").split("-")[0] : req.query.sortrange.split("-")[0]
+    let priceMin =
+      req.query.sortrange == Object
+        ? req.query.sortrange.join("").split("-")[0]
+        : req.query.sortrange.split("-")[0];
     filters.price = { $gte: parseFloat(priceMin) };
   }
 
   if (req.query.priceMax) {
-    let priceMax = req.query.sortrange == Object ? req.query.sortrange.join("").split("-")[1] : req.query.sortrange.split("-")[1]
+    let priceMax =
+      req.query.sortrange == Object
+        ? req.query.sortrange.join("").split("-")[1]
+        : req.query.sortrange.split("-")[1];
     filters.price = { ...filters.price, $lte: parseFloat(priceMax) };
   }
+
+  const { page } = req.query;
+  let total = await FootballModel.find().count();
+  let maxPage = total / 3;
+  page = page > maxPage ? maxPage : page;
+  if (page == 0 || page == undefined) page = 1;
+  let realpage = (page - 1) * 3;
+
   if (req.query.sortingByPrice === "asc") {
-    value = Number(1)
+    value = Number(1);
   } else if (req.query.sortingByPrice === "desc") {
-    value = Number(-1)
+    value = Number(-1);
   } else {
-    value = 0
+    value = 0;
   }
 
   try {
-    let medi = await MedModel.find(filters).sort({ price: value }).limit(20);
+    let medi = await MedModel.find(filters)
+      .skip(realpage)
+      .sort({ price: value })
+      .limit(20);
     res.status(200).send({ products: medi });
   } catch (err) {
     res.status(400).send({ err: err.message });
   }
 });
-
 
 //get particular Products for logged-in user
 medRouter.get("/admin", async (req, res) => {
@@ -116,10 +115,11 @@ medRouter.delete("/delete/:id", async (req, res) => {
   }
 });
 
-medRouter.get("/card/:id", async (req, res) => {
-  const { id } = req.params
+medRouter.get("/data/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
   try {
-    const medi = await MedModel.findById({ _id: id })
+    const medi = await MedModel.findById({ _id: id });
     res.status(200).send({ products: medi });
   } catch (err) {
     res.status(400).send({ err: err.message });

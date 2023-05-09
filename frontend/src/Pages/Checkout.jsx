@@ -17,6 +17,8 @@ import React, { useState } from "react";
 import styles from "../Styling/Cart.module.css";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/HomePage/Navbar";
+import Footer from "../components/HomePage/Footer";
 
 // import img from '../logo/Ezyshop.jpeg'
 const Checkout = () => {
@@ -123,6 +125,7 @@ const Checkout = () => {
 
   return (
     <>
+      <Navbar />
       <Flex
         bg={"#f7f7f7"}
         justifyContent={"space-around"}
@@ -711,6 +714,7 @@ const Checkout = () => {
           </Button>
         </Box>
       </GridItem>
+      <Footer />
     </>
   );
 };

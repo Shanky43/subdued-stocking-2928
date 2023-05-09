@@ -33,8 +33,7 @@ import {
 import { MdAddShoppingCart } from "react-icons/md";
 import { AiOutlineHome } from "react-icons/ai";
 import { AdminRoutes } from "../Pages/AdminRoutes";
-import healthcube from "../images/healthcube.png"
-
+import healthcube from "../images/healthcube.png";
 
 const LinkItems = [
   { name: "Add Product", icon: MdAddShoppingCart, path: "/add-product" },
@@ -91,7 +90,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
           {/* Logo */}
-          <Image src={healthcube} alt='logo' />
+          <Image src={healthcube} alt="logo" />
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
@@ -111,7 +110,6 @@ const NavItem = ({ icon, children, ...rest }) => {
       style={{ textDecoration: "none" }}
       _focus={{ boxShadow: "none" }}
     >
-
       <Flex
         align="center"
         p="4"
@@ -206,7 +204,6 @@ const MobileNav = ({ onOpen, ...rest }) => {
                 <Box display={{ base: "none", md: "flex" }}>
                   <FiChevronDown />
                 </Box>
-
               </HStack>
             </MenuButton>
             <MenuList

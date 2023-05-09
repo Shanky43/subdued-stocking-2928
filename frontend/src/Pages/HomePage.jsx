@@ -12,7 +12,7 @@ import DisplayProductsRow from "../components/HomePage/DisplayProduct";
 const HomePage = () => {
   return (
     <div id="app-body">
-      {/* <Navbar /> */}
+      <Navbar />
       <Banner />
       <ProductRow />
       <PopularCategory />

@@ -1,6 +1,8 @@
-import { Box, Heading, Text, GridItem, Grid } from "@chakra-ui/react";
+import { Box, Heading, Text, GridItem, Grid, Image } from "@chakra-ui/react";
 import axios from "axios";
 import React from "react";
+import Navbar from "../components/HomePage/Navbar";
+import Footer from "../components/HomePage/Footer";
 
 const OrderHistory = () => {
   const [myOrder, setMyOrder] = React.useState([]);
@@ -21,6 +23,7 @@ const OrderHistory = () => {
 
   return (
     <Box>
+      <Navbar />
       <GridItem
         position="relative"
         p={"15px"}
@@ -52,12 +55,7 @@ const OrderHistory = () => {
                 >
                   <Text display={"flex"}>
                     <Text position={"relative"}>
-                      <img
-                        src={el.image}
-                        width={"300px"}
-                        height={"300px"}
-                        alt="name"
-                      ></img>
+                      <Image src={el.image} width={"100%"} alt="name"></Image>
                     </Text>
                   </Text>
                 </GridItem>
@@ -89,9 +87,9 @@ const OrderHistory = () => {
                     #1 Best Seller
                   </Text>
                   <Text display={i % 2 === 0 ? "none " : "block"} m={"5px 0px"}>
-                    <img
+                    <Image
                       alt="myImg"
-                      width={30}
+                      width={"30px"}
                       src="https://assets-global.website-files.com/59ee0c0f13651700017e6ed2/5d7e518fc5774119be64fbca_hc.jpeg"
                     />
                   </Text>
@@ -111,6 +109,7 @@ const OrderHistory = () => {
             );
           })}
       </GridItem>
+      <Footer />
     </Box>
   );
 };

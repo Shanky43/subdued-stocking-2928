@@ -2,6 +2,8 @@ import React from "react";
 
 import { Box, Heading } from "@chakra-ui/react";
 import styles from "../Styling/Thank.module.css";
+import Navbar from "../components/HomePage/Navbar";
+import Footer from "../components/HomePage/Footer";
 function Thankyou() {
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -13,6 +15,7 @@ function Thankyou() {
 
   return (
     <Box id="box">
+      <Navbar />
       <div className={styles.content}>
         <div className={styles.wrapper1}>
           <div className={styles.wrapper2}>

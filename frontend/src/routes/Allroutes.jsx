@@ -11,7 +11,9 @@ import Cart from "../Pages/Cart.jsx";
 import Checkout from "../Pages/Checkout.jsx";
 import OrderHistory from "../Pages/OrderHistory.jsx";
 import Thankyou from "../Pages/Thankyou.jsx";
-import SingleProductPage from '../Pages/SingleProductPage.jsx'
+import SingleProductPage from "../Pages/SingleProductPage.jsx";
+import { Product } from "../Admin_Page/Pages/Product.jsx";
+import { Dashboard } from "../Admin_Page/Pages/Dashboard.jsx";
 
 const Allroutes = () => {
   return (
@@ -19,8 +21,12 @@ const Allroutes = () => {
       <Routes>
         {/* <Route path='/homeopathy' element={<Homeopathy />}></Route> */}
         <Route path="/products/:category" element={<Homeopathy />}></Route>
-        <Route path="/adminlogin" element={<Adminlogin />}></Route>
+        /* ====================Admin=======================*/
+        <Route path="/admin/adminlogin" element={<Adminlogin />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
+        <Route path="/admin/product" element={<Product />}></Route>
+        <Route path="/admin/dashboard" element={<Dashboard />}></Route>
+        /* ====================Admin=======================*/
         <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
@@ -28,7 +34,7 @@ const Allroutes = () => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/orderhistory" element={<OrderHistory />} />
         <Route path="/thankyou" element={<Thankyou />} />
-        <Route path='/:id' element={<SingleProductPage />}></Route>
+        <Route path="/:id" element={<SingleProductPage />}></Route>
       </Routes>
     </div>
   );

@@ -7,13 +7,16 @@ import {
   Img,
   Select,
   Text,
+  Image,
 } from "@chakra-ui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import React, { useEffect, useState } from "react";
 import styles from "../Styling/Cart.module.css";
 import axios from "axios";
+import Navbar from "../components/HomePage/Navbar";
 
 import { Link } from "react-router-dom";
+import Footer from "../components/HomePage/Footer";
 const Cart = () => {
   const [data, setdata] = useState([]);
   const [cartData, setCardData] = useState([]);
@@ -88,6 +91,7 @@ const Cart = () => {
 
   return (
     <>
+      <Navbar />
       <Grid
         gridTemplateColumns={{ sm: "repeat(1,1fr)", md: "1fr 25%" }}
         p={"20px"}
@@ -126,11 +130,12 @@ const Cart = () => {
                   <GridItem position="relative" mb={"30px"} key={el.id}>
                     <Text display={"flex"}>
                       <Text position={"relative"} top="70px">
-                        <img
+                        <Image
                           src={el.image}
-                          width={"250px"}
+                          width={"80%"}
                           height={"250px"}
-                        ></img>
+                          m={"auto"}
+                        />
                       </Text>
                     </Text>
                   </GridItem>
@@ -157,7 +162,7 @@ const Cart = () => {
                       display="inline"
                       className={styles.priceCart}
                     >
-                      ₹{el.totalPrice}
+                      ₹{el.totalPrice.toFixed(2)}
                     </Text>
                     <Text className={styles.cartDays}>
                       Usually dispatched in{" "}
@@ -277,7 +282,7 @@ const Cart = () => {
               <span className={styles.subtotal}>
                 Subtotal ({cartData.length} items):{}
               </span>
-              <span className={styles.priceCart}>{totalSum}.00</span>
+              <span className={styles.priceCart}>{totalSum}</span>
               {/* <span className={styles.priceCart}>{total}.00</span> */}
               <Link to={"/checkout"}>
                 <Button
@@ -345,12 +350,12 @@ const Cart = () => {
                       columnGap={3}
                     >
                       <GridItem>
-                        <img
+                        <Image
                           src={el.image}
                           width={"200px"}
                           height={"100px"}
                           key={el.id}
-                        ></img>
+                        />
                       </GridItem>
                       <GridItem>
                         <Text
@@ -376,6 +381,7 @@ const Cart = () => {
           </Grid>
         </GridItem>
       </Grid>
+      <Footer />
     </>
   );
 };

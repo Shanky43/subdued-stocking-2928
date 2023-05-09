@@ -1,19 +1,16 @@
-/* @font-face {
+ @font-face {
   font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #app-body {
-  color: #666;
+  /* color: #666; */
   min-height: 480px;
   min-width: 320px;
   font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
-/* HOMEPAGE STYLEs
-*/
-
-/* .carousel-container-homepage {
+ .carousel-container-homepage {
   boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px';
   padding: 6px 15px;
   background: white;
@@ -25,14 +22,10 @@
 .carousel-container-checkup {
   padding: 10px;
   border: '2px solid black'
-} */
+} 
 
-/* * {
-  text-align: center;
 
-} */
-
-/* #country_homepage>option {
+ #country_homepage>option {
 padding: 3px;
 margin: 2px;
 border-bottom: 1mm solid black.500;
@@ -41,17 +34,17 @@ border-bottom: 1mm solid black.500;
 option {
   font-size: 18px;
   background-color: #ffffff;
-} */ 
+} 
 
-/* option:before {
+option:before {
   content: ">";
   font-size: 20px;
   display: none;
   padding-right: 10px;
   padding-left: 5px;
   color: #fff;
-} */
-/* 
+} 
+
 option:hover:before {
   display: inline;
-} */ 
+} 
