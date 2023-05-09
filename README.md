@@ -10,7 +10,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/40278c03-b5e9-47f7-b05e-4f5fe5891dda/deploy-status)](https://flourishing-lollipop-9ef694.netlify.app/)
 
 
-Tata 1mg, previously 1mg, is a healthcare platform based in Gurgaon, India. It provides services, including e-pharmacy, diagnostics, e-consultation and health content. It was founded in April 2015 by Prashant Tandon, Gaurav Agarwal and Vikas Chauhan.
+Health Cube is a healthcare platform based in Bangalore, India. It provides a range of services, including online doctor consultation, lab tests, health packages, and health content. It was founded in 2017 by a team of experienced doctors and entrepreneurs with the aim of making healthcare more accessible and affordable to people across India.
    
 
 ## API Screenshots
@@ -19,13 +19,15 @@ Tata 1mg, previously 1mg, is a healthcare platform based in Gurgaon, India. It p
 
 
 ## Technologies We Used
-- HTML
-- CSS
+- React.js
+- Chakra UI
 - JavaScript
-- Bootstrap
+- React-Redux
 - Browser LocalStorage
 - npm and JSON Server
 - import export ,Debouncing ,Dom , ES6.
+- MongoDB 
+- MongoDB ATLAS
 
 ## Features
 - SignIn and SignUp functionality.
@@ -93,7 +95,8 @@ There is footer page where the user see terms and condition and connected to our
 
 ![footersec](https://user-images.githubusercontent.com/91946820/174493499-5077e966-2309-4c4c-84fa-5e3e88d0497b.png)
 ## Demo
-[![Netlify Status](https://api.netlify.com/api/v1/badges/40278c03-b5e9-47f7-b05e-4f5fe5891dda/deploy-status)](https://healthcube.vercel.app/)
+[![Deployment status](https://img.shields.io/endpoint?url=https://api.vercel.com/now/deployments/status/{YOUR_DEPLOYMENT_ID}&style=flat)](https://vercel.com/{YOUR_USERNAME}/{YOUR_PROJECT_NAME}/deployments)
+
 https://healthcube.vercel.app/
 
 
