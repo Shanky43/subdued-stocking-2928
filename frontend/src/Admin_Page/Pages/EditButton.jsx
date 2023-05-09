@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   Button,
   Flex,
@@ -10,17 +10,15 @@ import {
   Input,
   Stack,
   useColorModeValue,
-} from "@chakra-ui/react";
-import {
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
+  useToast,
 } from "@chakra-ui/react";
 
 export const EditButton = () => {
   const { id } = useParams();
-  // console.log("id",id);
+  const toast = useToast();
+
+  const navigate = useNavigate();
+
   const [product, setProduct] = useState({
     image: "",
     discount: "",
@@ -33,34 +31,12 @@ export const EditButton = () => {
     category: "",
     "price-box": "",
   });
-  // const [image, setImage] = useState("")
-  // const [discount, setDiscount] = useState("")
-  // const [name, setName] = useState("")
-  // const [subcat2, setSubcat2] = useState("")
-  // const [subcategory, setSubCategory] = useState("")
-  // const [brand, setBrand] = useState("")
-  // const [price, setPrice] = useState(0)
-  // const [mainprice, setMainPrice] = useState("")
-  // const [category, setCategory] = useState("")
-  // const [price_box, setprice_box] = useState("")
 
   useEffect(() => {
     axios
-      .get(`https://onemg-w2kv.onrender.com/products/card/${id}`)
+      .get(`https://onemg-w2kv.onrender.com/products/data/${id}`)
       .then((res) => {
         setProduct(res.data.products);
-        // setImage(res.data.products.image)
-        // setDiscount(res.data.products.discount)
-        // setName(res.data.products.name)
-        // setSubcat2(res.data.products.subcat2)
-        // setSubCategory(res.data.products.subcategory)
-        // setBrand(res.data.products.brand)
-        // setPrice(res.data.products.price)
-        // setMainPrice(res.data.products.mainprice)
-        // setCategory(res.data.products.category)
-        // setprice_box(res.data.products["price-box"])
-
-        console.log("data", res.data);
       })
 
       .catch((err) => console.log(err));
@@ -68,6 +44,16 @@ export const EditButton = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate("/admin/product");
+    toast({
+      title: "Product Updated To the Database.",
+      description: "Updated Sucessfully",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+      position: "top",
+    });
+
     console.log(product);
     const payload = {
       ...product,
@@ -217,10 +203,6 @@ export const EditButton = () => {
             <Button bg={"#ff9698"} color={"white"} onClick={handleSubmit}>
               Update
             </Button>
-            {/* <Alert status='success'>
-                            <AlertIcon />
-                            Data uploaded to the server. Fire on!
-                        </Alert> */}
           </Stack>
         </Stack>
       </Flex>

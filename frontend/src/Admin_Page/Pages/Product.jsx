@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Product.css";
 import { Link } from "react-router-dom";
-import { Box, Image, Text, Spacer, HStack } from "@chakra-ui/react";
+import { Box, Image, Text, Spacer, HStack, useToast } from "@chakra-ui/react";
 import { AiFillStar } from "react-icons/ai";
 export const Product = () => {
   const [medi, setMedi] = useState([]);
-
+  const toast = useToast();
   useEffect(() => {
     axios
       .get("https://onemg-w2kv.onrender.com/products")
@@ -15,7 +15,7 @@ export const Product = () => {
         setMedi(res.data.products);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [medi]);
 
   const handleDelete = (id) => {
     axios
@@ -24,6 +24,15 @@ export const Product = () => {
         setMedi(medi.filter((e) => e._id !== id));
       })
       .catch((err) => console.log(err));
+
+    toast({
+      title: "Product Deleted Successfully",
+      description: "Product is deleted from the Database.",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+      position: "top",
+    });
   };
 
   return (
@@ -125,6 +134,7 @@ export const Product = () => {
             </Box>
           </Box>
         ))}
+        
     </div>
   );
 };

@@ -54,8 +54,8 @@ medRouter.get("/:category", async (req, res) => {
     filters.price = { ...filters.price, $lte: parseFloat(priceMax) };
   }
 
-  const { page } = req.query;
-  let total = await FootballModel.find().count();
+  let { page } = req.query;
+  let total = 400;
   let maxPage = total / 3;
   page = page > maxPage ? maxPage : page;
   if (page == 0 || page == undefined) page = 1;

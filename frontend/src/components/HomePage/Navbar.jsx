@@ -204,14 +204,14 @@ const SecondFullRow = () => {
   const handleReachadmin = () => {
     toast({
       title: "Congratulations, To Became Our seller",
-      description: "Navigating To Admin section",
+      description: "Navigating To Admin Page",
       position: "top",
 
       duration: 2000,
       variant: "top-accent",
       isClosable: true,
     });
-    navigate("/admin");
+    navigate("/adminLogin");
   };
 
   const handleLogOut = () => {
@@ -224,6 +224,7 @@ const SecondFullRow = () => {
       position: "top",
     });
     localStorage.removeItem("token");
+    localStorage.removeItem("userName");
     navigate("/");
   };
 

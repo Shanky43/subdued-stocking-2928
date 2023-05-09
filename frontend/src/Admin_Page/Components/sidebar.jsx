@@ -9,7 +9,6 @@ import {
   VStack,
   Icon,
   useColorModeValue,
-  Link,
   Drawer,
   DrawerContent,
   Text,
@@ -30,18 +29,19 @@ import {
   FiShoppingCart,
   FiUsers,
 } from "react-icons/fi";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { MdAddShoppingCart } from "react-icons/md";
 import { AiOutlineHome } from "react-icons/ai";
 import { AdminRoutes } from "../Pages/AdminRoutes";
 import healthcube from "../images/healthcube.png";
 
 const LinkItems = [
-  { name: "Add Product", icon: MdAddShoppingCart, path: "/add-product" },
-  { name: "Dashboard", icon: FiHome, path: "/dashboard" },
-  { name: "Home", icon: AiOutlineHome, path: "/" },
-  { name: "Users", icon: FiUsers, path: "/users" },
-  { name: "Orders", icon: FiShoppingBag, path: "/orders" },
-  { name: "Products", icon: FiShoppingCart, path: "/products" },
+  { name: "Add Product", icon: MdAddShoppingCart, path: "/admin" },
+  // { name: "Dashboard", icon: FiHome, path: "/dashboard" },
+  // { name: "Home", icon: AiOutlineHome, path: "/" },
+  // { name: "Users", icon: FiUsers, path: "/users" },
+  // { name: "Orders", icon: FiShoppingBag, path: "/orders" },
+  { name: "Products", icon: FiShoppingCart, path: "/admin/product" },
 ];
 
 export default function SidebarWithHeader() {
@@ -95,18 +95,21 @@ const SidebarContent = ({ onClose, ...rest }) => {
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
+        <NavItem
+          key={link.name}
+          name={link.name}
+          icon={link.icon}
+          path={link.path}
+        />
       ))}
     </Box>
   );
 };
 
-const NavItem = ({ icon, children, ...rest }) => {
+const NavItem = ({ icon, name, path }) => {
   return (
     <Link
-      href="/admin/product"
+      to={path}
       style={{ textDecoration: "none" }}
       _focus={{ boxShadow: "none" }}
     >
@@ -121,7 +124,6 @@ const NavItem = ({ icon, children, ...rest }) => {
           bg: "#ff9698",
           color: "white",
         }}
-        {...rest}
       >
         {icon && (
           <Icon
@@ -133,13 +135,24 @@ const NavItem = ({ icon, children, ...rest }) => {
             as={icon}
           />
         )}
-        {children}
+        {name}
       </Flex>
     </Link>
   );
 };
 
 const MobileNav = ({ onOpen, ...rest }) => {
+  const navigate = useNavigate();
+
+  const handlelogOutAdmin = () => {
+    let { token } = localStorage.getItem("token");
+    if (token == "QpwL5tke4Pnpja7X4") {
+      localStorage.removeItem("token");
+    }
+
+    navigate("/");
+  };
+
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -214,7 +227,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem onClick={handlelogOutAdmin}>Sign out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>

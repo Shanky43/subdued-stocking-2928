@@ -8,6 +8,7 @@ import {
   Select,
   Text,
   Image,
+  useToast,
 } from "@chakra-ui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import React, { useEffect, useState } from "react";
@@ -22,6 +23,8 @@ const Cart = () => {
   const [cartData, setCardData] = useState([]);
   const [block, setblock] = useState(false);
   const [totalSum, setTotalSum] = useState();
+
+  const toast = useToast();
 
   useEffect(() => {
     getCartData();
@@ -68,7 +71,14 @@ const Cart = () => {
     axios
       .delete(`${baseUrl}/cart/${productId}`, { headers })
       .then((response) => {
-        // handle success response
+        toast({
+          title: "Product Deleted to the cart.",
+          description: "Deleted Sucessfully",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+          position: "top",
+        });
         console.log(`Product with ID ${productId} deleted successfully`);
         setCardData((prevData) =>
           prevData.filter((item) => item.id !== productId)
