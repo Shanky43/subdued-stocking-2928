@@ -14,19 +14,6 @@ medRouter.post("/add", async (req, res) => {
 });
 
 
-// FootballRouter.get("/:id", getSinglePlayer)
-
-
-
-// medRouter.get("/", async (req, res) => {
-//     try {
-//         const medi = await MedModel.find({ authorID: req.body.authorID });
-//         res.status(200).send({ products: medi });
-//     } catch (err) {
-//         res.status(400).send({ err: err.message });
-//     }
-// });
-
 
 medRouter.get("/", async (req, res) => {
   try {
@@ -81,16 +68,6 @@ medRouter.get("/:category", async (req, res) => {
 });
 
 
-//get particular Products for logged-in user
-medRouter.get("/admin", async (req, res) => {
-  try {
-    const medi = await MedModel.find({ authorID: req.body.authorID });
-    res.status(200).send({ products: medi });
-  } catch (err) {
-    res.status(400).send({ err: err.message });
-  }
-});
-
 medRouter.patch("/update/:id", async (req, res) => {
   const { id } = req.params;
   const medi = await MedModel.find({ _id: id });
@@ -116,7 +93,7 @@ medRouter.delete("/delete/:id", async (req, res) => {
   }
 });
 
-medRouter.get("/card/:id", async (req, res) => {
+medRouter.get("/data/:id", async (req, res) => {
   const { id } = req.params
   try {
     const medi = await MedModel.findById({ _id: id })
