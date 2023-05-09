@@ -1,18 +1,6 @@
 {
     "products": [
-        {
-            
-            "image": "https://www.netmeds.com/images/product-v1/150x150/844107/himalaya_erina_ep_powder_150_gm_0.jpg",
-            "discount": "10% OFF",
-            "name": "Himalaya Erina-Ep Powder 150 gm",
-            "subcat2": "veterinary",
-            "subcategory": "Petcare",
-            "brand": "Mkt: Himalaya Wellness Company",
-            "price": 180,
-            "mainprice": "Rs.200.00",
-            "category": "veterinary",
-            "price-box": "Best price"
-        },
+  
         {
             "image": "https://www.netmeds.com/images/product-v1/150x150/844110/himalaya_himcal_pet_200_ml_0.jpg",
             "discount": "10% OFF",
