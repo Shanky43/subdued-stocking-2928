@@ -342,7 +342,7 @@ const Homeopathy = () => {
                     <Flex>
                         {
                             isLargerThan1024 ?
-                                <Box maxW={"15%"} ml={["50px","50px","50px","0px","50px"]} mr={["50px","50px","50px","50px","50px"]} mt="10" >
+                                <Box maxW={"15%"} ml={["50px", "50px", "50px", "0px", "50px"]} mr={["50px", "50px", "50px", "50px", "50px"]} mt="10" >
                                     <Box style={{ "box-shadow": " rgba(0, 0, 0, 0.16) 0px 1px 4px" }} width={["400px", "400px", "100%", "150%", "150%"]} p="5" bgColor={"white"}>
                                         <Text fontSize={"md"} fontWeight={"bold"} color={"#ff6f61"}>FILTERS</Text>
                                         <Divider borderColor={"black"} pt="3" mb="3" />
@@ -395,11 +395,11 @@ const Homeopathy = () => {
 filter in the price range   
 */ }
 
-                                                <Box maxH="400px" overflowY="scroll" w="full" >
+                                                <Box maxH="400px" overflowY="scroll" w="full" css={{ '&::-webkit-scrollbar': { display: 'none' } }}>
                                                     <Accordion flex="1" allowToggle>
                                                         <AccordionItem>
                                                             <h2>
-                                                                <AccordionButton>
+                                                                <AccordionButton bgColor={"white"} _hover={{ bgColor: "white" }}>
                                                                     <Box as="span" flex='1' textAlign='left'>
                                                                         <Text color="black"> Price</Text>
                                                                     </Box>
@@ -599,6 +599,7 @@ filter in the price range
                                                 // showDots={true}
                                                 backgroundColor='#ff6f61'
                                                 responsive={responsive1}
+                                                
                                             >
                                                 {
                                                     ShopByHomeopathy.map((items, index) => (

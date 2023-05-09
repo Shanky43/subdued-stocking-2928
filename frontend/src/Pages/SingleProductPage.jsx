@@ -9,8 +9,9 @@ import Carousel from 'react-multi-carousel';
 import { useToast } from '@chakra-ui/react'
 
 
+
 const SingleProductPage = () => {
-  
+
   let { id } = useParams();
   const [product, setProduct] = useState({})
   const ChangedPrice = (localStorage.getItem('ChangedPrice')) || 0;
@@ -21,11 +22,13 @@ const SingleProductPage = () => {
   const [pinCode, setPincode] = useState(PinCode || "560001")
   const toast = useToast()
 
+
   console.log(id)
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/products/products/${id}`)
+    axios.get(`http://localhost:8080/products/card/${id}`)
       .then((res) => {
+        // console.log(res)
         setProduct(res.data.products)
         // console.log("data", res.data.products)
         if (prices === 0) {
@@ -45,7 +48,7 @@ const SingleProductPage = () => {
     setPrices(value)
   }
 
-
+  console.log(product)
   const handlePriceOnSelect = (e) => {
     let Pricevalue = e.target.value
     Pricevalue === "2" ? setPrices((((price * 0.5 + price)).toFixed(2))) :
@@ -62,16 +65,11 @@ const SingleProductPage = () => {
     setPincode(pin[0].pincode)
   }
 
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token")
   const baseUrl = "https://healthcube.onrender.com";
 
   const handleCart = (product) => {
-    console.log(product)
-    console.log(prices,"line68")
-
-    product = { ...product, "price": prices }
-
-    console.log(product, "line59")
+ 
 
     axios.post(`${baseUrl}/cart/add`, product, {
       headers: {
