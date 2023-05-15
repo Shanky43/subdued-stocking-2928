@@ -97,7 +97,7 @@ There is footer page where the user see terms and condition and connected to our
 ## Demo
 [![Deployment status](https://img.shields.io/endpoint?url=https://api.vercel.com/now/deployments/status/{YOUR_DEPLOYMENT_ID}&style=flat)](https://vercel.com/{YOUR_USERNAME}/{YOUR_PROJECT_NAME}/deployments)
 
-https://healthcube.vercel.app/
+https://healthcube-bisht1418.vercel.app/
 
 
 ## Authors
