@@ -1,20 +1,10 @@
 const express = require("express");
 const CartRouter = express.Router();
 const { CartModel } = require("../Model/cart.model");
-
 CartRouter.post("/add", async (req, res) => {
   try {
     const { image, name, price, quantity, category, userId, userName } =
       req.body;
-    // const product = new CartModel({
-    //   image,
-    //   name,
-    //   price,
-    //   category,
-    //   quantity,
-    //   userId,
-    //   userName,
-    // });
     const product = new CartModel(req.body)
     await product.save();
     res.status(201).send(product);
@@ -23,7 +13,6 @@ CartRouter.post("/add", async (req, res) => {
     res.status(500).send("Server error");
   }
 });
-
 // Delete a product from cart
 CartRouter.delete("/:productId", async (req, res) => {
   try {
@@ -58,10 +47,6 @@ CartRouter.post("/delete/all", async (req, res) => {
 CartRouter.get("/", async (req, res) => {
   try {
     const userId = req.body.userId; // Retrieve user ID from request object
-
-    // console.log(req.body);
-    // By the help of middleware i always get the userId and userName from req.body
-
     const products = await CartModel.find({
       userId,
     }); // Retrieve products that match user ID
@@ -79,7 +64,6 @@ CartRouter.patch("/increase", async (req, res) => {
     if (!id || !quantity) {
       return res.status(400).send("Missing required fields");
     }
-
     const product = await CartModel.findOne({ _id: id });
     if (!product) {
       return res.status(404).send("Product not found");

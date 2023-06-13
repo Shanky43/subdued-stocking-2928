@@ -10,7 +10,5 @@ const orderSchema = new mongoose.Schema({
   userName: { type: String, required: true },
   date: { type: Date, default: Date.now },
 });
-
 const OrderModel = mongoose.model("order", orderSchema);
-
 module.exports = { OrderModel };

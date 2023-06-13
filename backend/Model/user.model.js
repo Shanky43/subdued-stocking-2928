@@ -1,7 +1,5 @@
 const { Schema, model } = require("mongoose");
-
-const userSchema = Schema(
-  {
+const userSchema = Schema({
     name: { type: String, required: true },
     username: { type: String, required: true },
     email: { type: String, required: true },
@@ -12,7 +10,5 @@ const userSchema = Schema(
     versionKey: false,
   }
 );
-
 const userModel = model("users", userSchema);
-
 module.exports = { userModel };

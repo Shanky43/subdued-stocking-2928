@@ -3,21 +3,16 @@ const userRouter = express.Router();
 const jwt = require("jsonwebtoken");
 const { userModel } = require("../Model/user.model");
 const bcrypt = require("bcrypt");
-
 //register the user
 userRouter.post("/register", async (req, res) => {
   try {
     const { email, password, name, age, username } = req.body;
-
-    // check if user with the email already exists
     const existingUser = await userModel.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: "Email already exists" });
     }
-
     bcrypt.hash(password, 5, async (err, hash) => {
-      // Store hash in your password DB.
-      // create a new user
+
       const user = new userModel({
         email,
         password: hash,
@@ -27,7 +22,6 @@ userRouter.post("/register", async (req, res) => {
       });
       await user.save();
 
-      // return success message
       res.status(201).json({ message: "User created successfully" });
     });
   } catch (error) {
@@ -35,7 +29,6 @@ userRouter.post("/register", async (req, res) => {
   }
 });
 
-//login users
 userRouter.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -59,7 +52,6 @@ userRouter.post("/login", async (req, res) => {
     res.status(401).json({ error: error.message });
   }
 });
-
 //get all the users
 userRouter.get("/", async (req, res) => {
   try {
@@ -69,5 +61,4 @@ userRouter.get("/", async (req, res) => {
     res.status(500).json({ error });
   }
 });
-
 module.exports = { userRouter };

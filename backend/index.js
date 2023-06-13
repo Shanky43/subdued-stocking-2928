@@ -15,11 +15,6 @@ const { OrderRouter } = require("./Routes/order.route");
 
 app.use(cors());
 app.use(express.json());
-
-// app.get("/", (req, res) => {
-//   res.status(200).send("Home page");
-// });
-
 app.use("/products", medRouter);
 
 //By neeraj ==>

@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
-
-const medSchema = mongoose.Schema(
-  {
+const medSchema = mongoose.Schema({
     image: { type: String },
     discount: { type: String },
     name: { type: String },
@@ -13,10 +11,7 @@ const medSchema = mongoose.Schema(
     category: { type: String },
     "price-box": { type: String },
   },
-  {
-    versionKey: false,
-  }
+  {versionKey: false,}
 );
 const MedModel = mongoose.model("products", medSchema);
-
 module.exports = MedModel;
