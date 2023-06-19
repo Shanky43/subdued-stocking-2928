@@ -10,7 +10,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/40278c03-b5e9-47f7-b05e-4f5fe5891dda/deploy-status)](https://flourishing-lollipop-9ef694.netlify.app/)
 
 
-Health Cube is a healthcare platform based in Bangalore, India. It provides a range of services, including online doctor consultation, lab tests, health packages, and health content. It was founded in 2017 by a team of experienced doctors and entrepreneurs with the aim of making healthcare more accessible and affordable to people across India.
+Health Cube is a healthcare platform based in Bangalore, India. It provides a range of services, including online doctor consultation, lab tests, health packages, and health content. It was founded in 2023 by a team of experienced doctors and entrepreneurs with the aim of making healthcare more accessible and affordable to people across India.
    
 
 ## API Screenshots
